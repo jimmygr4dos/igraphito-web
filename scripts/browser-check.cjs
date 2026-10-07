@@ -29,11 +29,13 @@ async function main() {
   const textFits = await page.locator('[data-carousel-toggle]').evaluate(el => el.scrollWidth <= el.clientWidth && el.scrollHeight <= el.clientHeight);
   assert.equal(textFits, true, 'Carousel rotation control must fit its text');
   await page.setViewportSize({ width: 390, height: 844 });
-  assert.equal(await page.locator('#primary-nav').isVisible(), false);
+  assert.equal(await page.locator('#primary-nav .nav-links').isVisible(), false);
   await page.locator('[data-nav-toggle]').click();
-  assert.equal(await page.locator('#primary-nav').isVisible(), true);
+  assert.equal(await page.locator('#primary-nav .nav-links').isVisible(), true);
+  assert.equal(await page.locator('[data-nav-toggle]').getAttribute('aria-expanded'), 'true');
+  await page.screenshot({ path: 'qa/mobile-menu-open.png' });
   await page.keyboard.press('Escape');
-  assert.equal(await page.locator('#primary-nav').isVisible(), false);
+  assert.equal(await page.locator('#primary-nav .nav-links').isVisible(), false);
   assert.equal(await page.locator('[data-nav-toggle]').getAttribute('aria-expanded'), 'false');
   for (const route of routes) {
     await page.goto(base + route);
