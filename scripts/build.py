@@ -162,7 +162,7 @@ def main():
             body+='<section class="section soft"><div class="container"><div class="feature-grid">'+''.join(f'<div class="feature"><h2>{h}</h2><p>{v}</p></div>' for h,v in features)+'</div></div></section>'
             body+='<div class="container article">'+blocks(p,omit_intro=True)+'</div>'+section('También te puede interesar',product_cards(products,[j for j in cat[3] if j!=i][:2]))+cta(path,p['name'])
         elif n==29:
-            body='<article class="container legal"><h1>Privacidad</h1><div class="notice"><p>Documento pendiente de validación. Esta versión de desarrollo no está habilitada para publicación.</p></div><h2>Contacto voluntario</h2><p>Los enlaces de contacto abren WhatsApp. Tú decides si envías el mensaje y qué información compartes para consultar tu pedido.</p><h2>Validaciones pendientes</h2><p>Antes de publicar se deben confirmar el responsable legal, las finalidades y el tratamiento operativo, proveedores, conservación y atención de derechos. No se ha activado analítica en esta versión.</p><p>Contacto comercial: <a href="mailto:ventas@igraphito.com">ventas@igraphito.com</a>.</p></article>'
+            body='<article class="container legal"><h1>Política de privacidad</h1><div class="notice"><p>Borrador para revisión. Pendiente de confirmar los datos del responsable y completar la información operativa antes de publicar.</p></div>'+blocks(p)+'</article>'
         else:
             body='<article class="container article"><h1>'+E('Impresiones Graphito' if n==27 else p['name'])+'</h1>'+blocks(p)+'</article>'
             if n==8: body+=section('Productos relacionados',product_cards(products,[0,1,2,6,7,8,9,10,11]))
