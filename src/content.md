@@ -877,11 +877,13 @@ Los datos se conservan durante el tiempo necesario para atender el requerimiento
 
 Si continúa la relación contractual, se conservan los datos necesarios para gestionarla mientras dure y, posteriormente, durante los plazos exigidos por las obligaciones legales aplicables o necesarios para atender responsabilidades derivadas de ella. En ese periodo residual, su uso se limita a esas finalidades. No se establece una conservación comercial indefinida por la sola posibilidad de futuros pedidos.
 
-**Uso de WhatsApp y otros servicios**
+**Medios de tratamiento y proveedores**
 
 Los enlaces del sitio abren WhatsApp; tú decides si envías el mensaje. El uso de WhatsApp también está sujeto a las condiciones y política de privacidad de ese servicio, cuyo funcionamiento puede involucrar tratamiento de información fuera del Perú.
 
-La información sobre los demás proveedores, destinatarios, almacenamiento y transferencias aplicables debe completarse antes de publicar esta política.
+Las consultas, cotizaciones y comunicaciones se gestionan mediante WhatsApp, el correo electrónico de la empresa proporcionado por Publiperú y documentos internos de Excel y Word. La información necesaria para preparar y dar seguimiento al requerimiento puede incorporarse a esos documentos internos y queda sujeta a las mismas finalidades, criterios de conservación y derechos descritos en esta política.
+
+WhatsApp y Publiperú intervienen en la prestación de los respectivos servicios de comunicación. Esta política no autoriza a utilizar la información para fines comerciales ajenos al requerimiento. Los detalles de cualquier transferencia internacional y de las condiciones de tratamiento por los proveedores se informarán conforme a la operación verificada.
 
 **Tus derechos**
 
@@ -895,7 +897,7 @@ La supresión puede estar limitada por una obligación legal de conservación o 
 
 Esta política se interpreta conforme a la Ley N.° 29733, Ley de Protección de Datos Personales, y su Reglamento aprobado por Decreto Supremo N.° 016-2024-JUS. Los cambios de finalidad que requieran un nuevo consentimiento se comunicarán y autorizarán antes del nuevo tratamiento.
 
-Nota interna: borrador para revisión; RUC, razón social y domicilio de contacto confirmados por el usuario el 7 de octubre de 2026; pendiente inventario de proveedores y transferencias, identificación e inscripción del banco de datos que corresponda, registros técnicos del hosting y procedimiento operativo de conservación y derechos. No presentar este texto como cumplimiento integral ni habilitar publicación o analítica.
+Nota interna: borrador para revisión; RUC, razón social y domicilio de contacto confirmados por el usuario el 7 de octubre de 2026; medios confirmados: WhatsApp, correo de Publiperú y documentos internos Excel y Word; pendiente verificación de las transferencias y condiciones de los proveedores, identificación e inscripción del banco de datos que corresponda, registros técnicos del hosting y procedimiento operativo de conservación y derechos. No presentar este texto como cumplimiento integral ni habilitar publicación o analítica.
 
 ## Enlaces y mensajes para maquetación
 
