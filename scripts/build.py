@@ -129,7 +129,20 @@ def parse():
     return pages
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--output',default='dist',choices=['dist']);args=parser.parse_args()
+    global BASE
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--output',default='dist',choices=['dist'])
+    parser.add_argument('--base-path',default='')
+    parser.add_argument('--site-url',default=BASE)
+    args=parser.parse_args()
+    base_path='/' + args.base_path.strip('/') if args.base_path.strip('/') else ''
+    if base_path and not re.fullmatch(r'/[A-Za-z0-9_-]+',base_path):
+        parser.error('Base path must be one simple path segment')
+    BASE=args.site_url.rstrip('/') + base_path
+    def hosted(document):
+        if not base_path: return document
+        document=re.sub(r'((?:href|src)=")/(?!/)',lambda m:m[1]+base_path+'/',document)
+        return document.replace('url(/','url('+base_path+'/')
     out=ROOT/args.output
     if out.resolve()==ROOT.resolve() or ROOT not in out.resolve().parents: raise ValueError('Output must be a subdirectory of the project')
     if out.exists(): shutil.rmtree(out)
@@ -137,6 +150,9 @@ def main():
     for verification in ['googled4596d5466e1d60a.html','BingSiteAuth.xml']:
         shutil.copyfile(ROOT/'assets'/verification,out/verification)
     shutil.copyfile(ROOT/'src/site.css',out/'assets/site.css');shutil.copyfile(ROOT/'src/site.js',out/'assets/site.js')
+    if base_path:
+        stylesheet=out/'assets/site.css'
+        stylesheet.write_text(hosted(stylesheet.read_text()))
     pages=parse();products=pages[8:26]
     for p in pages:
         n,path=p['number'],p['path']
@@ -170,12 +186,17 @@ def main():
             body+=cta(path)
         schema={'@context':'https://schema.org','@type':'WebPage','name':p['title'],'url':BASE+path,'description':p['description'],'inLanguage':'es-PE'}
         document='<!doctype html><html lang="es-PE"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+E(p['title'])+'</title><meta name="description" content="'+E(p['description'])+'"><meta name="robots" content="noindex,nofollow"><link rel="canonical" href="'+BASE+path+'"><meta property="og:title" content="'+E(p['title'])+'"><meta property="og:description" content="'+E(p['description'])+'"><meta property="og:url" content="'+BASE+path+'"><meta property="og:type" content="website"><meta property="og:image" content="'+BASE+'/assets/images/final/hero.webp"><meta property="og:image:alt" content="Imagen ilustrativa de productos corporativos"><link rel="icon" href="/assets/images/favicon.ico"><link rel="stylesheet" href="/assets/site.css"><script defer src="/assets/site.js"></script><script type="application/ld+json">'+json.dumps(schema,ensure_ascii=False).replace('</','<\\/')+'</script></head><body>'+header(path)+'<main id="contenido">'+body+'</main>'+footer(path)+'</body></html>'
-        target=out/path.lstrip('/')/'index.html';target.parent.mkdir(parents=True,exist_ok=True);target.write_text(document)
+        target=out/path.lstrip('/')/'index.html';target.parent.mkdir(parents=True,exist_ok=True);target.write_text(hosted(document))
     (out/'404.html').write_text('<!doctype html><html lang="es"><meta charset="utf-8"><meta name="robots" content="noindex"><title>Página no encontrada | Graphito</title><h1>Página no encontrada</h1><p><a href="/">Volver al inicio</a></p></html>')
     (out/'robots.txt').write_text('User-agent: *\nDisallow: /\n')
     (out/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+escape(BASE+p['path'])+'</loc></url>' for p in pages)+'</urlset>')
     (out/'.htaccess').write_text('Options -Indexes\nDirectoryIndex index.html\nErrorDocument 404 /404.html\n<IfModule mod_headers.c>\nHeader always set X-Robots-Tag "noindex, nofollow"\nHeader always set X-Content-Type-Options "nosniff"\nHeader always set Referrer-Policy "strict-origin-when-cross-origin"\n</IfModule>\n')
     (out/'routes.json').write_text(json.dumps([p['path'] for p in pages],indent=2))
+    (out/'hosting.json').write_text(json.dumps({'base_path':base_path,'site_url':BASE}))
+    (out/'.nojekyll').touch()
+    if base_path:
+        not_found=out/'404.html'
+        not_found.write_text(hosted(not_found.read_text()))
     print(f'Built {len(pages)} pages; preview protected from indexing. Publication remains disabled.')
 
 if __name__=='__main__':main()

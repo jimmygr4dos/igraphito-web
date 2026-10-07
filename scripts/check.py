@@ -20,6 +20,7 @@ class Page(HTMLParser):
 
 errors=[]
 routes=json.loads((ROOT/'routes.json').read_text())
+base_path=json.loads((ROOT/'hosting.json').read_text())['base_path']
 assert len(routes)==29
 for route in routes:
     target=ROOT/route.lstrip('/')/'index.html'
@@ -29,7 +30,13 @@ for route in routes:
     if p.form:errors.append(f'{route}: commercial form is not authorized')
     for url in p.links+p.sources:
         if url.startswith('/'):
-            path=unquote(urlsplit(url).path); local=ROOT/path.lstrip('/')
+            path=unquote(urlsplit(url).path)
+            if base_path:
+                if not path.startswith(base_path+'/'):
+                    errors.append(f'{route}: target outside hosting path {url}')
+                    continue
+                path=path[len(base_path):]
+            local=ROOT/path.lstrip('/')
             if path.endswith('/'):local/= 'index.html'
             if not local.is_file():errors.append(f'{route}: broken target {url}')
         if url.startswith('https://wa.me/') and not url.startswith('https://wa.me/51942722449?text='):
