@@ -15,4 +15,22 @@ Rediseño completo de igraphito.com para clientes empresariales, con enfoque SEO
 
 ## Estado
 
-Implementación en curso. Este repositorio contiene la versión de desarrollo, no una web publicada ni una declaración de validación legal.
+Las 29 rutas se generan desde `src/content.md` mediante `scripts/build.py`. Incluye CSS responsive, navegación, carrusel accesible, enlaces de WhatsApp y assets originales recuperados del sitio actual. Es una versión de desarrollo; la revisión visual y las imágenes finales siguen pendientes. Privacidad requiere validación antes de publicación.
+
+## Desarrollo
+
+Requiere Python 3. No necesita dependencias externas para generar el sitio.
+
+```sh
+python3 scripts/build.py
+python3 scripts/check.py
+python3 -m http.server 8080 --directory dist
+```
+
+El resultado se genera en `dist/`. El build de revisión bloquea la indexación. No hay despliegue automático a producción.
+
+## Verificación
+
+Comprobación estática aprobada: 29 rutas, H1 únicos, metadatos, enlaces internos, assets, contacto de WhatsApp y ausencia de formularios. La comprobación visual en navegador está pendiente.
+
+Consulta `docs/publicacion.md` para condiciones de publicación.
