@@ -36,7 +36,15 @@ Fuentes oficiales:
 - Compendio actualizado: https://diariooficial.elperuano.pe/Normas/obtenerDocumento?idNorma=23
 - Opinión ANPD sobre excepción contractual: https://www.gob.pe/institucion/anpd/informes-publicaciones/1365650-excepcion-al-consentimiento-referida-al-tratamiento-de-datos-personales-necesarios-para-la-ejecucion-contractual
 
+## Medios de tratamiento confirmados por el usuario el 07/10/2026
+
+- WhatsApp.
+- Correo de la empresa proporcionado por Publiperú (normalización de «Publierpú» en el mensaje del usuario).
+- Documentos internos de Excel y Word.
+
+No se confirmó otro CRM, Google Drive ni otro servicio de almacenamiento. La referencia a Excel y Word no permite inferir que se usa Microsoft 365, OneDrive ni almacenamiento en la nube. No incluir tales proveedores sin evidencia.
+
 ## Información operativa todavía necesaria
 
-Verificar almacenamiento, copias, bancos de datos y su inscripción cuando corresponda; proveedores y destinatarios reales (incluido WhatsApp, correo y hosting), transferencias internacionales y registros técnicos. No afirmar ausencia de cookies o de recopilación técnica basándose únicamente en que no hay formularios o analítica.
+Verificar copias, bancos de datos y su inscripción cuando corresponda; condiciones de WhatsApp y del correo/hosting de Publiperú, ubicación efectiva del almacenamiento y transferencias internacionales, y registros técnicos. Los medios declarados por el usuario ya están identificados. No afirmar ausencia de cookies o de recopilación técnica basándose únicamente en que no hay formularios o analítica.
 Validar el procedimiento de derechos y la aplicación del criterio de conservación descrito. No publicar el borrador como si esos extremos estuvieran verificados.
