@@ -832,7 +832,7 @@ Cuéntanos qué producto necesitas y cómo lo quieres. Si tienes una referencia 
 
 WhatsApp: 942 722 449.
 Correo: ventas@igraphito.com.
-Dirección actualmente publicada: Jr. Orbegoso 271, Int. 423A, Breña, Lima.
+Dirección: Jr. Mariscal Luis Jose de Orbegoso N.° 271, Int. 423A, Breña, Lima, Perú.
 
 **¿Todavía estás evaluando opciones?**
 
@@ -840,7 +840,7 @@ Puedes iniciar la conversación contando el uso que tienes en mente. No necesita
 
 **Ver productos** — /productos/
 
-Nota interna: no añadir horarios o respuesta inmediata sin confirmación. Reconfirmar dirección vigente antes de publicar; el mockup usa otros datos y no es fuente de contacto.
+Nota interna: no añadir horarios o respuesta inmediata sin confirmación. Dirección, RUC y razón social confirmados por el usuario el 7 de octubre de 2026; el mockup no es fuente de contacto.
 
 ## 29. Privacidad — /privacidad/ — borrador pendiente de confirmación
 
@@ -853,7 +853,7 @@ Nota interna: no añadir horarios o respuesta inmediata sin confirmación. Recon
 
 **Responsable del tratamiento**
 
-IMPRESIONES GRAPHITO E.I.R.L. es responsable del tratamiento de los datos personales que recibe para atender consultas y gestionar sus relaciones comerciales. RUC: 20608374095. Domicilio fiscal consultado en SUNAT: Jr. Mariscal Luis Jose de Orbegoso Nro. 271, Urb. Azcona, Breña, Lima, Perú.
+IMPRESIONES GRAPHITO E.I.R.L. es responsable del tratamiento de los datos personales que recibe para atender consultas y gestionar sus relaciones comerciales. RUC: 20608374095. Domicilio de contacto: Jr. Mariscal Luis Jose de Orbegoso N.° 271, Int. 423A, Breña, Lima, Perú.
 
 WhatsApp de contacto y atención de derechos: +51 942 722 449.
 
@@ -895,7 +895,7 @@ La supresión puede estar limitada por una obligación legal de conservación o 
 
 Esta política se interpreta conforme a la Ley N.° 29733, Ley de Protección de Datos Personales, y su Reglamento aprobado por Decreto Supremo N.° 016-2024-JUS. Los cambios de finalidad que requieran un nuevo consentimiento se comunicarán y autorizarán antes del nuevo tratamiento.
 
-Nota interna: borrador para revisión; pendiente de confirmar RUC y domicilio con el usuario, inventario de proveedores y transferencias, identificación e inscripción del banco de datos que corresponda, registros técnicos del hosting y procedimiento operativo de conservación y derechos. No presentar este texto como cumplimiento integral ni habilitar publicación o analítica.
+Nota interna: borrador para revisión; RUC, razón social y domicilio de contacto confirmados por el usuario el 7 de octubre de 2026; pendiente inventario de proveedores y transferencias, identificación e inscripción del banco de datos que corresponda, registros técnicos del hosting y procedimiento operativo de conservación y derechos. No presentar este texto como cumplimiento integral ni habilitar publicación o analítica.
 
 ## Enlaces y mensajes para maquetación
 
