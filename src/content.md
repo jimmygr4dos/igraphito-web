@@ -842,20 +842,60 @@ Puedes iniciar la conversación contando el uso que tienes en mente. No necesita
 
 Nota interna: no añadir horarios o respuesta inmediata sin confirmación. Reconfirmar dirección vigente antes de publicar; el mockup usa otros datos y no es fuente de contacto.
 
-## 29. Privacidad — /privacidad/ — pendiente de validación legal
+## 29. Privacidad — /privacidad/ — borrador pendiente de confirmación
 
-Esta sección no es una política lista para publicar. La preferencia de evitar formularios no elimina los datos tratados por WhatsApp, medición o seguimiento comercial.
+**Title:** Política de privacidad | Impresiones Graphito
+**Descripción SEO:** Información sobre el uso de datos en consultas y cotizaciones, conservación y ejercicio de derechos por WhatsApp.
 
-Estructura preparada:
-- Identidad y contacto del responsable real.
-- Datos y finalidades de consultas/cotizaciones.
-- Analítica efectivamente implementada y mecanismos aplicables.
-- Proveedores, destinatarios y transferencias que correspondan.
-- Conservación real y criterios.
-- Derechos y canal real para atenderlos.
-- Actualización e información complementaria aplicable.
+**Política de privacidad**
 
-Faltan identidad jurídica y verificación del tratamiento operativo. No completar con supuestos ni publicar una política ficticia. Antes de activar medición o publicar debe resolverse el tratamiento y texto correspondiente. La aplicabilidad de Libro de Reclamaciones se evalúa por separado.
+Última revisión del borrador: 7 de octubre de 2026.
+
+**Responsable del tratamiento**
+
+IMPRESIONES GRAPHITO E.I.R.L. es responsable del tratamiento de los datos personales que recibe para atender consultas y gestionar sus relaciones comerciales. RUC: 20608374095. Domicilio fiscal consultado en SUNAT: Jr. Mariscal Luis Jose de Orbegoso Nro. 271, Urb. Azcona, Breña, Lima, Perú.
+
+WhatsApp de contacto y atención de derechos: +51 942 722 449.
+
+**Datos que recibimos**
+
+Tratamos los datos de identificación y contacto, así como la información del requerimiento que nos facilitas por WhatsApp o correo: nombre, teléfono, correo, empresa y, cuando corresponda, información necesaria para cotizar o gestionar el pedido. Comparte únicamente los datos necesarios para tu consulta.
+
+Proporcionar información para una consulta es voluntario. Si no contamos con los datos necesarios para evaluar el requerimiento o comunicarnos contigo, puede no ser posible elaborar la cotización o gestionar el pedido.
+
+**Finalidades y fundamento del tratamiento**
+
+Utilizamos los datos para atender consultas, elaborar y remitir cotizaciones y cartas de presentación solicitadas o vinculadas al requerimiento, realizar las coordinaciones correspondientes y, cuando se concrete una contratación, gestionar su ejecución y las obligaciones legales asociadas.
+
+Cuando el tratamiento sea necesario para preparar, celebrar o ejecutar una relación contractual en la que el titular de los datos sea parte, o para desarrollar una relación profesional en los supuestos previstos por ley, se aplica la excepción al consentimiento del artículo 14.5 de la Ley N.° 29733. Para otros tratamientos que requieran consentimiento, este debe obtenerse de forma previa, libre, informada, expresa e inequívoca.
+
+Solicitar una cotización no autoriza automáticamente el envío posterior de promociones ni cartas de presentación con fines de prospección ajenos al requerimiento. Ese uso requiere una base habilitante propia y, cuando corresponda, autorización específica. La aceptación de esta política no sustituye el consentimiento exigible.
+
+**Conservación**
+
+Los datos se conservan durante el tiempo necesario para atender el requerimiento y su seguimiento. Si la consulta termina con la primera cotización y no existe una relación posterior ni otra causa legal de conservación, los datos dejan de utilizarse para fines comerciales y corresponde suprimirlos o anonimizarlos cuando dejan de ser necesarios.
+
+Si continúa la relación contractual, se conservan los datos necesarios para gestionarla mientras dure y, posteriormente, durante los plazos exigidos por las obligaciones legales aplicables o necesarios para atender responsabilidades derivadas de ella. En ese periodo residual, su uso se limita a esas finalidades. No se establece una conservación comercial indefinida por la sola posibilidad de futuros pedidos.
+
+**Uso de WhatsApp y otros servicios**
+
+Los enlaces del sitio abren WhatsApp; tú decides si envías el mensaje. El uso de WhatsApp también está sujeto a las condiciones y política de privacidad de ese servicio, cuyo funcionamiento puede involucrar tratamiento de información fuera del Perú.
+
+La información sobre los demás proveedores, destinatarios, almacenamiento y transferencias aplicables debe completarse antes de publicar esta política.
+
+**Tus derechos**
+
+Puedes solicitar información y acceso a tus datos, su actualización o rectificación, cancelación o supresión y oposición al tratamiento, así como revocar el consentimiento cuando este sea la base del tratamiento, escribiendo al mismo WhatsApp: +51 942 722 449.
+
+Indica el derecho que deseas ejercer, los datos o tratamiento al que se refiere la solicitud y un medio para recibir la respuesta. Se verificará tu identidad o representación conforme a la normativa aplicable, sin solicitar información ajena a ese propósito. El ejercicio de estos derechos es gratuito y se atiende dentro de los plazos legales.
+
+La supresión puede estar limitada por una obligación legal de conservación o una relación contractual que justifique el tratamiento. En ese caso, se informará el motivo y se limitará el uso de los datos a la finalidad que justifica conservarlos. Si consideras que tus derechos no han sido atendidos conforme a la ley, puedes acudir a la Autoridad Nacional de Protección de Datos Personales.
+
+**Marco normativo y actualizaciones**
+
+Esta política se interpreta conforme a la Ley N.° 29733, Ley de Protección de Datos Personales, y su Reglamento aprobado por Decreto Supremo N.° 016-2024-JUS. Los cambios de finalidad que requieran un nuevo consentimiento se comunicarán y autorizarán antes del nuevo tratamiento.
+
+Nota interna: borrador para revisión; pendiente de confirmar RUC y domicilio con el usuario, inventario de proveedores y transferencias, identificación e inscripción del banco de datos que corresponda, registros técnicos del hosting y procedimiento operativo de conservación y derechos. No presentar este texto como cumplimiento integral ni habilitar publicación o analítica.
 
 ## Enlaces y mensajes para maquetación
 
