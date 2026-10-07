@@ -31,6 +31,9 @@ El resultado se genera en `dist/`. El build de revisión bloquea la indexación.
 
 ## Verificación
 
-Comprobación estática aprobada: 29 rutas, 20 imágenes finales, H1 únicos, metadatos, enlaces internos, assets, verificaciones Google/Bing originales, contacto de WhatsApp y ausencia de formularios o notas editoriales. La comprobación visual en navegador está pendiente.
+Comprobación estática aprobada: 29 rutas, 20 imágenes finales, H1 únicos, metadatos, enlaces internos, assets, verificaciones Google/Bing originales, contacto de WhatsApp y ausencia de formularios o notas editoriales. Comprobación en Chromium aprobada para escritorio y móvil: menú, carrusel, movimiento reducido, navegación sin JavaScript y contacto. Se revisaron las capturas reales de Home, categoría y producto.
 
 Consulta `docs/publicacion.md` para condiciones de publicación.
+
+
+[Ver capturas de la web implementada](docs/preview.md). [Ver las 20 imágenes finales](assets/images/final/). Los prompts y el inventario están en `docs/image-prompts.json` y `docs/image-manifest.json`.
