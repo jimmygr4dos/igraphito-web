@@ -14,7 +14,7 @@ Consulta del 07/10/2026, resultado visible en Consulta RUC.
 - Actividad principal: 1811 - IMPRESIÓN.
 Fuente: https://e-consultaruc.sunat.gob.pe/cl-ti-itmrconsruc/jcrS00Alias
 Para repetir la consulta, ingresar el RUC indicado. El resultado no dispone de enlace permanente.
-Pendiente de confirmación del usuario. La dirección comercial anterior incluye Int. 423A; SUNAT no muestra ese interior. No sustituir automáticamente una dirección por la otra.
+El usuario confirmó RUC, razón social y datos SUNAT el 07/10/2026. Para contacto y privacidad indicó usar: Jr. Mariscal Luis Jose de Orbegoso N.° 271, Int. 423A, Breña, Lima, Perú, omitiendo Urb. Azcona. El resultado SUNAT anterior se conserva como evidencia de consulta; no afirmar que SUNAT registra el interior.
 
 ## Instrucciones del usuario incorporadas
 
