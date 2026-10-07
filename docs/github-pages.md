@@ -9,7 +9,7 @@ La rama gh-pages contiene únicamente el resultado generado y los assets; nunca 
 
 Configuración necesaria: Settings → Pages → Deploy from a branch → gh-pages → / (root) → Save.
 
-Al 07/10/2026, el navegador devolvió HTTP 500 al guardar tanto la fuente GitHub Actions como la fuente desde rama. La activación no está confirmada. No presentar la URL prevista como publicada hasta verificar que sirve el sitio completo.
+El 07/10/2026 se confirmó en Settings → Pages la fuente gh-pages / (root) y HTTPS obligatorio. GitHub mostró HTTP 500 después de guardar, pero una comprobación posterior confirmó que el ajuste quedó aplicado. Ejecución de publicación: https://github.com/jimmygr4dos/igraphito-web/actions/runs/37655615798. Verificar la URL antes de dar por completado el despliegue.
 
 URL prevista: https://jimmygr4dos.github.io/igraphito-web/
 
