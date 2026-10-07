@@ -74,11 +74,11 @@ def inline(text):
     result = result.replace('ventas@igraphito.com','<a href="mailto:ventas@igraphito.com">ventas@igraphito.com</a>')
     return result
 
-def blocks(page):
+def blocks(page, omit_intro=False, omit_heading=None):
     """Editorial labels become semantic headings; internal instructions are excluded."""
     body = re.sub(r'\n(?=\*\*[^*\n]+\*\*)', '\n\n', page['body'])
     lines = re.split(r'\n\s*\n', body)
-    out=[]; faq=[]; question=None; first=True
+    out=[]; faq=[]; question=None; first=True; skip_paragraph=False
     for raw in lines:
         raw = raw.strip()
         if not raw or raw.startswith('Nota interna:'): continue
@@ -90,14 +90,16 @@ def blocks(page):
             if label.startswith('¿'):
                 question = label
                 continue
-            if 'WhatsApp' in label or target == 'WhatsApp':
+            if label == 'Conversemos por WhatsApp' and not target:
+                out.append(f'<h2>{E(label)}</h2>')
+            elif 'WhatsApp' in label or target == 'WhatsApp':
                 product = page['name'] if 3 <= page['number'] <= 7 or 9 <= page['number'] <= 26 else None
                 out.append(wa(label,product,page['path']))
             elif target and target.startswith('/'):
                 out.append(f'<p><a class="text-link" href="{E(target)}">{E(label)}</a></p>')
             elif first:
-                first=False
-            elif label not in ['Sigue explorando','Empresas que confían en nosotros']:
+                first=False;skip_paragraph=omit_intro
+            elif label not in ['Sigue explorando','Empresas que confían en nosotros',omit_heading]:
                 out.append(f'<h2>{E(label)}</h2>')
         elif raw.startswith('### '):
             out.append(f'<h2>{E(raw[4:])}</h2>')
@@ -108,6 +110,9 @@ def blocks(page):
         elif raw.startswith('Volver a '):
             continue
         else:
+            if skip_paragraph:
+                skip_paragraph=False
+                continue
             out.append('<p>'+inline(raw).replace('\n','<br>')+'</p>')
     return '<div class="content-block">'+''.join(out)+'</div>'+ ('<section class="faq"><h2>Preguntas frecuentes</h2>'+''.join(faq)+'</section>' if faq else '')
 
@@ -149,11 +154,13 @@ def main():
             body=hero('Productos corporativos a demanda','Soluciones para el trabajo, la comunicación y la presentación de tu marca.',path,'hero.webp',True)+section('Nuestras soluciones',category_cards())+section('Explora nuestros productos',product_cards(products,range(18)))+cta(path)
         elif 3<=n<=7:
             cat=CATEGORIES[n-3]
-            body=hero(p['name'],'Cada pedido parte de lo que tu empresa necesita. Conversemos sobre tu proyecto.',path,cat[2],True)+section('Encuentra la pieza para tu proyecto',product_cards(products,cat[3]))+'<div class="container article">'+blocks(p)+'</div>'+cta(path,p['name'])
+            body=hero(p['name'],'Cada pedido parte de lo que tu empresa necesita. Conversemos sobre tu proyecto.',path,cat[2],True)+section('Encuentra la pieza para tu proyecto',product_cards(products,cat[3]))+'<div class="container article">'+blocks(p,omit_heading='Encuentra la pieza para tu proyecto')+'</div>'+cta(path,p['name'])
         elif 9<=n<=26:
             i=n-9;cat=next(c for c in CATEGORIES if i in c[3]);intro=re.search(r'\*\*'+re.escape(p['name'])+r'\*\*\s+([^\n]+)',p['body'])
             body=f'<div class="container"><nav class="breadcrumbs" aria-label="Ruta de navegación"><a href="/">Inicio</a> / <a href="/productos/">Productos</a> / <a href="/{cat[0]}/">{cat[1]}</a></nav><section class="product-layout"><div class="product-gallery"><img src="{asset(IMAGES[i])}" alt="Imagen ilustrativa de {E(p["name"].lower())}" width="800" height="650" fetchpriority="high"></div><div class="product-summary"><p class="eyebrow">{E(cat[1])}</p><h1>{E(p["name"])}</h1><p>{E(intro[1] if intro else "Consulta tu pedido a medida para tu empresa.")}</p>{wa("Cotizar por WhatsApp",p["name"],path)}<p>Cantidades, características y condiciones se revisan en la cotización.</p></div></section></div>'
-            body+='<div class="container article">'+blocks(p)+'</div>'+section('También te puede interesar',product_cards(products,[j for j in cat[3] if j!=i][:2]))+cta(path,p['name'])
+            features=[('Personalización','Comparte tu marca, diseño o referencia.'),('Pedido a demanda','Las cantidades y características se acuerdan contigo.'),('Uso empresarial','Cuéntanos cómo se utilizará el producto.')]
+            body+='<section class="section soft"><div class="container"><div class="feature-grid">'+''.join(f'<div class="feature"><h2>{h}</h2><p>{v}</p></div>' for h,v in features)+'</div></div></section>'
+            body+='<div class="container article">'+blocks(p,omit_intro=True)+'</div>'+section('También te puede interesar',product_cards(products,[j for j in cat[3] if j!=i][:2]))+cta(path,p['name'])
         elif n==29:
             body='<article class="container legal"><h1>Privacidad</h1><div class="notice"><p>Documento pendiente de validación. Esta versión de desarrollo no está habilitada para publicación.</p></div><h2>Contacto voluntario</h2><p>Los enlaces de contacto abren WhatsApp. Tú decides si envías el mensaje y qué información compartes para consultar tu pedido.</p><h2>Validaciones pendientes</h2><p>Antes de publicar se deben confirmar el responsable legal, las finalidades y el tratamiento operativo, proveedores, conservación y atención de derechos. No se ha activado analítica en esta versión.</p><p>Contacto comercial: <a href="mailto:ventas@igraphito.com">ventas@igraphito.com</a>.</p></article>'
         else:
