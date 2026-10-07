@@ -34,5 +34,11 @@ for route in routes:
             if not local.is_file():errors.append(f'{route}: broken target {url}')
         if url.startswith('https://wa.me/') and not url.startswith('https://wa.me/51942722449?text='):
             errors.append(f'{route}: incorrect WhatsApp contact')
+    if 'Nota interna:' in target.read_text():errors.append(f'{route}: editorial note exposed')
+for verification in ['googled4596d5466e1d60a.html','BingSiteAuth.xml']:
+    if (ROOT/verification).read_bytes() != (ROOT.parent/'assets'/verification).read_bytes():
+        errors.append(f'Verification file altered: {verification}')
+final_images=list((ROOT/'assets/images/final').glob('*.webp'))
+if len(final_images)!=20:errors.append(f'Expected 20 final image assets, got {len(final_images)}')
 if errors:raise SystemExit('\n'.join(errors))
-print('PASS: 29 routes, internal links, assets, H1, metadata and WhatsApp contact; no forms.')
+print('PASS: 29 routes, 20 final images, internal links, assets, H1, metadata, original verification files and WhatsApp contact; no forms or editorial notes.')
