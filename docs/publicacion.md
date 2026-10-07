@@ -2,7 +2,7 @@
 
 Este repositorio contiene la implementación completa del mapa comercial y una página de privacidad pendiente. No está desplegado. El build genera una versión de revisión con `noindex` y `robots.txt` bloqueado.
 
-1. Revisar las vistas reales en escritorio y móvil contra el diseño aprobado. Las imágenes iniciales de productos proceden del sitio actual; el arte fotográfico final debe revisarse antes de dar por cerrado el diseño.
+1. Revisar las vistas reales en escritorio y móvil contra el diseño aprobado. El arte final consta de 20 imágenes ilustrativas generadas: hero, impresión y 18 productos. No se presentan como fotografías de trabajos realizados. El logotipo y los 24 logos de clientes son los originales.
 2. Confirmar identidad jurídica, tratamiento de consultas, proveedores, conservación y canal de derechos para finalizar privacidad. No activar analítica antes de resolver el tratamiento aplicable.
 3. Reconfirmar la dirección vigente; la actual se conserva como dato publicado previamente, no como dato verificado recientemente.
 4. Preparar staging con raíz exclusiva fuera de `public_html`, HTTPS y autenticación. `noindex` no sustituye una contraseña. La cuota del hosting necesita revisión antes de crear staging; no borrar correos para liberar espacio.
