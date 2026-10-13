@@ -11,11 +11,11 @@ E = html.escape
 CATEGORIES = [
  ('papeleria-corporativa','Papelería corporativa','folders.png',range(0,6)),
  ('cuadernos-y-agendas-corporativas','Cuadernos y agendas corporativas','cuadernos.png',range(6,9)),
- ('publicidad-corporativa','Publicidad corporativa','tripticos.jpg',range(9,12)),
+ ('publicidad-corporativa','Publicidad corporativa','tripticos.jpg',[9,10,11,18,19]),
  ('merchandising-empresarial','Merchandising empresarial','lapiceros.corporativos.jpg',range(12,14)),
  ('packaging-corporativo','Packaging corporativo','bolsas.papel.jpg',range(14,18)),
 ]
-IMAGES = ['tarjetas-de-presentacion-corporativas.webp','folders-corporativos.webp','hojas-membretadas.webp','formatos-continuos.webp','fotochecks-corporativos.webp','sellos-para-empresas.webp','cuadernos-corporativos.webp','agendas-corporativas.webp','calendarios-corporativos.webp','flyers-y-volantes.webp','dipticos.webp','tripticos.webp','lapiceros-corporativos.webp','tazas-corporativas.webp','bolsas-personalizadas-para-empresas.webp','cajas-personalizadas-para-empresas.webp','etiquetas-adhesivas.webp','hangtags.webp']
+IMAGES = ['tarjetas-de-presentacion-corporativas.webp','folders-corporativos.webp','hojas-membretadas.webp','formatos-continuos.webp','fotochecks-corporativos.webp','sellos-para-empresas.webp','cuadernos-corporativos.webp','agendas-corporativas.webp','calendarios-corporativos.webp','flyers-y-volantes.webp','dipticos.webp','tripticos.webp','lapiceros-corporativos.webp','tazas-corporativas.webp','bolsas-personalizadas-para-empresas.webp','cajas-personalizadas-para-empresas.webp','etiquetas-adhesivas.webp','hangtags.webp','banners-publicitarios.webp','viniles-personalizados.webp']
 for i, representative in enumerate([1,6,11,12,14]):
     slug, name, _, indices = CATEGORIES[i]
     CATEGORIES[i] = (slug, name, IMAGES[representative], indices)
@@ -40,7 +40,7 @@ def section(title, body, extra=''):
     return f'<section class="section {extra}"><div class="container"><div class="section-heading"><h2>{E(title)}</h2></div>{body}</div></section>'
 
 def category_cards():
-    descriptions=['Tarjetas, folders y documentos para tu empresa.','Cuadernos, agendas y calendarios para trabajo y planificación.','Flyers, dípticos y trípticos para tus campañas.','Lapiceros y tazas con la identidad de tu marca.','Bolsas, cajas, adhesivos y hangtags para tus productos.']
+    descriptions=['Tarjetas, folders y documentos para tu empresa.','Cuadernos, agendas y calendarios para trabajo y planificación.','Flyers, dípticos, trípticos, banners y viniles para tus campañas.','Lapiceros y tazas con la identidad de tu marca.','Bolsas, cajas, adhesivos y hangtags para tus productos.']
     return '<div class="card-grid five">' + ''.join(card(n,'/'+s+'/',i,descriptions[j]) for j,(s,n,i,_) in enumerate(CATEGORIES)) + '</div>'
 
 def product_cards(products, indices, variant=''):
@@ -93,7 +93,7 @@ def blocks(page, omit_intro=False, omit_heading=None):
             if label == 'Conversemos por WhatsApp' and not target:
                 out.append(f'<h2>{E(label)}</h2>')
             elif 'WhatsApp' in label or target == 'WhatsApp':
-                product = page['name'] if 3 <= page['number'] <= 7 or 9 <= page['number'] <= 26 else None
+                product = page['name'] if 3 <= page['number'] <= 7 or 9 <= page['number'] <= 26 or page['number'] in [30,31] else None
                 out.append(wa(label,product,page['path']))
             elif target and target.startswith('/'):
                 out.append(f'<p><a class="text-link" href="{E(target)}">{E(label)}</a></p>')
@@ -125,7 +125,7 @@ def parse():
         title=re.search(r'\*\*Title:\*\* (.+)',body)
         desc=re.search(r'\*\*Descripción SEO:\*\* (.+)',body)
         pages.append(dict(number=int(m[1]),name=m[2],path=m[3],body=body,title=title[1] if title else 'Privacidad | Impresiones Graphito',description=desc[1] if desc else 'Información de privacidad y contacto de Impresiones Graphito.'))
-    assert len(pages)==29
+    assert len(pages)==31
     return pages
 
 def main():
@@ -153,7 +153,7 @@ def main():
     if base_path:
         stylesheet=out/'assets/site.css'
         stylesheet.write_text(hosted(stylesheet.read_text()))
-    pages=parse();products=pages[8:26]
+    pages=parse();products=pages[8:26] + pages[29:31]
     for p in pages:
         n,path=p['number'],p['path']
         if n==1:
@@ -167,12 +167,12 @@ def main():
             gallery='<p>Ideas visuales para explorar tu proyecto. Las imágenes muestran diseños ilustrativos de productos.</p><div class="illustrative-gallery">'+''.join(f'<a href="{products[i]["path"]}"><img src="{asset(IMAGES[i])}" alt="Imagen ilustrativa de {E(products[i]["name"].lower())}" loading="lazy" width="800" height="600"></a>' for i in [0,6,13,14])+'</div>'
             body+=section('Imágenes ilustrativas de productos',gallery)+cta()+section('Empresas que confían en nosotros',carousel())
         elif n==2:
-            body=hero('Productos corporativos a demanda','Soluciones para el trabajo, la comunicación y la presentación de tu marca.',path,'hero.webp',True)+section('Nuestras soluciones',category_cards())+section('Explora nuestros productos',product_cards(products,range(18)))+cta(path)
+            body=hero('Productos corporativos a demanda','Soluciones para el trabajo, la comunicación y la presentación de tu marca.',path,'hero.webp',True)+section('Nuestras soluciones',category_cards())+section('Explora nuestros productos',product_cards(products,range(len(products))))+cta(path)
         elif 3<=n<=7:
             cat=CATEGORIES[n-3]
             body=hero(p['name'],'Cada pedido parte de lo que tu empresa necesita. Conversemos sobre tu proyecto.',path,cat[2],True)+section('Encuentra la pieza para tu proyecto',product_cards(products,cat[3]))+'<div class="container article">'+blocks(p,omit_heading='Encuentra la pieza para tu proyecto')+'</div>'+cta(path,p['name'])
-        elif 9<=n<=26:
-            i=n-9;cat=next(c for c in CATEGORIES if i in c[3]);intro=re.search(r'\*\*'+re.escape(p['name'])+r'\*\*\s+([^\n]+)',p['body'])
+        elif 9<=n<=26 or n in [30,31]:
+            i=products.index(p);cat=next(c for c in CATEGORIES if i in c[3]);intro=re.search(r'\*\*'+re.escape(p['name'])+r'\*\*\s+([^\n]+)',p['body'])
             body=f'<div class="container"><nav class="breadcrumbs" aria-label="Ruta de navegación"><a href="/">Inicio</a> / <a href="/productos/">Productos</a> / <a href="/{cat[0]}/">{cat[1]}</a></nav><section class="product-layout"><div class="product-gallery"><img src="{asset(IMAGES[i])}" alt="Imagen ilustrativa de {E(p["name"].lower())}" width="800" height="650" fetchpriority="high"></div><div class="product-summary"><p class="eyebrow">{E(cat[1])}</p><h1>{E(p["name"])}</h1><p>{E(intro[1] if intro else "Consulta tu pedido a medida para tu empresa.")}</p>{wa("Cotizar por WhatsApp",p["name"],path)}<p>Cantidades, características y condiciones se revisan en la cotización.</p></div></section></div>'
             features=[('Personalización','Comparte tu marca, diseño o referencia.'),('Pedido a demanda','Las cantidades y características se acuerdan contigo.'),('Uso empresarial','Cuéntanos cómo se utilizará el producto.')]
             body+='<section class="section soft"><div class="container"><div class="feature-grid">'+''.join(f'<div class="feature"><h2>{h}</h2><p>{v}</p></div>' for h,v in features)+'</div></div></section>'

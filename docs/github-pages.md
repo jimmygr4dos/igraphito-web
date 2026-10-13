@@ -14,3 +14,5 @@ El 07/10/2026 se confirmó en Settings → Pages la fuente gh-pages / (root) y H
 URL publicada: https://jimmygr4dos.github.io/igraphito-web/
 
 Una modificación en main requiere regenerar y actualizar gh-pages. No se configura publicación automática a igraphito.com.
+
+13/10/2026: ampliación preparada en rama de revisión: 31 páginas, 20 productos y 22 imágenes. Requiere integrar y regenerar gh-pages para actualizar la revisión navegable.
