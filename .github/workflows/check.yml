@@ -12,6 +12,7 @@ jobs:
           python-version: '3.12'
       - run: python scripts/build.py
       - run: python scripts/check.py
+      - run: python scripts/check_seo.py
       - uses: actions/setup-node@v4
         with:
           node-version: '22'

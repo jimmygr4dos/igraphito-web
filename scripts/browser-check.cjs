@@ -49,6 +49,14 @@ async function main() {
   await page.screenshot({ path: 'qa/category-desktop.png', fullPage: true });
   await page.goto(base + '/productos/cuadernos-corporativos/');
   await page.screenshot({ path: 'qa/product-desktop.png', fullPage: true });
+  for (const width of [1440, 390]) {
+    await page.setViewportSize({ width, height: 1000 });
+    for (const slug of ['banners-publicitarios', 'viniles-personalizados']) {
+      await page.goto(base + '/productos/' + slug + '/');
+      await page.locator('.product-gallery img').evaluate(image => image.decode());
+      await page.screenshot({ path: `qa/${slug}-${width}.png`, fullPage: true });
+    }
+  }
   const reduced = await browser.newPage({ reducedMotion: 'reduce' });
   await reduced.goto(base + '/');
   assert.equal(await reduced.locator('[data-carousel-toggle]').isDisabled(), true);
@@ -70,6 +78,6 @@ async function main() {
   assert.equal(errors.length, 0, errors.join('\n'));
   await browser.close();
   fs.writeFileSync('qa/report.json', JSON.stringify({ status: 'passed', routes: routes.length, viewports: ['1440x1000', '390x844'], checks: ['HTTP routes', 'one H1', 'no forms', 'no overflow', 'menu and Escape', 'carousel controls', 'reduced motion', 'no JavaScript fallback', 'WhatsApp contact', 'no page errors'] }, null, 2));
-  console.log('PASS: browser checks for all 29 routes, desktop/mobile, reduced motion and no-JS.');
+  console.log(`PASS: browser checks for all ${routes.length} routes, desktop/mobile, reduced motion and no-JS.`);
 }
 main().catch(error => { console.error(error); process.exit(1); });

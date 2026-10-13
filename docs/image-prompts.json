@@ -85,12 +85,12 @@
     {
       "key": "banners-publicitarios",
       "method": "built-in image generation",
-      "prompt": "Edit product advertisement using original assets/images/logo.png and assets/images/wordmark.png as faithful identity references. Match forest green, white, fine gold curves, warm light and corporate stationery photographs. Headline: Tu marca, en cada impresión. Services: Papelería · Publicidad · Merchandising. CTA: COTIZA POR WHATSAPP. Contact: 942 722 449. Show Graphito products printed within advertisement. Preserve physical banner with eyelets or adhesive vinyl with peeled liner respectively."
+      "prompt": "Edit using original Graphito symbol and wordmark faithfully. Restrained corporate B2B advertisement: mostly ivory, generous white space, forest-green right curve and one fine gold line. Modest logo upper left. Refined headline Tu marca, en cada impresión; small Soluciones gráficas para empresas; quiet bottom contact Cotiza por WhatsApp · 942 722 449. Remove product montage, heavy CTA pills, icons and oversized telephone. Preserve physical banner with eyelets or adhesive vinyl on glass with peeled liner sample respectively. Photorealistic landscape 4:3, warm light."
     },
     {
       "key": "viniles-personalizados",
       "method": "built-in image generation",
-      "prompt": "Edit product advertisement using original assets/images/logo.png and assets/images/wordmark.png as faithful identity references. Match forest green, white, fine gold curves, warm light and corporate stationery photographs. Headline: Tu marca, en cada impresión. Services: Papelería · Publicidad · Merchandising. CTA: COTIZA POR WHATSAPP. Contact: 942 722 449. Show Graphito products printed within advertisement. Preserve physical banner with eyelets or adhesive vinyl with peeled liner respectively."
+      "prompt": "Edit using original Graphito symbol and wordmark faithfully. Restrained corporate B2B advertisement: mostly ivory, generous white space, forest-green right curve and one fine gold line. Modest logo upper left. Refined headline Tu marca, en cada impresión; small Soluciones gráficas para empresas; quiet bottom contact Cotiza por WhatsApp · 942 722 449. Remove product montage, heavy CTA pills, icons and oversized telephone. Preserve physical banner with eyelets or adhesive vinyl on glass with peeled liner sample respectively. Photorealistic landscape 4:3, warm light."
     }
   ]
 }

@@ -365,12 +365,16 @@ Volver a Papelería corporativa — /papeleria-corporativa/. Nota interna: mostr
 
 ## 13. Fotochecks con lanyards — /productos/fotochecks-corporativos/
 
-**Title:** Fotochecks con lanyards | Impresiones Graphito
-**Descripción SEO:** Fotochecks con lanyards para identificación de equipos y actividades empresariales. Consulta tu pedido personalizado por WhatsApp con Graphito.
+**Title:** Fotochecks con lanyards en Lima | Graphito
+**Descripción SEO:** Fotochecks con lanyards para colaboradores y eventos corporativos en Lima. Personaliza la identificación de tu equipo y cotiza por WhatsApp.
 
 **Fotochecks con lanyards**
 
-Identifica a colaboradores o participantes con fotochecks con lanyards que acompañen la imagen de tu organización. El pedido se plantea de acuerdo con el uso, la información y la personalización que requiera tu equipo.
+Identifica a colaboradores o participantes de eventos corporativos en Lima con fotochecks con lanyards que acompañen la imagen de tu organización. El pedido se plantea de acuerdo con el uso, la información y la personalización que requiera tu equipo.
+
+**Identificación para equipos y eventos corporativos**
+
+Los fotochecks reúnen los datos de identificación de cada persona; los lanyards permiten llevar la credencial al cuello. Cuéntanos si el pedido es para colaboradores, visitantes o participantes de un evento, y qué información y elementos de marca necesitas incluir.
 
 **Un pedido de acuerdo con tu proyecto**
 
@@ -390,18 +394,26 @@ Para la consulta inicial basta describir el uso y la cantidad requerida. Los arc
 
 Puedes escribirnos con tu necesidad inicial. Cantidades, características, fecha y condiciones se revisan para cotizar el pedido.
 
+**¿El pedido incluye los lanyards?**
+
+Esta ficha corresponde a fotochecks con lanyards. El diseño de la credencial y las características de la cinta y su sujeción se especifican en la cotización.
+
 **Sigue explorando**
 
 Volver a Papelería corporativa — /papeleria-corporativa/. Nota interna: mostrar dos productos relacionados de la misma categoría, elegidos por uso; no repetir enlaces indiscriminadamente.
 
 ## 14. Sellos automáticos para empresas — /productos/sellos-para-empresas/
 
-**Title:** Sellos automáticos para empresas | Impresiones Graphito
-**Descripción SEO:** Sellos automáticos personalizados para documentación y tareas de oficina. Cuéntanos qué información necesitas incorporar y solicita una cotización por WhatsApp.
+**Title:** Sellos automáticos para empresas en Lima | Graphito
+**Descripción SEO:** Sellos automáticos personalizados para empresas en Lima. Comparte el texto o logotipo que necesitas y cotiza tu pedido de oficina por WhatsApp.
 
 **Sellos automáticos para empresas**
 
-Consulta sellos automáticos para identificar documentos y acompañar las tareas de tu oficina. Cuéntanos qué texto debe aparecer, dónde se utilizará y si necesitas sellos para distintas áreas.
+Consulta sellos automáticos personalizados para empresas en Lima, orientados a identificar documentos y acompañar las tareas de tu oficina. Cuéntanos qué texto debe aparecer, dónde se utilizará y si necesitas sellos para distintas áreas.
+
+**Sellos personalizados para la documentación de tu empresa**
+
+Un sello automático incorpora la tinta en su mecanismo. Comparte el texto, logotipo o referencia que necesitas para documentos administrativos y tareas de oficina. Revisamos la composición y el modelo según tu requerimiento.
 
 **Un pedido de acuerdo con tu proyecto**
 
@@ -420,6 +432,10 @@ Comparte el texto o una referencia del sello y dónde lo utilizarás. Las medida
 **¿Debo tener todos los detalles definidos?**
 
 Puedes escribirnos con tu necesidad inicial. Cantidades, características, fecha y condiciones se revisan para cotizar el pedido.
+
+**¿Puedo incluir el logotipo de mi empresa?**
+
+Puedes compartir tu logotipo y el texto requerido para evaluar cómo se adaptan al espacio de impresión del sello. La composición y el modelo se definen al cotizar.
 
 **Sigue explorando**
 
@@ -901,12 +917,16 @@ Nota interna: borrador para revisión; RUC, razón social y domicilio de contact
 
 ## 30. Banners publicitarios — /productos/banners-publicitarios/
 
-**Title:** Banners publicitarios para empresas en Lima | Impresiones Graphito
+**Title:** Banners publicitarios para empresas en Lima | Graphito
 **Descripción SEO:** Banners personalizados para empresas y campañas en Lima. Comparte tu diseño, medidas y uso previsto para cotizar por WhatsApp.
 
 **Banners publicitarios**
 
-Presenta tu marca y los mensajes de tu campaña con banners publicitarios personalizados. Cuéntanos dónde los utilizarás y qué necesitas comunicar para plantear el pedido a medida.
+Presenta tu marca y los mensajes de tu campaña con banners publicitarios personalizados para empresas en Lima. Cuéntanos dónde los utilizarás y qué necesitas comunicar para plantear el pedido a medida.
+
+**Publicidad para campañas y eventos empresariales**
+
+Los banners permiten presentar una marca o mensaje comercial en campañas, ferias y eventos corporativos. Para plantear el diseño, conviene identificar el mensaje principal, la distancia de lectura y el espacio donde se exhibirá.
 
 **Un pedido de acuerdo con tu proyecto**
 
@@ -922,18 +942,26 @@ Puedes escribirnos con tu necesidad inicial o compartir una referencia. Cantidad
 
 Puedes comenzar con una referencia y el espacio donde utilizarás el banner. Las medidas, el material y los acabados se acuerdan al evaluar tu pedido.
 
+**¿Qué debo compartir para cotizar la impresión del banner?**
+
+Indica el uso previsto, las medidas si las conoces y la cantidad que necesitas. Puedes adjuntar tu diseño o una referencia; los acabados y condiciones se acuerdan durante la cotización.
+
 **Sigue explorando**
 
 Volver a Publicidad corporativa — /publicidad-corporativa/.
 
 ## 31. Viniles personalizados — /productos/viniles-personalizados/
 
-**Title:** Viniles personalizados para empresas en Lima | Impresiones Graphito
+**Title:** Viniles personalizados para empresas en Lima | Graphito
 **Descripción SEO:** Viniles personalizados para comunicación visual de empresas en Lima. Consulta tu diseño, superficie y medidas para cotizar por WhatsApp.
 
 **Viniles personalizados**
 
-Comunica tu marca con viniles personalizados para los espacios de tu empresa o campaña. Comparte la superficie donde quieres utilizarlos y una referencia del diseño para evaluar tu proyecto.
+Comunica tu marca con viniles personalizados para los espacios de tu empresa o campaña en Lima. Comparte la superficie donde quieres utilizarlos y una referencia del diseño para evaluar tu proyecto.
+
+**Comunicación visual sobre superficies**
+
+Los viniles adhesivos permiten incorporar mensajes, identidad de marca y señalización a superficies. Describe si el proyecto es para un vidrio, una pared u otra superficie, y si estará en interior o exterior; esa información ayuda a evaluar el material para tu pedido.
 
 **Un pedido de acuerdo con tu proyecto**
 
@@ -948,6 +976,10 @@ Puedes escribirnos con tu necesidad inicial o compartir una referencia. Cantidad
 **¿Qué información necesitan para cotizar?**
 
 Comparte una referencia del diseño y describe la superficie y el lugar de uso. Las medidas, el tipo de vinil y las condiciones del pedido se coordinan durante la cotización.
+
+**¿Un vinil adhesivo es lo mismo que un banner?**
+
+El vinil adhesivo se aplica sobre una superficie; un banner es una pieza impresa que se exhibe mediante un sistema de sujeción. Cuéntanos dónde necesitas mostrar tu mensaje para revisar el producto adecuado.
 
 **Sigue explorando**
 

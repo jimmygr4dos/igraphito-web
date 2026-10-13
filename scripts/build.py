@@ -19,6 +19,13 @@ IMAGES = ['tarjetas-de-presentacion-corporativas.webp','folders-corporativos.web
 for i, representative in enumerate([1,6,11,12,14]):
     slug, name, _, indices = CATEGORIES[i]
     CATEGORIES[i] = (slug, name, IMAGES[representative], indices)
+PRODUCT_DETAILS = {
+ 4: ('Fotochecks con lanyards para colaboradores y eventos corporativos.', 'Imagen ilustrativa de fotochecks corporativos con lanyards verdes y portacredenciales'),
+ 5: ('Sellos automáticos personalizados para documentación de oficina.', 'Imagen ilustrativa de sellos automáticos para empresas y una muestra de impresión'),
+ 18: ('Banners publicitarios a medida para campañas y eventos empresariales.', 'Imagen ilustrativa de banner publicitario de Graphito con mensaje comercial y ojales'),
+ 19: ('Viniles personalizados para comunicación visual sobre superficies.', 'Imagen ilustrativa de vinil publicitario de Graphito sobre vidrio y muestra con soporte despegado'),
+}
+RELATED = {4: [5,0], 5: [2,3], 18: [19,9], 19: [18,16]}
 CONTACT_ICON = '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a9 9 0 0 1-13 8L3 21l1.5-5A9 9 0 1 1 21 11.5Z"/><path d="M8 7.5c-.8 4 3 7.7 7.1 8l1.3-2.4-2.8-1.3-1 1c-1.6-.7-2.6-1.8-3.2-3.2l1-1L9 6.7Z"/></svg>'
 CLIENT_NAMES = ['Aranwa Hotels Resorts & Spas','Clasem','Esparq','Boyles Bros Diamantina','JRM','Terrazul','V&V Bravo Constructora','La Viga','Crepier','Controles Empresariales','Eureka Grupo Inmobiliario','iBR','ilko','Virutex','Koplast','Essentia','Montali S.A.','Movil Group','Movil Air','Synthec','Record','SoftwareOne','Colegio Lima Waldorf','Huayna Seguridad y Vigilancia']
 STEP_PATHS = ['<path d="M9 5H5v16h14V5h-4M9 3h6v4H9ZM8 11h8M8 15h6"/>','<path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2"/><circle cx="15" cy="12" r="2"/><circle cx="9" cy="18" r="2"/>','<path d="M5 3h10l4 4v14H5ZM14 3v5h5M8 12h8M8 16h5"/>','<path d="M6 9V3h12v6M6 17H3V9h18v8h-3M6 14h12v7H6Z"/>','<path d="M2 4h11v12H2ZM13 8h5l4 4v4h-9"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/>']
@@ -33,8 +40,9 @@ def wa(label='Solicitar cotización', product=None, path='/', classes='button', 
 def asset(image):
     return '/assets/images/final/' + image
 
-def card(title, path, image, description='Consulta las características de tu pedido a medida.'):
-    return f'<article class="product-card"><a class="card-image" href="{path}"><img src="{asset(image)}" alt="Imagen ilustrativa de {E(title.lower())}" loading="lazy" width="800" height="600"></a><div class="card-body"><h3><a href="{path}">{E(title)}</a></h3><p>{E(description)}</p><a class="text-link" aria-label="Conoce más sobre {E(title.lower())}" href="{path}">Conoce más <span aria-hidden="true">→</span></a></div></article>'
+def card(title, path, image, description='Consulta las características de tu pedido a medida.', alt=None):
+    alt = alt or 'Imagen ilustrativa de ' + title.lower()
+    return f'<article class="product-card"><a class="card-image" href="{path}"><img src="{asset(image)}" alt="{E(alt)}" loading="lazy" width="800" height="600"></a><div class="card-body"><h3><a href="{path}">{E(title)}</a></h3><p>{E(description)}</p><a class="text-link" aria-label="Conoce más sobre {E(title.lower())}" href="{path}">Conoce más <span aria-hidden="true">→</span></a></div></article>'
 
 def section(title, body, extra=''):
     return f'<section class="section {extra}"><div class="container"><div class="section-heading"><h2>{E(title)}</h2></div>{body}</div></section>'
@@ -44,7 +52,7 @@ def category_cards():
     return '<div class="card-grid five">' + ''.join(card(n,'/'+s+'/',i,descriptions[j]) for j,(s,n,i,_) in enumerate(CATEGORIES)) + '</div>'
 
 def product_cards(products, indices, variant=''):
-    return f'<div class="card-grid {variant}">' + ''.join(card(products[i]['name'],products[i]['path'],IMAGES[i]) for i in indices) + '</div>'
+    return f'<div class="card-grid {variant}">' + ''.join(card(products[i]['name'],products[i]['path'],IMAGES[i],*PRODUCT_DETAILS.get(i, ('Consulta las características de tu pedido a medida.', None))) for i in indices) + '</div>'
 
 def carousel():
     logos = ''.join(f'<div class="client-logo"><img src="/assets/images/clients/item{i}.jpg" alt="{E(CLIENT_NAMES[i-1])}" loading="lazy" width="563" height="396"></div>' for i in range(1,25))
@@ -156,12 +164,15 @@ def main():
     pages=parse();products=pages[8:26] + pages[29:31]
     for p in pages:
         n,path=p['number'],p['path']
+        share_image='hero.webp';share_alt='Imagen ilustrativa de productos corporativos'
+        crumbs=[]
         if n==1:
             body=hero('Tu marca, en cada impresión','Papelería corporativa, cuadernos, publicidad, merchandising y packaging para tu empresa. Cuéntanos qué necesitas y cotizamos tu pedido a medida.',path,'hero.webp')
             body+='<div class="benefits-band"><div class="container"><span>Pedidos a demanda</span><span>Personalización</span><span>Enfoque empresarial</span><span>Contacto por WhatsApp</span></div></div>'
             body+=section('Todo lo que tu empresa necesita para comunicar su marca',category_cards())
             body+='<section class="printing-banner" style="background-image:url(/assets/images/final/printing.webp)"><div class="container"><div><p class="eyebrow">TU PROYECTO, A MEDIDA</p><h2>Impresión<br>offset y digital</h2><p>Conversemos sobre tu proyecto y sus opciones de impresión.</p><a class="button" href="/impresion-offset-y-digital/">Conoce más</a></div></div></section>'
             body+=section('Productos para tu empresa',product_cards(products,[0,1,6,7,11],'five'))
+            body+=section('Publicidad e identificación para tu empresa',product_cards(products,[18,19,4,5],'four'))
             steps=[('Cuéntanos tu proyecto','Comparte el producto y el uso que tienes en mente.'),('Revisamos tu requerimiento','Conversamos sobre las características de tu pedido.'),('Cotizamos a medida','La propuesta corresponde a tu proyecto.'),('Confirmamos los detalles','Las condiciones se acuerdan contigo.'),('Coordinamos tu pedido','Conforme a lo confirmado en la cotización.')]
             body+=section('Tu pedido, a medida','<div class="steps">'+''.join(f'<div class="step">{step_icon(i)}<h3>{h}</h3><p>{v}</p></div>' for i,(h,v) in enumerate(steps))+'</div>')
             gallery='<p>Ideas visuales para explorar tu proyecto. Las imágenes muestran diseños ilustrativos de productos.</p><div class="illustrative-gallery">'+''.join(f'<a href="{products[i]["path"]}"><img src="{asset(IMAGES[i])}" alt="Imagen ilustrativa de {E(products[i]["name"].lower())}" loading="lazy" width="800" height="600"></a>' for i in [0,6,13,14])+'</div>'
@@ -172,11 +183,12 @@ def main():
             cat=CATEGORIES[n-3]
             body=hero(p['name'],'Cada pedido parte de lo que tu empresa necesita. Conversemos sobre tu proyecto.',path,cat[2],True)+section('Encuentra la pieza para tu proyecto',product_cards(products,cat[3]))+'<div class="container article">'+blocks(p,omit_heading='Encuentra la pieza para tu proyecto')+'</div>'+cta(path,p['name'])
         elif 9<=n<=26 or n in [30,31]:
-            i=products.index(p);cat=next(c for c in CATEGORIES if i in c[3]);intro=re.search(r'\*\*'+re.escape(p['name'])+r'\*\*\s+([^\n]+)',p['body'])
-            body=f'<div class="container"><nav class="breadcrumbs" aria-label="Ruta de navegación"><a href="/">Inicio</a> / <a href="/productos/">Productos</a> / <a href="/{cat[0]}/">{cat[1]}</a></nav><section class="product-layout"><div class="product-gallery"><img src="{asset(IMAGES[i])}" alt="Imagen ilustrativa de {E(p["name"].lower())}" width="800" height="650" fetchpriority="high"></div><div class="product-summary"><p class="eyebrow">{E(cat[1])}</p><h1>{E(p["name"])}</h1><p>{E(intro[1] if intro else "Consulta tu pedido a medida para tu empresa.")}</p>{wa("Cotizar por WhatsApp",p["name"],path)}<p>Cantidades, características y condiciones se revisan en la cotización.</p></div></section></div>'
+            i=products.index(p);share_image=IMAGES[i];share_alt=PRODUCT_DETAILS.get(i, ('', 'Imagen ilustrativa de '+p['name'].lower()))[1];cat=next(c for c in CATEGORIES if i in c[3]);intro=re.search(r'\*\*'+re.escape(p['name'])+r'\*\*\s+([^\n]+)',p['body'])
+            crumbs=[('Inicio','/'),('Productos','/productos/'),(cat[1],'/'+cat[0]+'/'),(p['name'],path)]
+            body=f'<div class="container"><nav class="breadcrumbs" aria-label="Ruta de navegación"><a href="/">Inicio</a> / <a href="/productos/">Productos</a> / <a href="/{cat[0]}/">{cat[1]}</a> / <span aria-current="page">{E(p["name"])}</span></nav><section class="product-layout"><div class="product-gallery"><img src="{asset(IMAGES[i])}" alt="{E(share_alt)}" width="1448" height="1086" fetchpriority="high"></div><div class="product-summary"><p class="eyebrow">{E(cat[1])}</p><h1>{E(p["name"])}</h1><p>{E(intro[1] if intro else "Consulta tu pedido a medida para tu empresa.")}</p>{wa("Cotizar por WhatsApp",p["name"],path)}<p>Cantidades, características y condiciones se revisan en la cotización.</p></div></section></div>'
             features=[('Personalización','Comparte tu marca, diseño o referencia.'),('Pedido a demanda','Las cantidades y características se acuerdan contigo.'),('Uso empresarial','Cuéntanos cómo se utilizará el producto.')]
             body+='<section class="section soft"><div class="container"><div class="feature-grid">'+''.join(f'<div class="feature"><h2>{h}</h2><p>{v}</p></div>' for h,v in features)+'</div></div></section>'
-            body+='<div class="container article">'+blocks(p,omit_intro=True)+'</div>'+section('También te puede interesar',product_cards(products,[j for j in cat[3] if j!=i][:2]))+cta(path,p['name'])
+            body+='<div class="container article">'+blocks(p,omit_intro=True)+'</div>'+section('También te puede interesar',product_cards(products,RELATED.get(i, [j for j in cat[3] if j!=i][:2])))+cta(path,p['name'])
         elif n==29:
             body='<article class="container legal"><h1>Política de privacidad</h1><div class="notice"><p>Borrador para revisión. Datos del responsable confirmados. Pendiente de completar la información operativa antes de publicar.</p></div>'+blocks(p)+'</article>'
         else:
@@ -185,10 +197,13 @@ def main():
             if n==27: body+=section('Empresas que confían en nosotros',carousel())
             body+=cta(path)
         schema={'@context':'https://schema.org','@type':'WebPage','name':p['title'],'url':BASE+path,'description':p['description'],'inLanguage':'es-PE'}
-        document='<!doctype html><html lang="es-PE"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+E(p['title'])+'</title><meta name="description" content="'+E(p['description'])+'"><meta name="robots" content="noindex,nofollow"><link rel="canonical" href="'+BASE+path+'"><meta property="og:title" content="'+E(p['title'])+'"><meta property="og:description" content="'+E(p['description'])+'"><meta property="og:url" content="'+BASE+path+'"><meta property="og:type" content="website"><meta property="og:image" content="'+BASE+'/assets/images/final/hero.webp"><meta property="og:image:alt" content="Imagen ilustrativa de productos corporativos"><link rel="icon" href="/assets/images/favicon.ico"><link rel="stylesheet" href="/assets/site.css"><script defer src="/assets/site.js"></script><script type="application/ld+json">'+json.dumps(schema,ensure_ascii=False).replace('</','<\\/')+'</script></head><body>'+header(path)+'<main id="contenido">'+body+'</main>'+footer(path)+'</body></html>'
+        schema['primaryImageOfPage']={'@type':'ImageObject','contentUrl':BASE+asset(share_image),'caption':share_alt}
+        if crumbs:
+            schema['breadcrumb']={'@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':j+1,'name':name,'item':BASE+url} for j,(name,url) in enumerate(crumbs)]}
+        document='<!doctype html><html lang="es-PE"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+E(p['title'])+'</title><meta name="description" content="'+E(p['description'])+'"><meta name="robots" content="noindex,nofollow"><link rel="canonical" href="'+BASE+path+'"><meta property="og:title" content="'+E(p['title'])+'"><meta property="og:description" content="'+E(p['description'])+'"><meta property="og:url" content="'+BASE+path+'"><meta property="og:type" content="website"><meta property="og:image" content="'+BASE+asset(share_image)+'"><meta property="og:image:alt" content="'+E(share_alt)+'"><link rel="icon" href="/assets/images/favicon.ico"><link rel="stylesheet" href="/assets/site.css"><script defer src="/assets/site.js"></script><script type="application/ld+json">'+json.dumps(schema,ensure_ascii=False).replace('</','<\\/')+'</script></head><body>'+header(path)+'<main id="contenido">'+body+'</main>'+footer(path)+'</body></html>'
         target=out/path.lstrip('/')/'index.html';target.parent.mkdir(parents=True,exist_ok=True);target.write_text(hosted(document))
     (out/'404.html').write_text('<!doctype html><html lang="es"><meta charset="utf-8"><meta name="robots" content="noindex"><title>Página no encontrada | Graphito</title><h1>Página no encontrada</h1><p><a href="/">Volver al inicio</a></p></html>')
-    (out/'robots.txt').write_text('User-agent: *\nDisallow: /\n')
+    (out/'robots.txt').write_text('User-agent: *\nAllow: /\n')
     (out/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+escape(BASE+p['path'])+'</loc></url>' for p in pages)+'</urlset>')
     (out/'.htaccess').write_text('Options -Indexes\nDirectoryIndex index.html\nErrorDocument 404 /404.html\n<IfModule mod_headers.c>\nHeader always set X-Robots-Tag "noindex, nofollow"\nHeader always set X-Content-Type-Options "nosniff"\nHeader always set Referrer-Policy "strict-origin-when-cross-origin"\n</IfModule>\n')
     (out/'routes.json').write_text(json.dumps([p['path'] for p in pages],indent=2))

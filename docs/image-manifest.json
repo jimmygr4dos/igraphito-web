@@ -163,16 +163,16 @@
     "file": "banners-publicitarios.webp",
     "width": 1448,
     "height": 1086,
-    "bytes": 125422,
-    "sha256": "39dd4cc89d01016a2413ea8c7d42f725180c80e5cbc0667ad89b14dd1aca1f3a",
+    "bytes": 82658,
+    "sha256": "bcec57004b4765881f7114fe586e5f676a7002063f1363cbbff51be9c9c57a01",
     "kind": "generated illustrative product photograph"
   },
   {
     "file": "viniles-personalizados.webp",
     "width": 1448,
     "height": 1086,
-    "bytes": 144936,
-    "sha256": "52269d5b1c5e65feb633c2451fa6e5f9c9877dcb8784482cdbab09cb6e3b05fd",
+    "bytes": 107068,
+    "sha256": "c8f2dd05e381e685a7fdb937be374484fca144b5dc0526758dce18c33f621802",
     "kind": "generated illustrative product photograph"
   }
 ]

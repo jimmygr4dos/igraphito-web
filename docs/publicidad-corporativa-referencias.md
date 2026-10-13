@@ -12,3 +12,5 @@ Las imágenes son demostraciones ilustrativas; no representan trabajos realizado
 ## Identidad Graphito confirmada por el usuario
 
 Los nuevos mockups deben incluir el símbolo original de assets/images/logo.png y el nombre original de assets/images/wordmark.png. Utilizar esos archivos como referencias de identidad, sin crear marcas genéricas. Mantener verde bosque, blanco, pequeños acentos CMY, curvas finas y luz cálida del catálogo. Mensaje: «Tu marca, en cada impresión»; servicios: «Papelería · Publicidad · Merchandising»; contacto: «942 722 449». La publicidad representada corresponde a Graphito y sus productos; eliminar mensajes de consultoría ajenos a la empresa.
+
+Ajuste visual confirmado el 13/10/2026: composición sobria, más espacio en blanco, logo proporcionado, un solo mensaje, contacto discreto y curva verde con trazo dorado fino. Retirar el montaje de productos, fotografías interiores del anuncio, botones e iconos de gran tamaño.
