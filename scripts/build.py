@@ -35,8 +35,7 @@ def step_icon(index):
 
 def wa(label='Solicitar cotización', product=None, path='/', classes='button', cta='content'):
     product = product or PRODUCT_BY_PATH.get(path)
-    text = f'Hola, quisiera cotizar {product} para mi empresa.' if product else 'Hola, quisiera cotizar un pedido empresarial con Graphito.'
-    text += ' Vi esta página: ' + BASE + path
+    text = f'Hola, quisiera cotizar {product.lower()} para mi empresa.' if product else 'Hola, quisiera cotizar un pedido para mi empresa.'
     return f'<a class="{classes}" aria-label="{E(label)}" data-product="{E(product or "general")}" data-cta="{cta}" href="https://wa.me/51942722449?text={quote(text)}">{CONTACT_ICON}<span>{E(label)}</span></a>'
 
 def asset(image):

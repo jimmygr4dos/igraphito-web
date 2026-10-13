@@ -38,14 +38,16 @@ for route in routes:
         if len(p.whatsapp)!=6:errors.append(f'{route}: expected six product WhatsApp links')
         for a in p.whatsapp:
             message=parse_qs(urlsplit(a['href']).query).get('text',[''])[0]
-            expected=f'Hola, quisiera cotizar {p.heading} para mi empresa.'
-            if not message.startswith(expected):errors.append(f'{route}: generic or wrong product message ({a.get("data-cta")})')
+            expected=f'Hola, quisiera cotizar {p.heading.lower()} para mi empresa.'
+            if message!=expected:errors.append(f'{route}: generic or wrong product message ({a.get("data-cta")})')
             if a.get('data-product')!=p.heading:errors.append(f'{route}: wrong product tracking context')
-            if not message.endswith('Vi esta página: '+json.loads((ROOT/'hosting.json').read_text())['site_url']+route):errors.append(f'{route}: incorrect WhatsApp page URL')
             personalized+=1
     if p.h1!=1:errors.append(f'{route}: expected one H1, got {p.h1}')
     if not(p.title and p.description and p.canonical):errors.append(f'{route}: missing metadata')
     if p.form:errors.append(f'{route}: commercial form is not authorized')
+    for a in p.whatsapp:
+        message=parse_qs(urlsplit(a['href']).query).get('text',[''])[0]
+        if 'http' in message or 'Vi esta página:' in message:errors.append(f'{route}: URL exposed in WhatsApp message')
     for url in p.links+p.sources:
         if url.startswith('/'):
             path=unquote(urlsplit(url).path)

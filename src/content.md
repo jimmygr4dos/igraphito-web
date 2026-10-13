@@ -988,8 +988,8 @@ Volver a Publicidad corporativa — /publicidad-corporativa/.
 ## Enlaces y mensajes para maquetación
 
 Ruta WhatsApp de base: https://wa.me/51942722449.
-Mensaje general: «Hola, quisiera cotizar un pedido empresarial con Graphito. Vi esta página: [URL de producción]».
-Mensaje de producto: «Hola, quisiera cotizar [producto] para mi empresa. Vi esta página: [URL de producción]».
+Mensaje general: «Hola, quisiera cotizar un pedido para mi empresa.».
+Mensaje de producto: «Hola, quisiera cotizar [producto] para mi empresa.».
 
 Los mensajes son editables. Abrir el enlace no envía el mensaje; el usuario decide enviarlo. Los datos del pedido se conversan en el chat, sin formulario ni paso obligatorio previo.
 
