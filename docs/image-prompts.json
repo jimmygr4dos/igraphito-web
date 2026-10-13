@@ -85,12 +85,12 @@
     {
       "key": "banners-publicitarios",
       "method": "built-in image generation",
-      "prompt": "Photorealistic corporate advertising PVC banner with eyelets and reinforced hems; forest green and ivory; generic illustrative brand TU EMPRESA, headline SOLUCIONES PARA TU EMPRESA, services Asesoría · Gestión · Proyectos, CTA CONVERSEMOS; business photograph printed on the banner. Not abstract decoration or a real client job."
+      "prompt": "Edit product advertisement using original assets/images/logo.png and assets/images/wordmark.png as faithful identity references. Match forest green, white, fine gold curves, warm light and corporate stationery photographs. Headline: Tu marca, en cada impresión. Services: Papelería · Publicidad · Merchandising. CTA: COTIZA POR WHATSAPP. Contact: 942 722 449. Show Graphito products printed within advertisement. Preserve physical banner with eyelets or adhesive vinyl with peeled liner respectively."
     },
     {
       "key": "viniles-personalizados",
       "method": "built-in image generation",
-      "prompt": "Photorealistic corporate advertising adhesive vinyl applied to office glass plus peeled liner sample; forest green and ivory; generic illustrative brand TU EMPRESA, headline IMPULSA TU NEGOCIO, Consultoría empresarial, CTA CONVERSEMOS; business photograph printed within the advertisement. Not decorative mural or a real client job."
+      "prompt": "Edit product advertisement using original assets/images/logo.png and assets/images/wordmark.png as faithful identity references. Match forest green, white, fine gold curves, warm light and corporate stationery photographs. Headline: Tu marca, en cada impresión. Services: Papelería · Publicidad · Merchandising. CTA: COTIZA POR WHATSAPP. Contact: 942 722 449. Show Graphito products printed within advertisement. Preserve physical banner with eyelets or adhesive vinyl with peeled liner respectively."
     }
   ]
 }
