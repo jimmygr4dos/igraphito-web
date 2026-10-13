@@ -16,3 +16,5 @@ URL publicada: https://jimmygr4dos.github.io/igraphito-web/
 Una modificación en main requiere regenerar y actualizar gh-pages. No se configura publicación automática a igraphito.com.
 
 13/10/2026: ampliación preparada en rama de revisión: 31 páginas, 20 productos y 22 imágenes. Requiere integrar y regenerar gh-pages para actualizar la revisión navegable.
+
+13/10/2026: PR #2 integrado y gh-pages actualizado. Las cuatro fichas responden HTTP 200. Banners y viniles comprobados en navegador de escritorio a 1363 px, imágenes cargadas y sin desbordamiento horizontal. Títulos de fotochecks con lanyards y sellos automáticos confirmados en vivo. Captura: docs/preview/viniles-live-20261013.jpg. Pendiente revisión visual móvil: instalación de Chromium bloqueada por descarga incompleta; el navegador disponible no expone cambio de viewport. igraphito.com no modificado.
