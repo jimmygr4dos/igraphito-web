@@ -81,6 +81,16 @@
     {
       "key": "hangtags",
       "prompt": "Use case: product-mockup. Asset type: final illustrative product photograph for a B2B printing catalogue website, landscape 4:3 framing, high detail. Shared art direction: forest-green (#064d3c), ivory white, warm pale oak tabletop, discreet CMYK accents, refined corporate aesthetic. Bright diffuse natural light from left, softly blurred small green plant in background, believable materials and perspective, editorial product photography. Center the subject with safe margin on all sides for responsive cards; products fill about 70 percent of image. Subject: A tidy spread of rectangular white and kraft corporate hangtags with clean punched holes and natural thin cotton strings threaded through them. Minimal forest-green graphic and tiny CMYK corner accents, no price, no sizes or claims. Constraints: ONLY the specified product family. No webpage or UI, no buttons, no watermark, no Graphito logo reconstruction, no invented brand, no claims, no extra unrelated objects. If generic printing is visible, prefer small abstract gray lines instead of gibberish text. This is an illustrative design, not a photo of a completed client job."
+    },
+    {
+      "key": "banners-publicitarios",
+      "method": "built-in image generation",
+      "prompt": "Photorealistic corporate advertising PVC banner with eyelets and reinforced hems; forest green and ivory; generic illustrative brand TU EMPRESA, headline SOLUCIONES PARA TU EMPRESA, services Asesoría · Gestión · Proyectos, CTA CONVERSEMOS; business photograph printed on the banner. Not abstract decoration or a real client job."
+    },
+    {
+      "key": "viniles-personalizados",
+      "method": "built-in image generation",
+      "prompt": "Photorealistic corporate advertising adhesive vinyl applied to office glass plus peeled liner sample; forest green and ivory; generic illustrative brand TU EMPRESA, headline IMPULSA TU NEGOCIO, Consultoría empresarial, CTA CONVERSEMOS; business photograph printed within the advertisement. Not decorative mural or a real client job."
     }
   ]
 }
