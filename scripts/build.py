@@ -7,6 +7,7 @@ from xml.sax.saxutils import escape
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://www.igraphito.com'
+PRODUCT_BY_PATH = {}
 E = html.escape
 CATEGORIES = [
  ('papeleria-corporativa','Papelería corporativa','folders.png',range(0,6)),
@@ -33,6 +34,7 @@ def step_icon(index):
     return '<span class="step-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">'+STEP_PATHS[index]+'</svg></span>'
 
 def wa(label='Solicitar cotización', product=None, path='/', classes='button', cta='content'):
+    product = product or PRODUCT_BY_PATH.get(path)
     text = f'Hola, quisiera cotizar {product} para mi empresa.' if product else 'Hola, quisiera cotizar un pedido empresarial con Graphito.'
     text += ' Vi esta página: ' + BASE + path
     return f'<a class="{classes}" aria-label="{E(label)}" data-product="{E(product or "general")}" data-cta="{cta}" href="https://wa.me/51942722449?text={quote(text)}">{CONTACT_ICON}<span>{E(label)}</span></a>'
@@ -141,7 +143,7 @@ def parse():
     return pages
 
 def main():
-    global BASE
+    global BASE, PRODUCT_BY_PATH
     parser=argparse.ArgumentParser()
     parser.add_argument('--output',default='dist',choices=['dist'])
     parser.add_argument('--base-path',default='')
@@ -166,6 +168,7 @@ def main():
         stylesheet=out/'assets/site.css'
         stylesheet.write_text(hosted(stylesheet.read_text()))
     pages=parse();products=pages[8:26] + pages[29:31]
+    PRODUCT_BY_PATH = {p['path']: p['name'] for p in products}
     for p in pages:
         n,path=p['number'],p['path']
         share_image='hero.webp';share_alt='Imagen ilustrativa de productos corporativos'
