@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build all approved pages using only Python's standard library."""
 from pathlib import Path
-import re, html, shutil, json, argparse
+import re, html, shutil, json, argparse, hashlib
 from urllib.parse import quote
 from xml.sax.saxutils import escape
 
@@ -38,7 +38,11 @@ def wa(label='Solicitar cotización', product=None, path='/', classes='button', 
     return f'<a class="{classes}" aria-label="{E(label)}" data-product="{E(product or "general")}" data-cta="{cta}" href="https://wa.me/51942722449?text={quote(text)}">{CONTACT_ICON}<span>{E(label)}</span></a>'
 
 def asset(image):
-    return '/assets/images/final/' + image
+    path = '/assets/images/final/' + image
+    if image in ['banners-publicitarios.webp', 'viniles-personalizados.webp']:
+        version = hashlib.sha256((ROOT / path.lstrip('/')).read_bytes()).hexdigest()[:12]
+        return path + '?v=' + version
+    return path
 
 def card(title, path, image, description='Consulta las características de tu pedido a medida.', alt=None):
     alt = alt or 'Imagen ilustrativa de ' + title.lower()

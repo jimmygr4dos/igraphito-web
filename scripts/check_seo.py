@@ -2,6 +2,7 @@
 from pathlib import Path
 from html.parser import HTMLParser
 import json
+from urllib.parse import urlsplit
 import xml.etree.ElementTree as ET
 
 ROOT=Path(__file__).resolve().parents[1]/'dist'
@@ -37,7 +38,7 @@ for route in routes:
         assert [c['position'] for c in crumbs]==[1,2,3,4],route
         assert crumbs[-1]['item']==m.canonical,route
         assert schema['primaryImageOfPage']['contentUrl']==m.meta['og:image'],route
-        assert m.meta['og:image'].endswith('.webp') and not m.meta['og:image'].endswith('/hero.webp'),route
+        assert urlsplit(m.meta['og:image']).path.endswith('.webp') and not urlsplit(m.meta['og:image']).path.endswith('/hero.webp'),route
 assert products==20
 assert 'Disallow: /' not in (ROOT/'robots.txt').read_text(), 'Crawler must reach noindex'
 print('PASS SEO: 31 unique titles/descriptions, canonicals, sitemap, noindex; 20 product images and breadcrumb paths.')
