@@ -30,7 +30,7 @@ Explora nuestras líneas de productos y encuentra la solución para tu equipo, t
 
 - **Papelería corporativa.** Tarjetas, folders y documentos que acompañan la identidad de tu empresa.
 - **Cuadernos y agendas.** Materiales para trabajo, planificación y acciones de marca.
-- **Publicidad corporativa.** Flyers, dípticos y trípticos para compartir tu propuesta.
+- **Publicidad corporativa.** Flyers, dípticos, trípticos, banners y viniles para comunicar tu marca.
 - **Merchandising empresarial.** Lapiceros y tazas para equipos, encuentros y campañas.
 - **Packaging corporativo.** Bolsas, cajas, adhesivos y hangtags para presentar e identificar productos.
 
@@ -81,9 +81,9 @@ Encuentra productos para comunicar tu marca, acompañar el trabajo de tu equipo 
 
 **Elige una línea de productos**
 
-Papelería corporativa: tarjetas de presentación, folders, hojas membretadas, formatos continuos, fotochecks y sellos.
+Papelería corporativa: tarjetas de presentación, folders, hojas membretadas, formatos continuos, fotochecks con lanyards y sellos automáticos.
 Cuadernos y agendas: cuadernos, agendas y calendarios corporativos.
-Publicidad corporativa: flyers y volantes, dípticos y trípticos.
+Publicidad corporativa: flyers y volantes, dípticos, trípticos, banners y viniles.
 Merchandising empresarial: lapiceros y tazas corporativas.
 Packaging corporativo: bolsas, cajas, etiquetas adhesivas y hangtags.
 
@@ -106,7 +106,7 @@ Tu marca también se comunica en los documentos que entregas, las tarjetas que c
 
 **Encuentra la pieza para tu proyecto**
 
-Tarjetas para encuentros comerciales; folders para propuestas y documentos; hojas membretadas para comunicaciones; formatos continuos para operación; fotochecks para identificación; sellos para tareas de oficina.
+Tarjetas para encuentros comerciales; folders para propuestas y documentos; hojas membretadas para comunicaciones; formatos continuos para operación; fotochecks con lanyards para identificación; sellos automáticos para tareas de oficina.
 
 **Tu pedido, a demanda**
 
@@ -144,15 +144,15 @@ Puedes iniciar la conversación con el producto o el uso que necesitas. Los deta
 ## 5. Publicidad corporativa — /publicidad-corporativa/
 
 **Title:** Impresos publicitarios para empresas | Impresiones Graphito
-**Descripción SEO:** Flyers, dípticos y trípticos para comunicar productos y servicios. Consulta la impresión de tu campaña y cotiza por WhatsApp.
+**Descripción SEO:** Flyers, dípticos, trípticos, banners y viniles para comunicar productos y servicios. Consulta la impresión de tu campaña y cotiza por WhatsApp.
 
 **Publicidad corporativa**
 
-Presenta tus productos, comunica tus servicios o acompaña una campaña con piezas impresas que permitan consultar tu información. Flyers, dípticos y trípticos ofrecen distintas maneras de organizar el contenido que quieres compartir con tu público.
+Presenta tus productos, comunica tus servicios o acompaña una campaña con piezas impresas que permitan consultar tu información. Flyers, dípticos y trípticos permiten organizar tu información; banners y viniles ayudan a presentar tu marca en los espacios de tu empresa o campaña.
 
 **Encuentra la pieza para tu proyecto**
 
-Flyers y volantes para mensajes de campaña; dípticos para una presentación plegada en cuatro caras; trípticos para distribuir información en seis caras.
+Flyers y volantes para mensajes de campaña; dípticos para una presentación plegada en cuatro caras; trípticos para distribuir información en seis caras; banners para exhibir mensajes; viniles para personalizar superficies según el proyecto.
 
 **Tu pedido, a demanda**
 
@@ -363,24 +363,24 @@ Puedes escribirnos con tu necesidad inicial. Cantidades, características, fecha
 
 Volver a Papelería corporativa — /papeleria-corporativa/. Nota interna: mostrar dos productos relacionados de la misma categoría, elegidos por uso; no repetir enlaces indiscriminadamente.
 
-## 13. Fotochecks corporativos — /productos/fotochecks-corporativos/
+## 13. Fotochecks con lanyards — /productos/fotochecks-corporativos/
 
-**Title:** Fotochecks corporativos | Impresiones Graphito
-**Descripción SEO:** Fotochecks para identificación de equipos y actividades empresariales. Consulta tu pedido personalizado por WhatsApp con Graphito.
+**Title:** Fotochecks con lanyards | Impresiones Graphito
+**Descripción SEO:** Fotochecks con lanyards para identificación de equipos y actividades empresariales. Consulta tu pedido personalizado por WhatsApp con Graphito.
 
-**Fotochecks corporativos**
+**Fotochecks con lanyards**
 
-Identifica a colaboradores o participantes con fotochecks que acompañen la imagen de tu organización. El pedido se plantea de acuerdo con el uso, la información y la personalización que requiera tu equipo.
+Identifica a colaboradores o participantes con fotochecks con lanyards que acompañen la imagen de tu organización. El pedido se plantea de acuerdo con el uso, la información y la personalización que requiera tu equipo.
 
 **Un pedido de acuerdo con tu proyecto**
 
-Comparte el uso y la presentación que tienes en mente. Para evaluar la cotización podemos conversar sobre: material, tamaño, impresión y accesorios realmente disponibles. La cantidad y las características se acuerdan para tu requerimiento.
+Comparte el uso y la presentación que tienes en mente. Para evaluar la cotización podemos conversar sobre: material, tamaño, impresión del fotocheck y características del lanyard. La cantidad y las características se acuerdan para tu requerimiento.
 
 **Conversemos por WhatsApp**
 
 Puedes comenzar con el producto que buscas. Si ya conoces estos detalles, compártelos: cantidad requerida y alcance de personalización. Si todavía no los has definido, explica el uso previsto o comparte una referencia.
 
-**Cotizar fotochecks corporativos por WhatsApp**
+**Cotizar fotochecks con lanyards por WhatsApp**
 
 **¿Qué archivos se necesitan para preparar el pedido?**
 
@@ -394,14 +394,14 @@ Puedes escribirnos con tu necesidad inicial. Cantidades, características, fecha
 
 Volver a Papelería corporativa — /papeleria-corporativa/. Nota interna: mostrar dos productos relacionados de la misma categoría, elegidos por uso; no repetir enlaces indiscriminadamente.
 
-## 14. Sellos para empresas — /productos/sellos-para-empresas/
+## 14. Sellos automáticos para empresas — /productos/sellos-para-empresas/
 
-**Title:** Sellos para empresas | Impresiones Graphito
-**Descripción SEO:** Sellos para documentación y tareas de oficina. Cuéntanos qué información necesitas incorporar y solicita una cotización por WhatsApp.
+**Title:** Sellos automáticos para empresas | Impresiones Graphito
+**Descripción SEO:** Sellos automáticos personalizados para documentación y tareas de oficina. Cuéntanos qué información necesitas incorporar y solicita una cotización por WhatsApp.
 
-**Sellos para empresas**
+**Sellos automáticos para empresas**
 
-Consulta sellos para identificar documentos y acompañar las tareas de tu oficina. Cuéntanos qué texto debe aparecer, dónde se utilizará y si necesitas sellos para distintas áreas.
+Consulta sellos automáticos para identificar documentos y acompañar las tareas de tu oficina. Cuéntanos qué texto debe aparecer, dónde se utilizará y si necesitas sellos para distintas áreas.
 
 **Un pedido de acuerdo con tu proyecto**
 
@@ -411,7 +411,7 @@ Comparte el uso y la presentación que tienes en mente. Para evaluar la cotizaci
 
 Puedes comenzar con el producto que buscas. Si ya conoces estos detalles, compártelos: texto o modelo requerido y unidades por oficina. Si todavía no los has definido, explica el uso previsto o comparte una referencia.
 
-**Cotizar sellos para empresas por WhatsApp**
+**Cotizar sellos automáticos para empresas por WhatsApp**
 
 **¿Qué medidas y tipos de sello se pueden cotizar?**
 
@@ -899,6 +899,60 @@ Esta política se interpreta conforme a la Ley N.° 29733, Ley de Protección de
 
 Nota interna: borrador para revisión; RUC, razón social y domicilio de contacto confirmados por el usuario el 7 de octubre de 2026; medios confirmados: WhatsApp, correo de Publiperú y documentos internos Excel y Word; pendiente verificación de las transferencias y condiciones de los proveedores, identificación e inscripción del banco de datos que corresponda, registros técnicos del hosting y procedimiento operativo de conservación y derechos. No presentar este texto como cumplimiento integral ni habilitar publicación o analítica.
 
+## 30. Banners publicitarios — /productos/banners-publicitarios/
+
+**Title:** Banners publicitarios para empresas en Lima | Impresiones Graphito
+**Descripción SEO:** Banners personalizados para empresas y campañas en Lima. Comparte tu diseño, medidas y uso previsto para cotizar por WhatsApp.
+
+**Banners publicitarios**
+
+Presenta tu marca y los mensajes de tu campaña con banners publicitarios personalizados. Cuéntanos dónde los utilizarás y qué necesitas comunicar para plantear el pedido a medida.
+
+**Un pedido de acuerdo con tu proyecto**
+
+Comparte el diseño o una referencia, las medidas requeridas, la cantidad y el lugar de uso. El material y los acabados se revisan durante la cotización.
+
+**Conversemos por WhatsApp**
+
+Puedes escribirnos con tu necesidad inicial o compartir una referencia. Cantidades, características y condiciones se revisan para cotizar el pedido.
+
+**Cotizar banners publicitarios por WhatsApp**
+
+**¿Necesito tener las medidas definidas?**
+
+Puedes comenzar con una referencia y el espacio donde utilizarás el banner. Las medidas, el material y los acabados se acuerdan al evaluar tu pedido.
+
+**Sigue explorando**
+
+Volver a Publicidad corporativa — /publicidad-corporativa/.
+
+## 31. Viniles personalizados — /productos/viniles-personalizados/
+
+**Title:** Viniles personalizados para empresas en Lima | Impresiones Graphito
+**Descripción SEO:** Viniles personalizados para comunicación visual de empresas en Lima. Consulta tu diseño, superficie y medidas para cotizar por WhatsApp.
+
+**Viniles personalizados**
+
+Comunica tu marca con viniles personalizados para los espacios de tu empresa o campaña. Comparte la superficie donde quieres utilizarlos y una referencia del diseño para evaluar tu proyecto.
+
+**Un pedido de acuerdo con tu proyecto**
+
+Cuéntanos el uso previsto, la superficie, las medidas y la cantidad requerida. El tipo de vinil y las características de impresión se revisan según tu pedido.
+
+**Conversemos por WhatsApp**
+
+Puedes escribirnos con tu necesidad inicial o compartir una referencia. Cantidades, características y condiciones se revisan para cotizar el pedido.
+
+**Cotizar viniles personalizados por WhatsApp**
+
+**¿Qué información necesitan para cotizar?**
+
+Comparte una referencia del diseño y describe la superficie y el lugar de uso. Las medidas, el tipo de vinil y las condiciones del pedido se coordinan durante la cotización.
+
+**Sigue explorando**
+
+Volver a Publicidad corporativa — /publicidad-corporativa/.
+
 ## Enlaces y mensajes para maquetación
 
 Ruta WhatsApp de base: https://wa.me/51942722449.
@@ -912,3 +966,7 @@ Notas de maquetación, rutas y títulos de documento no son texto público. Cada
 ## Revisión editorial realizada
 
 Se cubrieron Home, catálogo, cinco categorías, proceso, 18 productos, Nosotros y Contacto: 28 páginas comerciales. La página de Privacidad conserva su estructura y pendientes explícitos. Se evitó precios, mínimos, plazos fijos y promesas de disponibilidad universal. No se añadieron productos fuera de los 18 auditados ni logos ficticios. La revisión visual y aprobación de publicación siguen pendientes.
+
+## Ampliación del catálogo — 13 de octubre de 2026
+
+Se incorporan banners y viniles a Publicidad corporativa. Se precisan fotochecks con lanyards y sellos automáticos en las fichas existentes, conservando sus rutas. Se mantiene el diseño aprobado y la cotización a demanda por WhatsApp. Total: 31 páginas y 20 productos.

@@ -21,7 +21,7 @@ class Page(HTMLParser):
 errors=[]
 routes=json.loads((ROOT/'routes.json').read_text())
 base_path=json.loads((ROOT/'hosting.json').read_text())['base_path']
-assert len(routes)==29
+assert len(routes)==31
 for route in routes:
     target=ROOT/route.lstrip('/')/'index.html'
     p=Page();p.feed(target.read_text())
@@ -46,6 +46,6 @@ for verification in ['googled4596d5466e1d60a.html','BingSiteAuth.xml']:
     if (ROOT/verification).read_bytes() != (ROOT.parent/'assets'/verification).read_bytes():
         errors.append(f'Verification file altered: {verification}')
 final_images=list((ROOT/'assets/images/final').glob('*.webp'))
-if len(final_images)!=20:errors.append(f'Expected 20 final image assets, got {len(final_images)}')
+if len(final_images)!=22:errors.append(f'Expected 22 final image assets, got {len(final_images)}')
 if errors:raise SystemExit('\n'.join(errors))
-print('PASS: 29 routes, 20 final images, internal links, assets, H1, metadata, original verification files and WhatsApp contact; no forms or editorial notes.')
+print('PASS: 31 routes, 22 final images, internal links, assets, H1, metadata, original verification files and WhatsApp contact; no forms or editorial notes.')
