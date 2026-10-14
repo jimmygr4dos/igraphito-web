@@ -48,3 +48,12 @@ No se confirmó otro CRM, Google Drive ni otro servicio de almacenamiento. La re
 
 Verificar copias, bancos de datos y su inscripción cuando corresponda; condiciones de WhatsApp y del correo/hosting de Publiperú, ubicación efectiva del almacenamiento y transferencias internacionales, y registros técnicos. Los medios declarados por el usuario ya están identificados. No afirmar ausencia de cookies o de recopilación técnica basándose únicamente en que no hay formularios o analítica.
 Validar el procedimiento de derechos y la aplicación del criterio de conservación descrito. No publicar el borrador como si esos extremos estuvieran verificados.
+
+
+## Precisiones del 13/10/2026
+
+- Se retira Publiperú del texto público, por instrucción del usuario. Graphito asume responsabilidad por gestión, almacenamiento y respaldos; ello no acredita que los proveedores carezcan de acceso ni elimina su posible intervención técnica.
+- Personal de IMPRESIONES GRAPHITO E.I.R.L. atiende derechos por WhatsApp.
+- Usuario declara ausencia de cookies y registros de visitas. El código no establece cookies ni incorpora analítica; la declaración sobre registros del hosting no ha sido comprobada mediante acceso a la configuración. GitHub Pages es plataforma de revisión y no se certifica ausencia de registros del proveedor.
+- Usuario solicita conservación indeterminada hasta que se pida eliminación. Se adapta a conservación sin plazo fijo vinculada a necesidad y obligaciones legales, con solicitud de eliminación en cualquier momento. El artículo 8 de la Ley 29733 limita la conservación al tiempo necesario; la ausencia de solicitud no basta para retención indefinida.
+- Continúa pendiente verificar el banco de datos que corresponda y su inscripción, condiciones efectivas de los servicios externos y aplicación del procedimiento de eliminación y derechos. La ausencia de registros de visitas no resuelve el banco de datos de contactos.

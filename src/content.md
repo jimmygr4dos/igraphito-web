@@ -863,7 +863,7 @@ Nota interna: no añadir horarios o respuesta inmediata sin confirmación. Direc
 
 **Política de privacidad**
 
-Última revisión del borrador: 7 de octubre de 2026.
+Última revisión del borrador: 13 de octubre de 2026.
 
 **Responsable del tratamiento**
 
@@ -887,21 +887,25 @@ Solicitar una cotización no autoriza automáticamente el envío posterior de pr
 
 **Conservación**
 
-Los datos se conservan durante el tiempo necesario para atender el requerimiento y su seguimiento. Si la consulta termina con la primera cotización y no existe una relación posterior ni otra causa legal de conservación, los datos dejan de utilizarse para fines comerciales y corresponde suprimirlos o anonimizarlos cuando dejan de ser necesarios.
+No se establece un plazo fijo de conservación. Los datos se mantienen mientras sean necesarios para atender el requerimiento, gestionar la relación comercial o cumplir obligaciones legales. Cuando dejen de ser necesarios y no exista una causa legal que justifique conservarlos, corresponde eliminarlos o anonimizarlos.
 
-Si continúa la relación contractual, se conservan los datos necesarios para gestionarla mientras dure y, posteriormente, durante los plazos exigidos por las obligaciones legales aplicables o necesarios para atender responsabilidades derivadas de ella. En ese periodo residual, su uso se limita a esas finalidades. No se establece una conservación comercial indefinida por la sola posibilidad de futuros pedidos.
+Puedes solicitar su eliminación en cualquier momento por WhatsApp al +51 942 722 449. La solicitud se atenderá conforme a los derechos y límites legales descritos en esta política. La ausencia de una solicitud no justifica por sí sola una conservación indefinida.
 
-**Medios de tratamiento y proveedores**
+**Almacenamiento y medios de tratamiento**
+
+IMPRESIONES GRAPHITO E.I.R.L. asume la responsabilidad por la gestión, almacenamiento y protección de la información contenida en su correo electrónico, documentos internos y respaldos. Las consultas, cotizaciones y comunicaciones se gestionan mediante WhatsApp, el correo de la empresa y documentos internos de Excel y Word, sujetos a las finalidades, conservación y derechos descritos en esta política.
 
 Los enlaces del sitio abren WhatsApp; tú decides si envías el mensaje. El uso de WhatsApp también está sujeto a las condiciones y política de privacidad de ese servicio, cuyo funcionamiento puede involucrar tratamiento de información fuera del Perú.
 
-Las consultas, cotizaciones y comunicaciones se gestionan mediante WhatsApp, el correo electrónico de la empresa proporcionado por Publiperú y documentos internos de Excel y Word. La información necesaria para preparar y dar seguimiento al requerimiento puede incorporarse a esos documentos internos y queda sujeta a las mismas finalidades, criterios de conservación y derechos descritos en esta política.
+**Cookies y registro de visitas**
 
-WhatsApp y Publiperú intervienen en la prestación de los respectivos servicios de comunicación. Esta política no autoriza a utilizar la información para fines comerciales ajenos al requerimiento. Los detalles de cualquier transferencia internacional y de las condiciones de tratamiento por los proveedores se informarán conforme a la operación verificada.
+El sitio no utiliza cookies ni herramientas de analítica o seguimiento de visitas. Según la configuración operativa informada por la empresa, no se mantiene un registro de visitas del sitio. Esto no modifica las condiciones propias de los servicios externos a los que decidas acceder, como WhatsApp.
 
 **Tus derechos**
 
 Puedes solicitar información y acceso a tus datos, su actualización o rectificación, cancelación o supresión y oposición al tratamiento, así como revocar el consentimiento cuando este sea la base del tratamiento, escribiendo al mismo WhatsApp: +51 942 722 449.
+
+Las solicitudes recibidas por WhatsApp son atendidas por personal de IMPRESIONES GRAPHITO E.I.R.L.
 
 Indica el derecho que deseas ejercer, los datos o tratamiento al que se refiere la solicitud y un medio para recibir la respuesta. Se verificará tu identidad o representación conforme a la normativa aplicable, sin solicitar información ajena a ese propósito. El ejercicio de estos derechos es gratuito y se atiende dentro de los plazos legales.
 
@@ -911,7 +915,7 @@ La supresión puede estar limitada por una obligación legal de conservación o 
 
 Esta política se interpreta conforme a la Ley N.° 29733, Ley de Protección de Datos Personales, y su Reglamento aprobado por Decreto Supremo N.° 016-2024-JUS. Los cambios de finalidad que requieran un nuevo consentimiento se comunicarán y autorizarán antes del nuevo tratamiento.
 
-Nota interna: borrador para revisión; RUC, razón social y domicilio de contacto confirmados por el usuario el 7 de octubre de 2026; medios confirmados: WhatsApp, correo de Publiperú y documentos internos Excel y Word; pendiente verificación de las transferencias y condiciones de los proveedores, identificación e inscripción del banco de datos que corresponda, registros técnicos del hosting y procedimiento operativo de conservación y derechos. No presentar este texto como cumplimiento integral ni habilitar publicación o analítica.
+Nota interna: borrador actualizado el 13 de octubre de 2026. Datos del responsable confirmados; Graphito asume la gestión de almacenamiento y respaldos y su personal atiende derechos por WhatsApp. El usuario declara que no hay cookies ni registros de visitas; no implica verificación técnica del hosting o de la plataforma de revisión. Retención solicitada por el usuario sin fecha de caducidad, adaptada al artículo 8 de la Ley 29733: no equivale a conservar indefinidamente hasta que se solicite supresión. Pendiente identificación e inscripción del banco de datos cuando corresponda, condiciones efectivas de los servicios externos y aplicación operativa de eliminación y derechos. No presentar como cumplimiento integral ni habilitar producción o analítica.
 
 ## 30. Banners publicitarios — /productos/banners-publicitarios/
 
