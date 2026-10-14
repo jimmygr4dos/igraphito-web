@@ -57,3 +57,8 @@ Validar el procedimiento de derechos y la aplicación del criterio de conservaci
 - Usuario declara ausencia de cookies y registros de visitas. El código no establece cookies ni incorpora analítica; la declaración sobre registros del hosting no ha sido comprobada mediante acceso a la configuración. GitHub Pages es plataforma de revisión y no se certifica ausencia de registros del proveedor.
 - Usuario solicita conservación indeterminada hasta que se pida eliminación. Se adapta a conservación sin plazo fijo vinculada a necesidad y obligaciones legales, con solicitud de eliminación en cualquier momento. El artículo 8 de la Ley 29733 limita la conservación al tiempo necesario; la ausencia de solicitud no basta para retención indefinida.
 - Continúa pendiente verificar el banco de datos que corresponda y su inscripción, condiciones efectivas de los servicios externos y aplicación del procedimiento de eliminación y derechos. La ausencia de registros de visitas no resuelve el banco de datos de contactos.
+
+
+## Cierre de precisiones del 13/10/2026
+
+El usuario confirma que correo, documentos y respaldos se almacenan en servidor de Graphito en Perú. Banco de datos no inscrito. Autoriza asistencia con inscripción y adecuación de conservación. Datos preparados en privacidad-registro.md y procedimiento en privacidad-procedimiento.md. No se han eliminado archivos ni configurado respaldos: no hay acceso a esos sistemas. Se mantiene condición de borrador mientras no se complete el registro y se adopte y aplique el procedimiento; no se certifica cumplimiento integral por editar la web.

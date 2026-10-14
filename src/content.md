@@ -889,11 +889,11 @@ Solicitar una cotización no autoriza automáticamente el envío posterior de pr
 
 No se establece un plazo fijo de conservación. Los datos se mantienen mientras sean necesarios para atender el requerimiento, gestionar la relación comercial o cumplir obligaciones legales. Cuando dejen de ser necesarios y no exista una causa legal que justifique conservarlos, corresponde eliminarlos o anonimizarlos.
 
-Puedes solicitar su eliminación en cualquier momento por WhatsApp al +51 942 722 449. La solicitud se atenderá conforme a los derechos y límites legales descritos en esta política. La ausencia de una solicitud no justifica por sí sola una conservación indefinida.
+Puedes solicitar su eliminación en cualquier momento por WhatsApp al +51 942 722 449. La solicitud se atenderá conforme a los derechos y límites legales descritos en esta política. La ausencia de una solicitud no justifica por sí sola una conservación indefinida. La eliminación comprende los datos innecesarios contenidos en el correo, los documentos internos, WhatsApp y las copias de respaldo bajo control de la empresa, según corresponda. Si debe conservarse parte de la información por una obligación legal, su uso se limita a esa finalidad.
 
 **Almacenamiento y medios de tratamiento**
 
-IMPRESIONES GRAPHITO E.I.R.L. asume la responsabilidad por la gestión, almacenamiento y protección de la información contenida en su correo electrónico, documentos internos y respaldos. Las consultas, cotizaciones y comunicaciones se gestionan mediante WhatsApp, el correo de la empresa y documentos internos de Excel y Word, sujetos a las finalidades, conservación y derechos descritos en esta política.
+IMPRESIONES GRAPHITO E.I.R.L. asume la responsabilidad por la gestión, almacenamiento y protección de la información contenida en su correo electrónico, documentos internos y respaldos. El correo, los documentos internos y sus copias de respaldo se almacenan en un servidor de la empresa ubicado en Perú. Las consultas, cotizaciones y comunicaciones se gestionan mediante WhatsApp, el correo de la empresa y documentos internos de Excel y Word, sujetos a las finalidades, conservación y derechos descritos en esta política.
 
 Los enlaces del sitio abren WhatsApp; tú decides si envías el mensaje. El uso de WhatsApp también está sujeto a las condiciones y política de privacidad de ese servicio, cuyo funcionamiento puede involucrar tratamiento de información fuera del Perú.
 
@@ -907,7 +907,7 @@ Puedes solicitar información y acceso a tus datos, su actualización o rectific
 
 Las solicitudes recibidas por WhatsApp son atendidas por personal de IMPRESIONES GRAPHITO E.I.R.L.
 
-Indica el derecho que deseas ejercer, los datos o tratamiento al que se refiere la solicitud y un medio para recibir la respuesta. Se verificará tu identidad o representación conforme a la normativa aplicable, sin solicitar información ajena a ese propósito. El ejercicio de estos derechos es gratuito y se atiende dentro de los plazos legales.
+Indica el derecho que deseas ejercer, los datos o tratamiento al que se refiere la solicitud y un medio para recibir la respuesta. Se verificará tu identidad o representación conforme a la normativa aplicable, sin solicitar información ajena a ese propósito. El ejercicio de estos derechos es gratuito. Los plazos máximos de respuesta son ocho días para información, veinte días para acceso y diez días para rectificación, cancelación u oposición, contados desde el día siguiente de la presentación de la solicitud, conforme al Reglamento y sus reglas de cómputo, subsanación y ampliación cuando correspondan.
 
 La supresión puede estar limitada por una obligación legal de conservación o una relación contractual que justifique el tratamiento. En ese caso, se informará el motivo y se limitará el uso de los datos a la finalidad que justifica conservarlos. Si consideras que tus derechos no han sido atendidos conforme a la ley, puedes acudir a la Autoridad Nacional de Protección de Datos Personales.
 
@@ -915,7 +915,7 @@ La supresión puede estar limitada por una obligación legal de conservación o 
 
 Esta política se interpreta conforme a la Ley N.° 29733, Ley de Protección de Datos Personales, y su Reglamento aprobado por Decreto Supremo N.° 016-2024-JUS. Los cambios de finalidad que requieran un nuevo consentimiento se comunicarán y autorizarán antes del nuevo tratamiento.
 
-Nota interna: borrador actualizado el 13 de octubre de 2026. Datos del responsable confirmados; Graphito asume la gestión de almacenamiento y respaldos y su personal atiende derechos por WhatsApp. El usuario declara que no hay cookies ni registros de visitas; no implica verificación técnica del hosting o de la plataforma de revisión. Retención solicitada por el usuario sin fecha de caducidad, adaptada al artículo 8 de la Ley 29733: no equivale a conservar indefinidamente hasta que se solicite supresión. Pendiente identificación e inscripción del banco de datos cuando corresponda, condiciones efectivas de los servicios externos y aplicación operativa de eliminación y derechos. No presentar como cumplimiento integral ni habilitar producción o analítica.
+Nota interna: borrador actualizado el 13 de octubre de 2026. Datos del responsable confirmados; Graphito asume la gestión de almacenamiento y respaldos y su personal atiende derechos por WhatsApp. El usuario declara que no hay cookies ni registros de visitas; no implica verificación técnica del hosting o de la plataforma de revisión. Retención solicitada por el usuario sin fecha de caducidad, adaptada al artículo 8 de la Ley 29733: no equivale a conservar indefinidamente hasta que se solicite supresión. Usuario confirma que correo, documentos y respaldos están en servidor de Graphito en Perú; confirma que el banco no está inscrito y autoriza preparar la inscripción y adecuar la conservación. Procedimiento preparado en docs/privacidad-procedimiento.md: aún requiere aplicación real en los sistemas internos, no accesibles desde el sitio. Pendiente inscripción del banco, confirmar datos del representante y detalles exigidos por SIPDP, condiciones efectivas de WhatsApp y medidas de seguridad reales. No presentar como cumplimiento integral ni habilitar producción o analítica.
 
 ## 30. Banners publicitarios — /productos/banners-publicitarios/
 
