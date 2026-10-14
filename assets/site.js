@@ -55,7 +55,7 @@
     let touching = false;
     let interactionUntil = 0;
     let timer;
-    const interval = 5000;
+    const interval = 8000;
 
     const updateToggle = () => {
       if (!toggle) return;
