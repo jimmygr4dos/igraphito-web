@@ -1,6 +1,6 @@
 # igraphito — Textos comerciales para revisión y maquetación
 
-Versión 1. Redacción de 28 páginas comerciales del mapa y alcance de la página legal restante. Producción a demanda, B2B y WhatsApp como canal principal. No se han generado diseños o imágenes ni publicado contenido. Los textos comerciales están preparados para revisión y maquetación; no constituyen aprobación de publicación. Privacidad conserva validaciones pendientes y no se presenta como política final.
+Versión 1. Redacción de 28 páginas comerciales del mapa y alcance de la página legal restante. Producción a demanda, B2B y WhatsApp como canal principal. No se han generado diseños o imágenes ni publicado contenido. Los textos comerciales están preparados para revisión y maquetación; no constituyen aprobación de publicación. La política de privacidad tiene texto final aprobado por el usuario el 13/10/2026; la inscripción y aplicación de las medidas internas se documentan por separado.
 
 ## Reglas de edición
 
@@ -856,20 +856,20 @@ Puedes iniciar la conversación contando el uso que tienes en mente. No necesita
 
 Nota interna: no añadir horarios o respuesta inmediata sin confirmación. Dirección, RUC y razón social confirmados por el usuario el 7 de octubre de 2026; el mockup no es fuente de contacto.
 
-## 29. Privacidad — /privacidad/ — borrador pendiente de confirmación
+## 29. Privacidad — /privacidad/
 
 **Title:** Política de privacidad | Impresiones Graphito
 **Descripción SEO:** Información sobre el uso de datos en consultas y cotizaciones, conservación y ejercicio de derechos por WhatsApp.
 
 **Política de privacidad**
 
-Última revisión del borrador: 13 de octubre de 2026.
+Última actualización: 13 de octubre de 2026.
 
 **Responsable del tratamiento**
 
 IMPRESIONES GRAPHITO E.I.R.L. es responsable del tratamiento de los datos personales que recibe para atender consultas y gestionar sus relaciones comerciales. RUC: 20608374095. Domicilio de contacto: Jr. Mariscal Luis Jose de Orbegoso N.° 271, Int. 423A, Breña, Lima, Perú.
 
-WhatsApp de contacto y atención de derechos: +51 942 722 449.
+WhatsApp de contacto y atención de derechos: +51 942 722 449. Correo: ventas@igraphito.com.
 
 **Datos que recibimos**
 
@@ -891,15 +891,17 @@ No se establece un plazo fijo de conservación. Los datos se mantienen mientras 
 
 Puedes solicitar su eliminación en cualquier momento por WhatsApp al +51 942 722 449. La solicitud se atenderá conforme a los derechos y límites legales descritos en esta política. La ausencia de una solicitud no justifica por sí sola una conservación indefinida. La eliminación comprende los datos innecesarios contenidos en el correo, los documentos internos, WhatsApp y las copias de respaldo bajo control de la empresa, según corresponda. Si debe conservarse parte de la información por una obligación legal, su uso se limita a esa finalidad.
 
-**Almacenamiento y medios de tratamiento**
+**Almacenamiento y destinatarios**
 
 IMPRESIONES GRAPHITO E.I.R.L. asume la responsabilidad por la gestión, almacenamiento y protección de la información contenida en su correo electrónico, documentos internos y respaldos. El correo, los documentos internos y sus copias de respaldo se almacenan en un servidor de la empresa ubicado en Perú. Las consultas, cotizaciones y comunicaciones se gestionan mediante WhatsApp, el correo de la empresa y documentos internos de Excel y Word, sujetos a las finalidades, conservación y derechos descritos en esta política.
+
+Los datos se organizan en el archivo comercial de consultas, cotizaciones y clientes de IMPRESIONES GRAPHITO E.I.R.L. Su atención corresponde al personal de la empresa. No se destinan a publicidad de terceros. Solo se comunicarán a terceros cuando sea necesario para atender el pedido, con la información y base legal que correspondan, o por una obligación legal.
 
 Los enlaces del sitio abren WhatsApp; tú decides si envías el mensaje. El uso de WhatsApp también está sujeto a las condiciones y política de privacidad de ese servicio, cuyo funcionamiento puede involucrar tratamiento de información fuera del Perú.
 
 **Cookies y registro de visitas**
 
-El sitio no utiliza cookies ni herramientas de analítica o seguimiento de visitas. Según la configuración operativa informada por la empresa, no se mantiene un registro de visitas del sitio. Esto no modifica las condiciones propias de los servicios externos a los que decidas acceder, como WhatsApp.
+El sitio no incorpora cookies ni herramientas de analítica o seguimiento de visitas. Graphito informa que no mantiene un registro propio de visitas. La versión de revisión se aloja en GitHub Pages, que puede tratar datos técnicos conforme a sus propias condiciones. Los servicios externos a los que decidas acceder, como WhatsApp, aplican sus propias políticas de privacidad.
 
 **Tus derechos**
 
@@ -915,7 +917,7 @@ La supresión puede estar limitada por una obligación legal de conservación o 
 
 Esta política se interpreta conforme a la Ley N.° 29733, Ley de Protección de Datos Personales, y su Reglamento aprobado por Decreto Supremo N.° 016-2024-JUS. Los cambios de finalidad que requieran un nuevo consentimiento se comunicarán y autorizarán antes del nuevo tratamiento.
 
-Nota interna: borrador actualizado el 13 de octubre de 2026. Datos del responsable confirmados; Graphito asume la gestión de almacenamiento y respaldos y su personal atiende derechos por WhatsApp. El usuario declara que no hay cookies ni registros de visitas; no implica verificación técnica del hosting o de la plataforma de revisión. Retención solicitada por el usuario sin fecha de caducidad, adaptada al artículo 8 de la Ley 29733: no equivale a conservar indefinidamente hasta que se solicite supresión. Usuario confirma que correo, documentos y respaldos están en servidor de Graphito en Perú; confirma que el banco no está inscrito y autoriza preparar la inscripción y adecuar la conservación. Procedimiento preparado en docs/privacidad-procedimiento.md: aún requiere aplicación real en los sistemas internos, no accesibles desde el sitio. Pendiente inscripción del banco, confirmar datos del representante y detalles exigidos por SIPDP, condiciones efectivas de WhatsApp y medidas de seguridad reales. No presentar como cumplimiento integral ni habilitar producción o analítica.
+Nota interna: texto cerrado por instrucción del usuario el 13/10/2026. No se afirma inscripción ni cumplimiento integral. Registro del banco y aplicación interna de conservación, derechos y seguridad se controlan por separado en docs/privacidad-validacion.md y docs/privacidad-procedimiento.md. No se modifica producción.
 
 ## 30. Banners publicitarios — /productos/banners-publicitarios/
 
@@ -999,7 +1001,7 @@ Notas de maquetación, rutas y títulos de documento no son texto público. Cada
 
 ## Revisión editorial realizada
 
-Se cubrieron Home, catálogo, cinco categorías, proceso, 18 productos, Nosotros y Contacto: 28 páginas comerciales. La página de Privacidad conserva su estructura y pendientes explícitos. Se evitó precios, mínimos, plazos fijos y promesas de disponibilidad universal. No se añadieron productos fuera de los 18 auditados ni logos ficticios. La revisión visual y aprobación de publicación siguen pendientes.
+Se cubrieron Home, catálogo, cinco categorías, proceso, 18 productos, Nosotros y Contacto: 28 páginas comerciales. La página de Privacidad contiene su texto definitivo; los compromisos operativos y la inscripción se documentan por separado. Se evitó precios, mínimos, plazos fijos y promesas de disponibilidad universal. No se añadieron productos fuera de los 18 auditados ni logos ficticios. La revisión visual y aprobación de publicación siguen pendientes.
 
 ## Ampliación del catálogo — 13 de octubre de 2026
 

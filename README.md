@@ -15,7 +15,7 @@ Rediseño completo de igraphito.com para clientes empresariales, con enfoque SEO
 
 ## Estado
 
-Las 29 rutas se generan desde `src/content.md` mediante `scripts/build.py`. Incluye CSS responsive, navegación, carrusel accesible, enlaces de WhatsApp y assets originales recuperados del sitio actual. El arte final de las 20 imágenes está completo e integrado. Privacidad requiere validación antes de publicación.
+Las 29 rutas se generan desde `src/content.md` mediante `scripts/build.py`. Incluye CSS responsive, navegación, carrusel accesible, enlaces de WhatsApp y assets originales recuperados del sitio actual. El arte final de las 20 imágenes está completo e integrado. Política de privacidad finalizada el 13/10/2026. La inscripción del banco y la aplicación de los compromisos internos siguen como obligaciones operativas independientes.
 
 ## Desarrollo
 

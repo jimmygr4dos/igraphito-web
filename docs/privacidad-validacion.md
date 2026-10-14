@@ -1,4 +1,4 @@
-# Privacidad: validación pendiente antes de publicar
+# Privacidad: texto final y obligaciones operativas
 
 ## Datos consultados directamente en SUNAT
 
@@ -62,3 +62,17 @@ Validar el procedimiento de derechos y la aplicación del criterio de conservaci
 ## Cierre de precisiones del 13/10/2026
 
 El usuario confirma que correo, documentos y respaldos se almacenan en servidor de Graphito en Perú. Banco de datos no inscrito. Autoriza asistencia con inscripción y adecuación de conservación. Datos preparados en privacidad-registro.md y procedimiento en privacidad-procedimiento.md. No se han eliminado archivos ni configurado respaldos: no hay acceso a esos sistemas. Se mantiene condición de borrador mientras no se complete el registro y se adopte y aplique el procedimiento; no se certifica cumplimiento integral por editar la web.
+
+
+## Cierre del texto — 13/10/2026
+
+El usuario instruye cerrar con lo mínimo necesario. Se finaliza la sección 29 y se elimina el aviso público de borrador. Los datos ya confirmados no requieren nuevas preguntas. Se identifica descriptivamente el archivo comercial de consultas, cotizaciones y clientes; no se inventa un código de inscripción. Se diferencia la ausencia de seguimiento propio de los datos técnicos que GitHub Pages pueda tratar en la revisión.
+
+La finalización del texto no equivale a certificación de cumplimiento integral. Pendientes fuera del sitio:
+- Tramitar la inscripción del banco existente conforme a la definición del artículo III.1 y al artículo 42 del D.S. 016-2024-JUS; Excel, Word y contactos organizados pueden constituir un banco aunque no se use un CRM. No afirmar que está inscrito ni que está en trámite sin constancia.
+- Aplicar el procedimiento de conservación, eliminación y atención de derechos en los sistemas y respaldos bajo control de Graphito.
+- Limitar acceso al personal autorizado y verificar seguridad efectiva del servidor; no se ha accedido a él desde esta tarea.
+
+No se modifica igraphito.com, DNS, correo ni archivos internos. La política puede tener texto final sin confundirlo con la realización del registro.
+
+Fuentes oficiales verificadas: https://www3.congreso.gob.pe/Docs/DGP/DIDP/files/ds_016-2024-jus.pdf (artículos 6, 7, 42 y 69); https://www.gob.pe/8060-inscribir-banco-de-datos-en-el-registro-nacional-de-proteccion-de-datos-personales.
