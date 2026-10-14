@@ -181,7 +181,13 @@ def main():
             body+=section('Publicidad e identificación para tu empresa',product_cards(products,[18,19,4,5],'four'))
             steps=[('Cuéntanos tu proyecto','Comparte el producto y el uso que tienes en mente.'),('Revisamos tu requerimiento','Conversamos sobre las características de tu pedido.'),('Cotizamos a medida','La propuesta corresponde a tu proyecto.'),('Confirmamos los detalles','Las condiciones se acuerdan contigo.'),('Coordinamos tu pedido','Conforme a lo confirmado en la cotización.')]
             body+=section('Tu pedido, a medida','<div class="steps">'+''.join(f'<div class="step">{step_icon(i)}<h3>{h}</h3><p>{v}</p></div>' for i,(h,v) in enumerate(steps))+'</div>')
-            gallery='<p>Ideas visuales para explorar tu proyecto. Las imágenes muestran diseños ilustrativos de productos.</p><div class="illustrative-gallery">'+''.join(f'<a href="{products[i]["path"]}"><img src="{asset(IMAGES[i])}" alt="Imagen ilustrativa de {E(products[i]["name"].lower())}" loading="lazy" width="800" height="600"></a>' for i in [0,6,13,14])+'</div>'
+            gallery_descriptions = {
+                0: 'Presenta tu marca y tus datos de contacto en reuniones y encuentros de negocios.',
+                6: 'Acompaña las reuniones y el trabajo diario con la identidad de tu empresa.',
+                13: 'Da presencia a tu marca en la oficina o en obsequios empresariales.',
+                14: 'Presenta tus productos con bolsas que lleven la identidad de tu empresa.',
+            }
+            gallery='<p>Ideas visuales para explorar tu proyecto. Las imágenes muestran diseños ilustrativos de productos.</p><div class="card-grid four">'+''.join(card(products[i]['name'],products[i]['path'],IMAGES[i],gallery_descriptions[i]) for i in [0,6,13,14])+'</div>'
             body+=section('Imágenes ilustrativas de productos',gallery)+cta()+section('Empresas que confían en nosotros',carousel())
         elif n==2:
             body=hero('Productos corporativos a demanda','Soluciones para el trabajo, la comunicación y la presentación de tu marca.',path,'hero.webp',True)+section('Nuestras soluciones',category_cards())+section('Explora nuestros productos',product_cards(products,range(len(products))))+cta(path)
