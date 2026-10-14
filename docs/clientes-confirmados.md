@@ -1,6 +1,6 @@
 # Carrusel de clientes — 13/10/2026
 
-Lista exclusiva confirmada por la captura del usuario, en su orden de lectura. Se conserva la ubicación al final de Inicio y en Nosotros, tarjetas y controles del diseño aprobado. Avance automático cada 8 segundos, con pausas por interacción, foco, pestaña oculta y preferencia de movimiento reducido.
+Lista exclusiva confirmada por la captura del usuario, en su orden de lectura. Se conserva la ubicación al final de Inicio y en Nosotros, tarjetas y controles del diseño aprobado. Avance automático cada 5 segundos, con pausas por interacción, foco, pestaña oculta y preferencia de movimiento reducido.
 
 - Aranwa Hotels Resorts & Spas — item1.jpg
 - Terrazul — item6.jpg
