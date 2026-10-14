@@ -25,3 +25,5 @@
 
 /* Preserve the established monochrome client carousel with original logo shapes. */
 .client-logo img{filter:grayscale(1)}
+/* Match newly sourced marks to the light gray of the original client assets. */
+.client-logo img:not([src*="/item"]){opacity:.38}
