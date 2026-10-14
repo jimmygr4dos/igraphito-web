@@ -859,65 +859,47 @@ Nota interna: no añadir horarios o respuesta inmediata sin confirmación. Direc
 ## 29. Privacidad — /privacidad/
 
 **Title:** Política de privacidad | Impresiones Graphito
-**Descripción SEO:** Información sobre el uso de datos en consultas y cotizaciones, conservación y ejercicio de derechos por WhatsApp.
+**Descripción SEO:** Cómo utilizamos y conservamos tus datos y cómo ejercer tus derechos ante Impresiones Graphito.
 
 **Política de privacidad**
 
 Última actualización: 13 de octubre de 2026.
 
-**Responsable del tratamiento**
+**Responsable**
 
-IMPRESIONES GRAPHITO E.I.R.L. es responsable del tratamiento de los datos personales que recibe para atender consultas y gestionar sus relaciones comerciales. RUC: 20608374095. Domicilio de contacto: Jr. Mariscal Luis Jose de Orbegoso N.° 271, Int. 423A, Breña, Lima, Perú.
+IMPRESIONES GRAPHITO E.I.R.L., RUC 20608374095, con domicilio en Jr. Mariscal Luis Jose de Orbegoso N.° 271, Int. 423A, Breña, Lima, Perú. Contacto: WhatsApp +51 942 722 449 y ventas@igraphito.com.
 
-WhatsApp de contacto y atención de derechos: +51 942 722 449. Correo: ventas@igraphito.com.
+**Datos y finalidad**
 
-**Datos que recibimos**
+Utilizamos los datos de identificación y contacto que nos facilitas por WhatsApp o correo, junto con la información de tu pedido, para responder consultas, enviar cotizaciones y cartas de presentación vinculadas a tu solicitud, coordinar pedidos y cumplir obligaciones legales.
 
-Tratamos los datos de identificación y contacto, así como la información del requerimiento que nos facilitas por WhatsApp o correo: nombre, teléfono, correo, empresa y, cuando corresponda, información necesaria para cotizar o gestionar el pedido. Comparte únicamente los datos necesarios para tu consulta.
+Proporcionarlos es voluntario; sin la información necesaria podríamos no atender tu requerimiento. Tratamos los datos necesarios para la relación precontractual, contractual o profesional en los supuestos permitidos por ley. Para otros usos que lo requieran solicitaremos tu consentimiento previo. Pedir una cotización no autoriza el envío de promociones.
 
-Proporcionar información para una consulta es voluntario. Si no contamos con los datos necesarios para evaluar el requerimiento o comunicarnos contigo, puede no ser posible elaborar la cotización o gestionar el pedido.
+**Almacenamiento y comunicación**
 
-**Finalidades y fundamento del tratamiento**
+Los datos forman parte del archivo comercial de consultas, cotizaciones y clientes de Graphito. Se gestionan mediante WhatsApp, correo y documentos internos de Excel y Word. El correo, los documentos y sus respaldos se almacenan en un servidor de Graphito en Perú, bajo su responsabilidad.
 
-Utilizamos los datos para atender consultas, elaborar y remitir cotizaciones y cartas de presentación solicitadas o vinculadas al requerimiento, realizar las coordinaciones correspondientes y, cuando se concrete una contratación, gestionar su ejecución y las obligaciones legales asociadas.
-
-Cuando el tratamiento sea necesario para preparar, celebrar o ejecutar una relación contractual en la que el titular de los datos sea parte, o para desarrollar una relación profesional en los supuestos previstos por ley, se aplica la excepción al consentimiento del artículo 14.5 de la Ley N.° 29733. Para otros tratamientos que requieran consentimiento, este debe obtenerse de forma previa, libre, informada, expresa e inequívoca.
-
-Solicitar una cotización no autoriza automáticamente el envío posterior de promociones ni cartas de presentación con fines de prospección ajenos al requerimiento. Ese uso requiere una base habilitante propia y, cuando corresponda, autorización específica. La aceptación de esta política no sustituye el consentimiento exigible.
+El personal de Graphito atiende las comunicaciones. Solo se comunicarán datos a terceros cuando sea necesario para tu pedido, con la información y base legal correspondientes, o por obligación legal. WhatsApp aplica su propia política de privacidad y puede tratar información fuera del Perú.
 
 **Conservación**
 
-No se establece un plazo fijo de conservación. Los datos se mantienen mientras sean necesarios para atender el requerimiento, gestionar la relación comercial o cumplir obligaciones legales. Cuando dejen de ser necesarios y no exista una causa legal que justifique conservarlos, corresponde eliminarlos o anonimizarlos.
-
-Puedes solicitar su eliminación en cualquier momento por WhatsApp al +51 942 722 449. La solicitud se atenderá conforme a los derechos y límites legales descritos en esta política. La ausencia de una solicitud no justifica por sí sola una conservación indefinida. La eliminación comprende los datos innecesarios contenidos en el correo, los documentos internos, WhatsApp y las copias de respaldo bajo control de la empresa, según corresponda. Si debe conservarse parte de la información por una obligación legal, su uso se limita a esa finalidad.
-
-**Almacenamiento y destinatarios**
-
-IMPRESIONES GRAPHITO E.I.R.L. asume la responsabilidad por la gestión, almacenamiento y protección de la información contenida en su correo electrónico, documentos internos y respaldos. El correo, los documentos internos y sus copias de respaldo se almacenan en un servidor de la empresa ubicado en Perú. Las consultas, cotizaciones y comunicaciones se gestionan mediante WhatsApp, el correo de la empresa y documentos internos de Excel y Word, sujetos a las finalidades, conservación y derechos descritos en esta política.
-
-Los datos se organizan en el archivo comercial de consultas, cotizaciones y clientes de IMPRESIONES GRAPHITO E.I.R.L. Su atención corresponde al personal de la empresa. No se destinan a publicidad de terceros. Solo se comunicarán a terceros cuando sea necesario para atender el pedido, con la información y base legal que correspondan, o por una obligación legal.
-
-Los enlaces del sitio abren WhatsApp; tú decides si envías el mensaje. El uso de WhatsApp también está sujeto a las condiciones y política de privacidad de ese servicio, cuyo funcionamiento puede involucrar tratamiento de información fuera del Perú.
-
-**Cookies y registro de visitas**
-
-El sitio no incorpora cookies ni herramientas de analítica o seguimiento de visitas. Graphito informa que no mantiene un registro propio de visitas. La versión de revisión se aloja en GitHub Pages, que puede tratar datos técnicos conforme a sus propias condiciones. Los servicios externos a los que decidas acceder, como WhatsApp, aplican sus propias políticas de privacidad.
+Conservamos los datos mientras sean necesarios para tu solicitud, la relación comercial o las obligaciones legales. Después se eliminan o anonimizan, incluidos los soportes y respaldos bajo control de Graphito, según corresponda. La información que deba conservarse por ley se limita a esa finalidad. No se conserva indefinidamente por el solo hecho de que no solicites su eliminación.
 
 **Tus derechos**
 
-Puedes solicitar información y acceso a tus datos, su actualización o rectificación, cancelación o supresión y oposición al tratamiento, así como revocar el consentimiento cuando este sea la base del tratamiento, escribiendo al mismo WhatsApp: +51 942 722 449.
+Puedes solicitar información, acceso, rectificación, eliminación u oposición y revocar tu consentimiento escribiendo al WhatsApp +51 942 722 449. Personal de Graphito atenderá gratuitamente tu solicitud y verificará tu identidad o representación.
 
-Las solicitudes recibidas por WhatsApp son atendidas por personal de IMPRESIONES GRAPHITO E.I.R.L.
+Indica qué solicitas, a qué datos te refieres y cómo recibir la respuesta. Los plazos máximos son 8 días para información, 20 para acceso y 10 para rectificación, cancelación u oposición, desde el día siguiente de la solicitud y conforme a las reglas legales de cómputo, subsanación y ampliación.
 
-Indica el derecho que deseas ejercer, los datos o tratamiento al que se refiere la solicitud y un medio para recibir la respuesta. Se verificará tu identidad o representación conforme a la normativa aplicable, sin solicitar información ajena a ese propósito. El ejercicio de estos derechos es gratuito. Los plazos máximos de respuesta son ocho días para información, veinte días para acceso y diez días para rectificación, cancelación u oposición, contados desde el día siguiente de la presentación de la solicitud, conforme al Reglamento y sus reglas de cómputo, subsanación y ampliación cuando correspondan.
+Si una obligación legal impide eliminar algún dato, te explicaremos el motivo. Si tus derechos no son atendidos, puedes acudir a la Autoridad Nacional de Protección de Datos Personales.
 
-La supresión puede estar limitada por una obligación legal de conservación o una relación contractual que justifique el tratamiento. En ese caso, se informará el motivo y se limitará el uso de los datos a la finalidad que justifica conservarlos. Si consideras que tus derechos no han sido atendidos conforme a la ley, puedes acudir a la Autoridad Nacional de Protección de Datos Personales.
+**Cookies y actualizaciones**
 
-**Marco normativo y actualizaciones**
+El sitio no utiliza cookies ni herramientas de analítica o seguimiento de visitas.
 
-Esta política se interpreta conforme a la Ley N.° 29733, Ley de Protección de Datos Personales, y su Reglamento aprobado por Decreto Supremo N.° 016-2024-JUS. Los cambios de finalidad que requieran un nuevo consentimiento se comunicarán y autorizarán antes del nuevo tratamiento.
+Esta política se rige por la Ley N.° 29733 y el D.S. N.° 016-2024-JUS. Publicaremos aquí sus actualizaciones y solicitaremos un nuevo consentimiento cuando corresponda.
 
-Nota interna: texto cerrado por instrucción del usuario el 13/10/2026. No se afirma inscripción ni cumplimiento integral. Registro del banco y aplicación interna de conservación, derechos y seguridad se controlan por separado en docs/privacidad-validacion.md y docs/privacidad-procedimiento.md. No se modifica producción.
+Nota interna: texto resumido por instrucción del usuario el 13/10/2026. Política destinada a igraphito.com; se retira la referencia al alojamiento temporal en GitHub Pages. No se declara inscripción ni ejecución de medidas internas. Obligaciones operativas separadas en docs/privacidad-validacion.md y docs/privacidad-procedimiento.md.
 
 ## 30. Banners publicitarios — /productos/banners-publicitarios/
 
