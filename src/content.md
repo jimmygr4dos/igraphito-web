@@ -828,8 +828,6 @@ Cada pedido parte de lo que necesita tu empresa. Cuéntanos el uso del producto,
 
 **Empresas que confían en nosotros**
 
-Conoce los logos de empresas que han confiado en Impresiones Graphito.
-
 **Conversemos sobre tu proyecto** — WhatsApp
 **Explorar productos** — /productos/
 
