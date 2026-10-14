@@ -21,7 +21,12 @@ async function main() {
   await page.locator('img').evaluateAll(images => images.forEach(image => image.loading = 'eager'));
   await page.evaluate(async () => { await Promise.all(Array.from(document.images, image => image.decode())); });
   await page.screenshot({ path: 'qa/home-desktop.png', fullPage: true });
-  assert.equal(await page.locator('.client-logo').count(), 24);
+  assert.equal(await page.locator('.client-logo').count(), 12);
+  assert.deepEqual(await page.locator('.client-logo img').evaluateAll(images => images.map(image => image.alt)), ['Aranwa Hotels Resorts & Spas','Terrazul','Grupo Lúdyco','Hikvision','Koplast','Crepier','Corporación Limatambo','Casaideal','Amphora','JRM','Movilbus','V&V Bravo Constructora']);
+  await page.locator('.client-carousel').scrollIntoViewIfNeeded();
+  await page.mouse.move(0, 0);
+  await page.waitForFunction(() => document.querySelector('.carousel-track').scrollLeft > 0, undefined, { timeout: 12000 });
+  await page.screenshot({path: 'qa/client-carousel-desktop.png'});
   await page.locator('[data-carousel-toggle]').click();
   assert.equal(await page.locator('[data-carousel-toggle]').getAttribute('aria-pressed'), 'true');
   await page.locator('[data-carousel-next]').click();

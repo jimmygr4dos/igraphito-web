@@ -22,3 +22,6 @@
 .product-gallery>img{aspect-ratio:4/3;object-fit:contain}.feature h2{font-size:20px;margin-bottom:10px;letter-spacing:-.02em}
 /* Keep the full navigation available when JavaScript is unavailable. */
 @media(max-width:960px){html:not(.js) .nav-toggle{display:none}html:not(.js) .nav{width:100%;order:3;margin-top:10px}html:not(.js) .nav-links{display:flex;position:static;flex-direction:row;flex-wrap:wrap;gap:0 20px;align-items:center;padding:0;border:0;box-shadow:none;max-height:none;overflow:visible;width:100%}html:not(.js) .nav-submenu{position:static}html.js .nav-toggle{display:block}html.js #primary-nav:not(.is-open){display:none}html.js #primary-nav.is-open{display:flex}}
+
+/* Preserve the established monochrome client carousel with original logo shapes. */
+.client-logo img{filter:grayscale(1)}

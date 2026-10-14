@@ -28,7 +28,7 @@ PRODUCT_DETAILS = {
 }
 RELATED = {4: [5,0], 5: [2,3], 18: [19,9], 19: [18,16]}
 CONTACT_ICON = '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a9 9 0 0 1-13 8L3 21l1.5-5A9 9 0 1 1 21 11.5Z"/><path d="M8 7.5c-.8 4 3 7.7 7.1 8l1.3-2.4-2.8-1.3-1 1c-1.6-.7-2.6-1.8-3.2-3.2l1-1L9 6.7Z"/></svg>'
-CLIENT_NAMES = ['Aranwa Hotels Resorts & Spas','Clasem','Esparq','Boyles Bros Diamantina','JRM','Terrazul','V&V Bravo Constructora','La Viga','Crepier','Controles Empresariales','Eureka Grupo Inmobiliario','iBR','ilko','Virutex','Koplast','Essentia','Montali S.A.','Movil Group','Movil Air','Synthec','Record','SoftwareOne','Colegio Lima Waldorf','Huayna Seguridad y Vigilancia']
+CLIENTS = [('Aranwa Hotels Resorts & Spas', 'item1.jpg'), ('Terrazul', 'item6.jpg'), ('Grupo Lúdyco', 'grupo-ludyco.webp'), ('Hikvision', 'hikvision.svg'), ('Koplast', 'item15.jpg'), ('Crepier', 'item9.jpg'), ('Corporación Limatambo', 'limatambo.png'), ('Casaideal', 'casaideal.svg'), ('Amphora', 'amphora.webp'), ('JRM', 'jrm.png'), ('Movilbus', 'movilbus.png'), ('V&V Bravo Constructora', 'item7.jpg')]
 STEP_PATHS = ['<path d="M9 5H5v16h14V5h-4M9 3h6v4H9ZM8 11h8M8 15h6"/>','<path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2"/><circle cx="15" cy="12" r="2"/><circle cx="9" cy="18" r="2"/>','<path d="M5 3h10l4 4v14H5ZM14 3v5h5M8 12h8M8 16h5"/>','<path d="M6 9V3h12v6M6 17H3V9h18v8h-3M6 14h12v7H6Z"/>','<path d="M2 4h11v12H2ZM13 8h5l4 4v4h-9"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/>']
 def step_icon(index):
     return '<span class="step-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">'+STEP_PATHS[index]+'</svg></span>'
@@ -60,7 +60,7 @@ def product_cards(products, indices, variant=''):
     return f'<div class="card-grid {variant}">' + ''.join(card(products[i]['name'],products[i]['path'],IMAGES[i],*PRODUCT_DETAILS.get(i, ('Consulta las características de tu pedido a medida.', None))) for i in indices) + '</div>'
 
 def carousel():
-    logos = ''.join(f'<div class="client-logo"><img src="/assets/images/clients/item{i}.jpg" alt="{E(CLIENT_NAMES[i-1])}" loading="lazy" width="563" height="396"></div>' for i in range(1,25))
+    logos = ''.join(f'<div class="client-logo"><img src="/assets/images/clients/{file}" alt="{E(name)}" loading="lazy" width="563" height="396"></div>' for name,file in CLIENTS)
     return '<div class="client-carousel" data-carousel role="region" aria-label="Empresas que confían en nosotros"><div class="carousel-track" role="group" tabindex="0" aria-label="Logotipos de clientes; desliza o usa las flechas para explorar">'+logos+'<'+ '/div><div class="carousel-controls"><button hidden data-carousel-prev aria-label="Clientes anteriores">←</button><button hidden data-carousel-toggle aria-pressed="false">Pausar</button><button hidden data-carousel-next aria-label="Clientes siguientes">→</button></div></div>'
 
 def cta(path='/', product=None):
