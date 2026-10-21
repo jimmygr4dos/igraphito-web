@@ -16,10 +16,13 @@ def main():
     ftp = ftplib.FTP_TLS(context=ssl.create_default_context(), timeout=90)
     try:
         host = 'nemesis.sipanserver.com'
-        if not (set(socket.gethostbyname_ex(host)[2]) & set(socket.gethostbyname_ex('ftp.igraphito.com')[2])):
+        if not (set(socket.gethostbyname_ex(host)[2]) & set(socket.gethostbyname_ex('igraphito.com')[2])):
             raise RuntimeError('Hosting hostname does not match the supplied FTP server')
-        ftp.connect(host, 21)
-        ftp.login('igraphito', password)
+        ftp.connect('igraphito.com', 21)
+        # The hosting presents its server certificate on the domain's FTP endpoint.
+        # Keep full certificate verification using its previously inspected DNS name.
+        ftp.host = host
+        ftp.login('igraphito@igraphito.com', password)
         ftp.prot_p()
         root = ftp.pwd()
         ftp.cwd('public_html')
