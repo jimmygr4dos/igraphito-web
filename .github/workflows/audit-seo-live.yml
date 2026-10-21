@@ -1,0 +1,62 @@
+name: Auditoria SEO publica
+on:
+  push:
+    paths: ['.github/workflows/audit-seo-live.yml']
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Revisar SEO del sitio publicado (solo lectura)
+        run: |
+          python3 -u - <<'PY'
+          import json, re, time, xml.etree.ElementTree as ET
+          from urllib.request import urlopen, Request
+          from urllib.error import HTTPError
+          from html.parser import HTMLParser
+          class Page(HTMLParser):
+              def __init__(self):
+                  super().__init__(); self.title=[]; self.h1=[]; self.meta={}; self.canon=[]; self.schemas=[]; self.links=[]; self.main=[]; self.tag=''; self.inmain=False; self.inschema=False; self.schema=''
+              def handle_starttag(self,t,attrs):
+                  a=dict(attrs); self.tag=t
+                  if t=='main': self.inmain=True
+                  if t=='meta': self.meta[a.get('name',a.get('property',''))]=a.get('content','')
+                  if t=='link' and a.get('rel')=='canonical': self.canon.append(a.get('href'))
+                  if t=='a': self.links.append(a.get('href',''))
+                  if t=='script' and a.get('type')=='application/ld+json': self.inschema=True; self.schema=''
+              def handle_data(self,d):
+                  if self.tag=='title': self.title.append(d)
+                  if self.tag=='h1': self.h1.append(d)
+                  if self.inschema: self.schema+=d
+                  elif self.inmain: self.main.append(d)
+              def handle_endtag(self,t):
+                  if t=='main': self.inmain=False
+                  if t=='script' and self.inschema:
+                      self.schemas.append(json.loads(self.schema)); self.inschema=False
+                  self.tag=''
+          def fetch(url):
+              start=time.monotonic()
+              try:
+                  with urlopen(Request(url,headers={'User-Agent':'Graphito-SEO-Audit/1.0','Cache-Control':'no-cache'}),timeout=30) as r:
+                      return r.status,r.url,dict(r.headers),r.read().decode('utf-8',errors='replace'),round(time.monotonic()-start,3)
+              except HTTPError as e:
+                  return e.code,e.url,dict(e.headers),e.read().decode('utf-8',errors='replace'),round(time.monotonic()-start,3)
+          base='https://www.igraphito.com'
+          for url in ['http://igraphito.com/','http://www.igraphito.com/','https://igraphito.com/',base+'/',base+'/index.html',base+'/index2.html',base+'/pagina-inexistente-auditoria-seo/']:
+              status,final,headers,text,elapsed=fetch(url)
+              p=Page();p.feed(text)
+              print('VARIANT='+json.dumps({'url':url,'status':status,'final':final,'canonical':p.canon,'robots':p.meta.get('robots'),'xrobots':headers.get('X-Robots-Tag'),'seconds':elapsed}))
+          status,_,_,robots,_=fetch(base+'/robots.txt')
+          print('ROBOTS='+json.dumps({'status':status,'content':robots}))
+          status,_,_,sitemap,_=fetch(base+'/sitemap.xml')
+          urls=[n.text for n in ET.fromstring(sitemap).findall('{*}url/{*}loc')]
+          print('SITEMAP='+json.dumps({'status':status,'urls':len(urls)}))
+          for url in urls:
+              status,final,headers,text,elapsed=fetch(url)
+              p=Page();p.feed(text)
+              main=' '.join(p.main)
+              print('PAGE='+json.dumps({'url':url,'status':status,'title':''.join(p.title),'h1':' '.join(p.h1),'description':p.meta.get('description'),'robots':p.meta.get('robots'),'xrobots':headers.get('X-Robots-Tag'),'canonical':p.canon,'schema':p.schemas,'main_words':len(main.split()),'main_text':main if any(s in url for s in ['/contacto/','/folders-corporativos/','/nosotros/']) else None,'seconds':elapsed},ensure_ascii=False))
+          PY
