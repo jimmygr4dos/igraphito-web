@@ -829,7 +829,7 @@ Cada pedido parte de lo que necesita tu empresa. Cuéntanos el uso del producto,
 **Empresas que confían en nosotros**
 
 **Conversemos sobre tu proyecto** — WhatsApp
-**Explorar productos** — /productos/
+**Explorar nuestros productos** — /productos/
 
 Nota interna: insertar logos reales confirmados. No inventar historia, antigüedad, tamaño del equipo, equipos industriales o certificaciones. La información de identidad jurídica se incorporará tras verificación.
 
