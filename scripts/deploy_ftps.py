@@ -3,6 +3,7 @@ import ftplib
 import os
 from pathlib import Path
 import ssl
+import socket
 import tempfile
 from datetime import datetime, timezone
 import zipfile
@@ -14,7 +15,10 @@ def main():
         raise SystemExit('Missing FTP_PASSWORD repository secret')
     ftp = ftplib.FTP_TLS(context=ssl.create_default_context(), timeout=90)
     try:
-        ftp.connect('ftp.igraphito.com', 21)
+        host = 'nemesis.sipanserver.com'
+        if not (set(socket.gethostbyname_ex(host)[2]) & set(socket.gethostbyname_ex('ftp.igraphito.com')[2])):
+            raise RuntimeError('Hosting hostname does not match the supplied FTP server')
+        ftp.connect(host, 21)
         ftp.login('igraphito', password)
         ftp.prot_p()
         root = ftp.pwd()
