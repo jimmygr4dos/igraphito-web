@@ -1,0 +1,48 @@
+name: Publicar Graphito por FTPS
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Comprobar conexión o publicar con respaldo previo
+        required: true
+        default: check
+        type: choice
+        options:
+          - check
+          - publish
+permissions:
+  contents: read
+concurrency:
+  group: igraphito-production-ftps
+  cancel-in-progress: false
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generar y validar las 31 páginas
+        run: |
+          python scripts/build.py
+          python scripts/check.py
+          python scripts/check_seo.py
+      - name: Preparar indexación de producción
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          for page in Path('dist').rglob('index.html'):
+              text = page.read_text()
+              assert '<meta name="robots" content="noindex,nofollow">' in text
+              page.write_text(text.replace('<meta name="robots" content="noindex,nofollow">', '<meta name="robots" content="index,follow">'))
+          config = Path('dist/.htaccess')
+          config.write_text(config.read_text().replace('Header always set X-Robots-Tag "noindex, nofollow"\n', ''))
+          PY
+      - name: Conectar por FTPS y ejecutar la opción seleccionada
+        env:
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          DEPLOY_MODE: ${{ inputs.mode }}
+        run: python scripts/deploy_ftps.py
