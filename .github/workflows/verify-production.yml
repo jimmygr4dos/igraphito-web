@@ -1,0 +1,55 @@
+name: Verificar web publicada
+on:
+  workflow_run:
+    workflows: ['Publicar Graphito por FTPS']
+    types: [completed]
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  verify:
+    if: github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Comprobar páginas y recursos públicos
+        run: |
+          python3 scripts/build.py
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          from urllib.request import Request, urlopen
+          from urllib.parse import urlsplit
+          from html.parser import HTMLParser
+          class Page(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.assets = set()
+              def handle_starttag(self, tag, attrs):
+                  attrs = dict(attrs)
+                  if tag in ('img', 'script') and attrs.get('src', '').startswith('/'):
+                      self.assets.add(attrs['src'])
+                  if tag == 'link' and attrs.get('rel') == 'stylesheet':
+                      self.assets.add(attrs['href'])
+          def get(path):
+              request = Request('https://www.igraphito.com' + path, headers={'User-Agent': 'Graphito-Publication-Check/1.0', 'Cache-Control': 'no-cache'})
+              with urlopen(request, timeout=30) as response:
+                  assert response.status == 200, path
+                  assert urlsplit(response.url).hostname in ('igraphito.com', 'www.igraphito.com'), response.url
+                  assert 'noindex' not in response.headers.get('X-Robots-Tag', '').lower(), path
+                  return response.read()
+          assets = set()
+          routes = json.loads(Path('dist/routes.json').read_text())
+          for route in routes:
+              text = get(route).decode('utf-8')
+              assert '<meta name="robots" content="index,follow">' in text, route
+              assert '51942722449' in text, route
+              page = Page()
+              page.feed(text)
+              assets.update(page.assets)
+              print('OK page:', route)
+          for asset in sorted(assets):
+              assert get(asset), asset
+          print('PASS:', len(routes), 'pages and', len(assets), 'assets accessible on production.')
+          PY
