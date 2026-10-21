@@ -32,3 +32,8 @@
 .header-phones{display:flex;align-items:center;gap:10px}
 .content-block .about-explore{margin-top:24px}
 @media(max-width:960px){.header-contact .header-phones{display:none}}
+
+/* Keep the About product link close to the following client section. */
+.article:has(.about-explore){padding-bottom:0}
+.article:has(.about-explore) .content-block{margin-bottom:0}
+.article:has(.about-explore)+.section{padding-top:32px}
