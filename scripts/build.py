@@ -218,7 +218,7 @@ def main():
     (out/'404.html').write_text('<!doctype html><html lang="es"><meta charset="utf-8"><meta name="robots" content="noindex"><title>Página no encontrada | Graphito</title><h1>Página no encontrada</h1><p><a href="/">Volver al inicio</a></p></html>')
     (out/'robots.txt').write_text('User-agent: *\nAllow: /\n')
     (out/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+escape(BASE+p['path'])+'</loc></url>' for p in pages)+'</urlset>')
-    (out/'.htaccess').write_text('Options -Indexes\nDirectoryIndex index.html\nErrorDocument 404 /404.html\n<IfModule mod_headers.c>\nHeader always set X-Robots-Tag "noindex, nofollow"\nHeader always set X-Content-Type-Options "nosniff"\nHeader always set Referrer-Policy "strict-origin-when-cross-origin"\n</IfModule>\n')
+    (out/'.htaccess').write_text('Options -Indexes\nDirectoryIndex index.html\nErrorDocument 404 /404.html\n<IfModule mod_rewrite.c>\nRewriteEngine On\nRewriteCond %{HTTP_HOST} ^(www\\.)?igraphito\\.com$ [NC]\nRewriteCond %{HTTPS} !=on [OR]\nRewriteCond %{HTTP_HOST} !^www\\.igraphito\\.com$ [NC]\nRewriteRule ^ https://www.igraphito.com%{REQUEST_URI} [R=301,L,NE]\n</IfModule>\n<IfModule mod_headers.c>\nHeader always set X-Robots-Tag "noindex, nofollow"\nHeader always set X-Content-Type-Options "nosniff"\nHeader always set Referrer-Policy "strict-origin-when-cross-origin"\n</IfModule>\n')
     (out/'routes.json').write_text(json.dumps([p['path'] for p in pages],indent=2))
     (out/'hosting.json').write_text(json.dumps({'base_path':base_path,'site_url':BASE}))
     (out/'.nojekyll').touch()
