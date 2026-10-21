@@ -1,0 +1,128 @@
+name: Verificar uso real de imagenes products
+on:
+  push:
+    paths:
+      - '.github/workflows/verify-products-usage.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-save --ignore-scripts playwright@1.62.1
+      - run: npx playwright install --with-deps chromium
+      - name: Inventario y referencias reales del hosting (solo lectura)
+        env:
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          python3 -u - <<'PY'
+          import ftplib, ssl, socket, os, json, io
+          from pathlib import Path
+          host = 'nemesis.sipanserver.com'
+          assert set(socket.gethostbyname_ex(host)[2]) & set(socket.gethostbyname_ex('igraphito.com')[2])
+          ftp = ftplib.FTP_TLS(context=ssl.create_default_context(), timeout=90)
+          ftp.connect('igraphito.com', 21)
+          ftp.host = host
+          ftp.login('igraphito@igraphito.com', os.environ['FTP_PASSWORD'])
+          ftp.prot_p()
+          ftp.cwd('public_html')
+          base = ftp.pwd()
+          files = []
+          def scan(remote, relative=''):
+              for name, facts in ftp.mlsd(remote):
+                  if facts.get('type') in ('cdir', 'pdir'):
+                      continue
+                  assert '/' not in name and name not in ('.', '..')
+                  path = relative + name
+                  if facts.get('type') == 'dir':
+                      scan(remote.rstrip('/') + '/' + name, path + '/')
+                  elif facts.get('type') == 'file':
+                      files.append(path)
+          try:
+              scan(base)
+              targets = [p for p in files if p.startswith('assets/images/products/')]
+              print('TARGET_IMAGES=' + json.dumps(targets))
+              hits = []
+              count = 0
+              for path in files:
+                  if Path(path).suffix.lower() not in ('.html', '.css', '.js', '.json', '.xml', '.txt', '.cgi') and path != '.htaccess':
+                      continue
+                  output = io.BytesIO()
+                  ftp.retrbinary('RETR ' + base.rstrip('/') + '/' + path, output.write)
+                  text = output.getvalue().decode('utf-8', errors='replace')
+                  count += 1
+                  if 'assets/images/products' in text or '../images/products' in text or './images/products' in text:
+                      hits.append(path)
+              print('REMOTE_TEXT_FILES_CHECKED=' + str(count))
+              print('REMOTE_REFERENCE_HITS=' + json.dumps(hits))
+              Path('/tmp/products-audit-targets.json').write_text(json.dumps(targets))
+          finally:
+              ftp.close()
+          PY
+      - name: Generar y validar SIN la carpeta products en el entorno de prueba
+        run: |
+          python3 - <<'PY'
+          import shutil, tempfile
+          from pathlib import Path
+          source = Path('assets/images/products')
+          assert source.is_dir()
+          archive = Path(tempfile.mkdtemp(prefix='graphito-products-proof-'))
+          shutil.move(str(source), str(archive / 'products'))
+          print('Moved products out of the test checkout; hosting unchanged.')
+          PY
+          python3 scripts/build.py
+          python3 scripts/check.py
+          python3 scripts/check_seo.py
+          python3 -m http.server 8080 --directory dist > /tmp/graphito-audit.log 2>&1 &
+          node scripts/browser-check.cjs
+      - name: Comprobar las 31 páginas públicas bloqueando products en el navegador de prueba
+        run: |
+          node <<'JS'
+          const {chromium} = require('playwright');
+          const fs = require('fs');
+          const assert = require('assert/strict');
+          (async () => {
+            const routes = JSON.parse(fs.readFileSync('dist/routes.json', 'utf8'));
+            const browser = await chromium.launch({headless:true});
+            const context = await browser.newContext({viewport:{width:1440,height:1000}, serviceWorkers:'block'});
+            const requested = new Set();
+            const bad = [];
+            const targetPattern = /\/assets\/images\/products\//;
+            await context.route('**/*', async route => {
+              if (targetPattern.test(route.request().url())) {
+                requested.add(route.request().url());
+                return route.abort();
+              }
+              return route.continue();
+            });
+            const page = await context.newPage();
+            page.on('pageerror', e => bad.push(e.message));
+            for (const route of routes) {
+              const response = await page.goto('https://www.igraphito.com' + route, {waitUntil:'networkidle'});
+              assert.equal(response.status(), 200, route);
+              const html = await page.content();
+              assert.equal(html.includes('/assets/images/products/'), false, route);
+              await page.locator('img').evaluateAll(async images => {
+                for (const image of images) image.loading = 'eager';
+                await Promise.all(images.map(image => image.decode()));
+              });
+              const broken = await page.locator('img').evaluateAll(images => images.filter(i => !i.complete || i.naturalWidth === 0).map(i => i.src));
+              assert.deepEqual(broken, [], route);
+              console.log('LIVE_PASS ' + route);
+            }
+            await page.goto('https://www.igraphito.com/nosotros/', {waitUntil:'networkidle'});
+            await page.locator('[data-carousel-next]').click();
+            await page.locator('[data-carousel-prev]').click();
+            await page.locator('[data-carousel-toggle]').click();
+            assert.equal(requested.size, 0, 'Products requests detected');
+            assert.deepEqual(bad, [], 'Browser errors');
+            console.log('PROOF: 31 live pages loaded all images; 0 products requests; carousel interactions passed.');
+            await browser.close();
+          })().catch(e => { console.error(e); process.exit(1); });
+          JS
