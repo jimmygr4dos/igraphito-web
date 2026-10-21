@@ -1,8 +1,5 @@
 name: Publicar Graphito por FTPS
 on:
-  push:
-    paths:
-      - 'scripts/deploy_ftps.py'
   workflow_dispatch:
     inputs:
       mode:
@@ -20,7 +17,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   publish:
-    if: github.ref == 'refs/heads/main' && (github.event_name == 'workflow_dispatch' || github.event.head_commit.message == 'Publish approved Graphito using verified hosting FTPS hostname')
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
@@ -47,5 +44,5 @@ jobs:
       - name: Conectar por FTPS y ejecutar la opción seleccionada
         env:
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-          DEPLOY_MODE: ${{ github.event_name == 'push' && 'publish' || inputs.mode }}
+          DEPLOY_MODE: ${{ inputs.mode }}
         run: python scripts/deploy_ftps.py
