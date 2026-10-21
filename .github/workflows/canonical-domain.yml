@@ -1,0 +1,109 @@
+name: Unificar direccion HTTPS www
+on:
+  push:
+    paths: ['.github/workflows/canonical-domain.yml']
+permissions:
+  contents: read
+concurrency:
+  group: igraphito-production-ftps
+  cancel-in-progress: false
+jobs:
+  canonical:
+    if: github.event.head_commit.message == 'Unify approved Graphito domain to HTTPS www'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Respaldar htaccess, aplicar redireccion y verificar las 31 rutas
+        env:
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          python3 -u - <<'PY'
+          import ftplib, ssl, socket, os, io, hashlib, time
+          import xml.etree.ElementTree as ET
+          from datetime import datetime, timezone
+          from urllib.request import Request, urlopen, build_opener, HTTPRedirectHandler
+          from urllib.error import HTTPError, URLError
+          RULE = "<IfModule mod_rewrite.c>\nRewriteEngine On\nRewriteCond %{HTTP_HOST} ^(www\\.)?igraphito\\.com$ [NC]\nRewriteCond %{HTTPS} !=on [OR]\nRewriteCond %{HTTP_HOST} !^www\\.igraphito\\.com$ [NC]\nRewriteRule ^ https://www.igraphito.com%{REQUEST_URI} [R=301,L,NE]\n</IfModule>\n"
+          class NoRedirect(HTTPRedirectHandler):
+              def redirect_request(self, req, fp, code, msg, headers, newurl):
+                  return None
+          opener = build_opener(NoRedirect())
+          def get(url, follow=True):
+              for attempt in range(3):
+                  try:
+                      request = Request(url, headers={'User-Agent':'Graphito-Domain-Verification/1.0','Cache-Control':'no-cache'})
+                      with (urlopen(request,timeout=30) if follow else opener.open(request,timeout=30)) as r:
+                          return r.status, dict(r.headers), r.read()
+                  except HTTPError as e:
+                      return e.code,dict(e.headers),e.read()
+                  except (URLError,ConnectionError,TimeoutError):
+                      if attempt == 2: raise
+                      time.sleep(1)
+          base='https://www.igraphito.com'
+          status,_,body=get(base+'/')
+          assert status == 200
+          original_home=hashlib.sha256(body).hexdigest()
+          status,_,xml=get(base+'/sitemap.xml')
+          assert status == 200
+          routes=[n.text.removeprefix(base) for n in ET.fromstring(xml).findall('{*}url/{*}loc')]
+          assert len(routes)==31
+          host='nemesis.sipanserver.com'
+          assert set(socket.gethostbyname_ex(host)[2]) & set(socket.gethostbyname_ex('igraphito.com')[2])
+          ftp=ftplib.FTP_TLS(context=ssl.create_default_context(),timeout=60)
+          changed=False
+          old=None
+          webroot=None
+          def retrieve(name):
+              output=io.BytesIO()
+              ftp.retrbinary('RETR '+name,output.write)
+              return output.getvalue()
+          def replace(data):
+              ftp.cwd(webroot)
+              ftp.storbinary('STOR .htaccess.graphito-new',io.BytesIO(data))
+              ftp.rename('.htaccess.graphito-new','.htaccess')
+          try:
+              ftp.connect('igraphito.com',21)
+              ftp.host=host
+              ftp.login('igraphito@igraphito.com',os.environ['FTP_PASSWORD'])
+              ftp.prot_p()
+              root=ftp.pwd()
+              ftp.cwd('public_html')
+              webroot=ftp.pwd()
+              assert root != webroot
+              old=retrieve('.htaccess')
+              assert b'RewriteEngine' not in old, 'Review existing rewrite rules before changing'
+              ftp.cwd(root)
+              ftp.cwd('igraphito-private-backups')
+              name='htaccess-before-canonical-'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')+'.txt'
+              ftp.storbinary('STOR '+name,io.BytesIO(old))
+              assert retrieve(name)==old
+              print('BACKUP: igraphito-private-backups/'+name)
+              replace(RULE.encode('utf-8')+old)
+              changed=True
+              assert retrieve('.htaccess')==RULE.encode('utf-8')+old
+              for route in routes:
+                  expected=base+route
+                  for origin in ('http://igraphito.com','http://www.igraphito.com','https://igraphito.com'):
+                      status,headers,_=get(origin+route,follow=False)
+                      assert status == 301,(origin,route,status)
+                      assert headers.get('Location')==expected,(origin,route,headers.get('Location'))
+                  status,headers,_=get(expected,follow=False)
+                  assert status == 200,(expected,status)
+                  print('PASS canonical route: '+route)
+              query='/contacto/?origen=prueba&pedido=1'
+              for origin in ('http://igraphito.com','http://www.igraphito.com','https://igraphito.com'):
+                  status,headers,_=get(origin+query,follow=False)
+                  assert status==301 and headers.get('Location')==base+query,(origin,status,headers.get('Location'))
+              status,_,body=get(base+'/')
+              assert status==200 and hashlib.sha256(body).hexdigest()==original_home
+              status,_,_=get(base+'/pagina-inexistente-canonical-check/')
+              assert status==404,status
+              print('SUCCESS: 93 permanent redirects, 31 canonical pages, query parameters preserved, homepage unchanged, real 404 verified.')
+          except Exception:
+              if changed and old is not None:
+                  replace(old)
+                  print('ROLLED BACK: restored previous htaccess after verification failure.')
+              raise
+          finally:
+              ftp.close()
+          PY
