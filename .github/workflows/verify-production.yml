@@ -45,6 +45,9 @@ jobs:
               text = get(route).decode('utf-8')
               assert '<meta name="robots" content="index,follow">' in text, route
               assert '51942722449' in text, route
+              assert text.count('href="tel:+51942750810"') == 2, route
+              if route == '/nosotros/':
+                  assert 'Explorar nuestros productos' in text, route
               page = Page()
               page.feed(text)
               assets.update(page.assets)
