@@ -36,6 +36,6 @@
 /* Keep the About product link close to the following client section. */
 .article:has(.about-explore){padding-bottom:0}
 .article:has(.about-explore) .content-block{margin-bottom:0}
-.article:has(.about-explore)+.section{padding-top:16px}
+.article:has(.about-explore)+.section{padding-top:40px}
 
 .article .about-explore{margin-bottom:0}
