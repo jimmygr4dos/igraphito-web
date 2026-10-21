@@ -27,3 +27,8 @@
 .client-logo img{filter:grayscale(1)}
 /* Match newly sourced marks to the light gray of the original client assets. */
 .client-logo img:not([src*="/item"]){opacity:.38}
+
+/* Contact numbers and spacing on the About page. */
+.header-phones{display:flex;align-items:center;gap:10px}
+.content-block .about-explore{margin-top:24px}
+@media(max-width:960px){.header-contact .header-phones{display:none}}
