@@ -1,0 +1,29 @@
+name: Diagnóstico del certificado FTPS
+on:
+  push:
+    paths:
+      - '.github/workflows/diagnose-ftps.yml'
+permissions:
+  contents: read
+jobs:
+  certificate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Inspeccionar certificado sin credenciales
+        run: |
+          python3 - <<'PY'
+          import ftplib, ssl, socket
+          host = 'ftp.igraphito.com'
+          print('Server addresses:', socket.gethostbyname_ex(host))
+          context = ssl.create_default_context()
+          context.check_hostname = False
+          ftp = ftplib.FTP_TLS(context=context, timeout=30)
+          ftp.connect(host, 21)
+          ftp.auth()
+          cert = ftp.sock.getpeercert()
+          print('Certificate subject:', cert.get('subject'))
+          print('Certificate names:', cert.get('subjectAltName'))
+          print('Certificate expiration:', cert.get('notAfter'))
+          ftp.close()
+          PY
