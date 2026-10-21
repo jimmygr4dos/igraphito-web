@@ -1,0 +1,53 @@
+name: Eliminar index2 antiguo
+on:
+  push:
+    paths: ['.github/workflows/remove-index2.yml']
+permissions:
+  contents: read
+concurrency:
+  group: igraphito-production-ftps
+  cancel-in-progress: false
+jobs:
+  remove:
+    if: github.event.head_commit.message == 'Remove only obsolete public_html index2 as requested'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Eliminar exclusivamente index2.html y verificar
+        env:
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          python3 -u - <<'PY'
+          import ftplib, ssl, socket, os, hashlib
+          from urllib.request import urlopen, Request
+          from urllib.error import HTTPError
+          def home():
+              with urlopen(Request('https://www.igraphito.com/', headers={'Cache-Control':'no-cache'}),timeout=30) as response:
+                  assert response.status == 200
+                  return hashlib.sha256(response.read()).hexdigest()
+          before = home()
+          host = 'nemesis.sipanserver.com'
+          assert set(socket.gethostbyname_ex(host)[2]) & set(socket.gethostbyname_ex('igraphito.com')[2])
+          ftp = ftplib.FTP_TLS(context=ssl.create_default_context(),timeout=60)
+          try:
+              ftp.connect('igraphito.com',21)
+              ftp.host = host
+              ftp.login('igraphito@igraphito.com',os.environ['FTP_PASSWORD'])
+              ftp.prot_p()
+              ftp.cwd('public_html')
+              files = dict(ftp.mlsd())
+              assert files['index.html']['type'] == 'file'
+              assert files['index2.html']['type'] == 'file'
+              ftp.delete('index2.html')
+              assert 'index2.html' not in dict(ftp.mlsd())
+              print('DELETED: public_html/index2.html')
+          finally:
+              ftp.close()
+          assert home() == before, 'Homepage changed during verification'
+          try:
+              with urlopen(Request('https://www.igraphito.com/index2.html',headers={'Cache-Control':'no-cache'}),timeout=30) as response:
+                  raise RuntimeError('Old URL unexpectedly returns ' + str(response.status))
+          except HTTPError as error:
+              assert error.code == 404, error.code
+          print('PASS: index2.html absent, old URL returns 404, homepage unchanged and HTTP 200.')
+          PY
