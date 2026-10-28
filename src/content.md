@@ -971,6 +971,45 @@ El vinil adhesivo se aplica sobre una superficie; un banner es una pieza impresa
 
 Volver a Publicidad corporativa — /publicidad-corporativa/.
 
+## 32. Papeles de regalo empresariales — /productos/papeles-de-regalo-empresariales/
+
+**Title:** Papel de regalo personalizado para empresas en Lima | Graphito
+**Descripción SEO:** Papel de regalo corporativo personalizado con tu marca para obsequios a clientes y colaboradores. Diseños empresariales y navideños. Cotiza en Lima.
+
+**Papeles de regalo empresariales**
+
+Convierte los obsequios para tus clientes y colaboradores en una presentación coherente con la identidad de tu empresa. Personaliza el papel de regalo con tu logotipo, colores y motivos gráficos para campañas, reconocimientos y celebraciones.
+
+**Regalos corporativos con identidad de marca**
+
+Un papel de regalo personalizado ayuda a presentar los obsequios empresariales con una imagen cuidada. Puedes compartir tu logotipo o una referencia visual para evaluar la impresión según el uso y la cantidad requerida.
+
+**Papel de regalo corporativo para Navidad**
+
+Prepara los presentes de fin de año para clientes, equipos y colaboradores con diseños navideños que incorporen tu identidad corporativa. Los ejemplos visuales son ilustrativos y utilizan el texto «TU LOGO AQUÍ» en lugar de marcas ajenas.
+
+**Materiales y personalización**
+
+Podemos evaluar opciones como papel couché, kraft o seda según la presentación que buscas y la viabilidad del proyecto. Material, gramaje, medidas, acabado, impresión y cantidades se confirman durante la cotización; no se ofrecen como especificaciones fijas.
+
+**¿Qué necesitamos para cotizar?**
+
+Cuéntanos a quién entregarás los regalos, si la campaña es navideña o de otra ocasión, la cantidad estimada, las medidas o referencias y si ya cuentas con el diseño o logotipo.
+
+**Cotizar papeles de regalo por WhatsApp**
+
+**¿Puedo solicitar un diseño con mi logotipo?**
+
+Sí, comparte tu identidad gráfica o una referencia para revisar la personalización del papel de regalo en tu cotización.
+
+**¿También se puede usar para regalos navideños?**
+
+Sí, puedes consultar diseños para campañas navideñas y obsequios de fin de año destinados a clientes o colaboradores.
+
+**Sigue explorando**
+
+Volver a Packaging corporativo — /packaging-corporativo/.
+
 ## Enlaces y mensajes para maquetación
 
 Ruta WhatsApp de base: https://wa.me/51942722449.
