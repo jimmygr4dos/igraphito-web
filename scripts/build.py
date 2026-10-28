@@ -16,7 +16,7 @@ CATEGORIES = [
  ('merchandising-empresarial','Merchandising empresarial','lapiceros.corporativos.jpg',range(12,14)),
  ('packaging-corporativo','Packaging corporativo','bolsas.papel.jpg',[14,15,16,17,20]),
 ]
-IMAGES = ['tarjetas-de-presentacion-corporativas.webp','folders-corporativos.webp','hojas-membretadas.webp','formatos-continuos.webp','fotochecks-corporativos.webp','sellos-para-empresas.webp','cuadernos-corporativos.webp','agendas-corporativas.webp','calendarios-corporativos.webp','flyers-y-volantes.webp','dipticos.webp','tripticos.webp','lapiceros-corporativos.webp','tazas-corporativas.webp','bolsas-personalizadas-para-empresas.webp','cajas-personalizadas-para-empresas.webp','etiquetas-adhesivas.webp','hangtags.webp','banners-publicitarios.webp','viniles-personalizados.webp','papeles-de-regalo-empresariales.svg']
+IMAGES = ['tarjetas-de-presentacion-corporativas.webp','folders-corporativos.webp','hojas-membretadas.webp','formatos-continuos.webp','fotochecks-corporativos.webp','sellos-para-empresas.webp','cuadernos-corporativos.webp','agendas-corporativas.webp','calendarios-corporativos.webp','flyers-y-volantes.webp','dipticos.webp','tripticos.webp','lapiceros-corporativos.webp','tazas-corporativas.webp','bolsas-personalizadas-para-empresas.webp','cajas-personalizadas-para-empresas.webp','etiquetas-adhesivas.webp','hangtags.webp','banners-publicitarios.webp','viniles-personalizados.webp','papeles-de-regalo-empresariales.webp']
 for i, representative in enumerate([1,6,11,12,14]):
     slug, name, _, indices = CATEGORIES[i]
     CATEGORIES[i] = (slug, name, IMAGES[representative], indices)
@@ -24,7 +24,7 @@ PRODUCT_DETAILS = {
  4: ('Fotochecks con lanyards para colaboradores y eventos corporativos.', 'Imagen ilustrativa de fotochecks corporativos con lanyards verdes y portacredenciales'),
  5: ('Sellos automáticos personalizados para documentación de oficina.', 'Imagen ilustrativa de sellos automáticos para empresas y una muestra de impresión'),
  18: ('Banners publicitarios a medida para campañas y eventos empresariales.', 'Imagen ilustrativa de banner publicitario de Graphito con mensaje comercial y ojales'),
- 20: ('Papel de regalo personalizado para presentes de clientes y colaboradores, incluyendo campañas navideñas.', 'Diseños ilustrativos de papeles de regalo corporativos con texto TU LOGO AQUÍ'),
+ 20: ('Papel de regalo personalizado para presentes de clientes y colaboradores, incluyendo campañas navideñas.', 'Imagen ilustrativa de un regalo empresarial con papel marfil personalizado y cinta verde'),
  19: ('Viniles personalizados para comunicación visual sobre superficies.', 'Imagen ilustrativa de vinil publicitario de Graphito sobre vidrio y muestra con soporte despegado'),
 }
 RELATED = {20: [14,15], 4: [5,0], 5: [2,3], 18: [19,9], 19: [18,16]}
