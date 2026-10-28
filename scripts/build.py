@@ -14,9 +14,9 @@ CATEGORIES = [
  ('cuadernos-y-agendas-corporativas','Cuadernos y agendas corporativas','cuadernos.png',range(6,9)),
  ('publicidad-corporativa','Publicidad corporativa','tripticos.jpg',[9,10,11,18,19]),
  ('merchandising-empresarial','Merchandising empresarial','lapiceros.corporativos.jpg',range(12,14)),
- ('packaging-corporativo','Packaging corporativo','bolsas.papel.jpg',range(14,18)),
+ ('packaging-corporativo','Packaging corporativo','bolsas.papel.jpg',[14,15,16,17,20]),
 ]
-IMAGES = ['tarjetas-de-presentacion-corporativas.webp','folders-corporativos.webp','hojas-membretadas.webp','formatos-continuos.webp','fotochecks-corporativos.webp','sellos-para-empresas.webp','cuadernos-corporativos.webp','agendas-corporativas.webp','calendarios-corporativos.webp','flyers-y-volantes.webp','dipticos.webp','tripticos.webp','lapiceros-corporativos.webp','tazas-corporativas.webp','bolsas-personalizadas-para-empresas.webp','cajas-personalizadas-para-empresas.webp','etiquetas-adhesivas.webp','hangtags.webp','banners-publicitarios.webp','viniles-personalizados.webp']
+IMAGES = ['tarjetas-de-presentacion-corporativas.webp','folders-corporativos.webp','hojas-membretadas.webp','formatos-continuos.webp','fotochecks-corporativos.webp','sellos-para-empresas.webp','cuadernos-corporativos.webp','agendas-corporativas.webp','calendarios-corporativos.webp','flyers-y-volantes.webp','dipticos.webp','tripticos.webp','lapiceros-corporativos.webp','tazas-corporativas.webp','bolsas-personalizadas-para-empresas.webp','cajas-personalizadas-para-empresas.webp','etiquetas-adhesivas.webp','hangtags.webp','banners-publicitarios.webp','viniles-personalizados.webp','papeles-de-regalo-empresariales.svg']
 for i, representative in enumerate([1,6,11,12,14]):
     slug, name, _, indices = CATEGORIES[i]
     CATEGORIES[i] = (slug, name, IMAGES[representative], indices)
@@ -24,9 +24,10 @@ PRODUCT_DETAILS = {
  4: ('Fotochecks con lanyards para colaboradores y eventos corporativos.', 'Imagen ilustrativa de fotochecks corporativos con lanyards verdes y portacredenciales'),
  5: ('Sellos automáticos personalizados para documentación de oficina.', 'Imagen ilustrativa de sellos automáticos para empresas y una muestra de impresión'),
  18: ('Banners publicitarios a medida para campañas y eventos empresariales.', 'Imagen ilustrativa de banner publicitario de Graphito con mensaje comercial y ojales'),
+ 20: ('Papel de regalo personalizado para presentes de clientes y colaboradores, incluyendo campañas navideñas.', 'Diseños ilustrativos de papeles de regalo corporativos con texto TU LOGO AQUÍ'),
  19: ('Viniles personalizados para comunicación visual sobre superficies.', 'Imagen ilustrativa de vinil publicitario de Graphito sobre vidrio y muestra con soporte despegado'),
 }
-RELATED = {4: [5,0], 5: [2,3], 18: [19,9], 19: [18,16]}
+RELATED = {20: [14,15], 4: [5,0], 5: [2,3], 18: [19,9], 19: [18,16]}
 CONTACT_ICON = '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a9 9 0 0 1-13 8L3 21l1.5-5A9 9 0 1 1 21 11.5Z"/><path d="M8 7.5c-.8 4 3 7.7 7.1 8l1.3-2.4-2.8-1.3-1 1c-1.6-.7-2.6-1.8-3.2-3.2l1-1L9 6.7Z"/></svg>'
 CLIENTS = [('Aranwa Hotels Resorts & Spas', 'item1.jpg'), ('Terrazul', 'item6.jpg'), ('Grupo Lúdyco', 'grupo-ludyco.webp'), ('Hikvision', 'hikvision.svg'), ('Koplast', 'item15.jpg'), ('Crepier', 'item9.jpg'), ('Corporación Limatambo', 'limatambo.png'), ('Casaideal', 'casaideal.svg'), ('Amphora', 'amphora.webp'), ('JRM', 'jrm.png'), ('Movilbus', 'movilbus.png'), ('V&V Bravo Constructora', 'item7.jpg')]
 STEP_PATHS = ['<path d="M9 5H5v16h14V5h-4M9 3h6v4H9ZM8 11h8M8 15h6"/>','<path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2"/><circle cx="15" cy="12" r="2"/><circle cx="9" cy="18" r="2"/>','<path d="M5 3h10l4 4v14H5ZM14 3v5h5M8 12h8M8 16h5"/>','<path d="M6 9V3h12v6M6 17H3V9h18v8h-3M6 14h12v7H6Z"/>','<path d="M2 4h11v12H2ZM13 8h5l4 4v4h-9"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/>']
@@ -106,7 +107,7 @@ def blocks(page, omit_intro=False, omit_heading=None):
             if label == 'Conversemos por WhatsApp' and not target:
                 out.append(f'<h2>{E(label)}</h2>')
             elif 'WhatsApp' in label or target == 'WhatsApp':
-                product = page['name'] if 3 <= page['number'] <= 7 or 9 <= page['number'] <= 26 or page['number'] in [30,31] else None
+                product = page['name'] if 3 <= page['number'] <= 7 or 9 <= page['number'] <= 26 or page['number'] in [30,31,32] else None
                 out.append(wa(label,product,page['path']))
             elif target and target.startswith('/'):
                 extra_class = ' class="about-explore"' if page['number'] == 27 and target == '/productos/' else ''
@@ -139,7 +140,7 @@ def parse():
         title=re.search(r'\*\*Title:\*\* (.+)',body)
         desc=re.search(r'\*\*Descripción SEO:\*\* (.+)',body)
         pages.append(dict(number=int(m[1]),name=m[2],path=m[3],body=body,title=title[1] if title else 'Privacidad | Impresiones Graphito',description=desc[1] if desc else 'Información de privacidad y contacto de Impresiones Graphito.'))
-    assert len(pages)==31
+    assert len(pages)==32
     return pages
 
 def main():
@@ -167,7 +168,7 @@ def main():
     if base_path:
         stylesheet=out/'assets/site.css'
         stylesheet.write_text(hosted(stylesheet.read_text()))
-    pages=parse();products=pages[8:26] + pages[29:31]
+    pages=parse();products=pages[8:26] + pages[29:32]
     PRODUCT_BY_PATH = {p['path']: p['name'] for p in products}
     for p in pages:
         n,path=p['number'],p['path']
@@ -195,7 +196,7 @@ def main():
         elif 3<=n<=7:
             cat=CATEGORIES[n-3]
             body=hero(p['name'],'Cada pedido parte de lo que tu empresa necesita. Conversemos sobre tu proyecto.',path,cat[2],True)+section('Encuentra la pieza para tu proyecto',product_cards(products,cat[3]))+'<div class="container article">'+blocks(p,omit_heading='Encuentra la pieza para tu proyecto')+'</div>'+cta(path,p['name'])
-        elif 9<=n<=26 or n in [30,31]:
+        elif 9<=n<=26 or n in [30,31,32]:
             i=products.index(p);share_image=IMAGES[i];share_alt=PRODUCT_DETAILS.get(i, ('', 'Imagen ilustrativa de '+p['name'].lower()))[1];cat=next(c for c in CATEGORIES if i in c[3]);intro=re.search(r'\*\*'+re.escape(p['name'])+r'\*\*\s+([^\n]+)',p['body'])
             crumbs=[('Inicio','/'),('Productos','/productos/'),(cat[1],'/'+cat[0]+'/'),(p['name'],path)]
             body=f'<div class="container"><nav class="breadcrumbs" aria-label="Ruta de navegación"><a href="/">Inicio</a> / <a href="/productos/">Productos</a> / <a href="/{cat[0]}/">{cat[1]}</a> / <span aria-current="page">{E(p["name"])}</span></nav><section class="product-layout"><div class="product-gallery"><img src="{asset(IMAGES[i])}" alt="{E(share_alt)}" width="1448" height="1086" fetchpriority="high"></div><div class="product-summary"><p class="eyebrow">{E(cat[1])}</p><h1>{E(p["name"])}</h1><p>{E(intro[1] if intro else "Consulta tu pedido a medida para tu empresa.")}</p>{wa("Cotizar por WhatsApp",p["name"],path)}<p>Cantidades, características y condiciones se revisan en la cotización.</p></div></section></div>'
