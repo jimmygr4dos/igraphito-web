@@ -30,7 +30,7 @@ personalized=0
 
 routes=json.loads((ROOT/'routes.json').read_text())
 base_path=json.loads((ROOT/'hosting.json').read_text())['base_path']
-assert len(routes)==31
+assert len(routes)==32
 for route in routes:
     target=ROOT/route.lstrip('/')/'index.html'
     p=Page();p.feed(target.read_text())
@@ -68,6 +68,6 @@ for verification in ['googled4596d5466e1d60a.html','BingSiteAuth.xml']:
 final_images=list((ROOT/'assets/images/final').glob('*.webp'))
 if len(final_images)!=22:errors.append(f'Expected 22 final image assets, got {len(final_images)}')
 if errors:raise SystemExit('\n'.join(errors))
-assert personalized==120, personalized
-print('PASS: 120 WhatsApp links personalized across all 20 products.')
-print('PASS: 31 routes, 22 final images, internal links, assets, H1, metadata, original verification files and WhatsApp contact; no forms or editorial notes.')
+assert personalized==126, personalized
+print('PASS: 126 WhatsApp links personalized across all 21 products.')
+print('PASS: 32 routes, 22 final images, internal links, assets, H1, metadata, original verification files and WhatsApp contact; no forms or editorial notes.')
