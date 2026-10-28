@@ -1,5 +1,9 @@
 name: Publicar Graphito por FTPS
 on:
+  # Temporary trigger for this user-approved release; remove after execution.
+  push:
+    branches: [main]
+    paths: ['.github/workflows/publish-ftps.yml']
   workflow_dispatch:
     inputs:
       mode:
@@ -17,7 +21,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   publish:
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'workflow_dispatch' || github.event.head_commit.message == 'Deploy approved corporate gift wrapping to production (2026-10-28)')
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
@@ -25,7 +29,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Generar y validar las 31 páginas
+      - name: Generar y validar las 32 páginas
         run: |
           python scripts/build.py
           python scripts/check.py
@@ -44,5 +48,5 @@ jobs:
       - name: Conectar por FTPS y ejecutar la opción seleccionada
         env:
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-          DEPLOY_MODE: ${{ inputs.mode }}
+          DEPLOY_MODE: ${{ github.event_name == 'push' && 'publish' || inputs.mode }}
         run: python scripts/deploy_ftps.py

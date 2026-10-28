@@ -27,7 +27,7 @@ PRODUCT_DETAILS = {
  20: ('Papel de regalo personalizado para presentes de clientes y colaboradores, incluyendo campañas navideñas.', 'Imagen ilustrativa de un regalo empresarial con papel marfil personalizado y cinta verde'),
  19: ('Viniles personalizados para comunicación visual sobre superficies.', 'Imagen ilustrativa de vinil publicitario de Graphito sobre vidrio y muestra con soporte despegado'),
 }
-RELATED = {20: [14,15], 4: [5,0], 5: [2,3], 18: [19,9], 19: [18,16]}
+RELATED = {14: [15,20], 15: [14,20], 20: [14,15], 4: [5,0], 5: [2,3], 18: [19,9], 19: [18,16]}
 CONTACT_ICON = '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a9 9 0 0 1-13 8L3 21l1.5-5A9 9 0 1 1 21 11.5Z"/><path d="M8 7.5c-.8 4 3 7.7 7.1 8l1.3-2.4-2.8-1.3-1 1c-1.6-.7-2.6-1.8-3.2-3.2l1-1L9 6.7Z"/></svg>'
 CLIENTS = [('Aranwa Hotels Resorts & Spas', 'item1.jpg'), ('Terrazul', 'item6.jpg'), ('Grupo Lúdyco', 'grupo-ludyco.webp'), ('Hikvision', 'hikvision.svg'), ('Koplast', 'item15.jpg'), ('Crepier', 'item9.jpg'), ('Corporación Limatambo', 'limatambo.png'), ('Casaideal', 'casaideal.svg'), ('Amphora', 'amphora.webp'), ('JRM', 'jrm.png'), ('Movilbus', 'movilbus.png'), ('V&V Bravo Constructora', 'item7.jpg')]
 STEP_PATHS = ['<path d="M9 5H5v16h14V5h-4M9 3h6v4H9ZM8 11h8M8 15h6"/>','<path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2"/><circle cx="15" cy="12" r="2"/><circle cx="9" cy="18" r="2"/>','<path d="M5 3h10l4 4v14H5ZM14 3v5h5M8 12h8M8 16h5"/>','<path d="M6 9V3h12v6M6 17H3V9h18v8h-3M6 14h12v7H6Z"/>','<path d="M2 4h11v12H2ZM13 8h5l4 4v4h-9"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/>']
