@@ -1,4 +1,6 @@
 dist/
+release/
+release-manifest.json
 node_modules/
 __pycache__/
 .env*

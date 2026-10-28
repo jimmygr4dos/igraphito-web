@@ -7,9 +7,12 @@ import socket
 import tempfile
 from datetime import datetime, timezone
 import zipfile
+from prepare_release import prepare_release
 
 
 def main():
+    # Validate and minimize the payload before connecting or changing hosting.
+    dist = prepare_release()
     password = os.environ.get('FTP_PASSWORD')
     if not password:
         raise SystemExit('Missing FTP_PASSWORD repository secret')
@@ -80,7 +83,6 @@ def main():
                 raise RuntimeError('Remote backup size mismatch; deployment aborted')
             print('Backup saved outside public_html: ' + archive.name)
         ftp.cwd(webroot)
-        dist = Path('dist')
         files = sorted(p for p in dist.rglob('*') if p.is_file())
         # Upload assets and inner pages first; activate the homepage last.
         files.sort(key=lambda p: (p.relative_to(dist).as_posix() in {'index.html', '.htaccess'}, p.relative_to(dist).as_posix() == '.htaccess'))
