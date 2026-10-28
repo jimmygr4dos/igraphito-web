@@ -984,13 +984,13 @@ Convierte los obsequios para tus clientes y colaboradores en una presentación c
 
 Un papel de regalo personalizado ayuda a presentar los obsequios empresariales con una imagen cuidada. Puedes compartir tu logotipo o una referencia visual para evaluar la impresión según el uso y la cantidad requerida.
 
-**Papel de regalo corporativo para Navidad**
-
-Prepara los presentes de fin de año para clientes, equipos y colaboradores con diseños navideños que incorporen tu identidad corporativa. Los ejemplos visuales son ilustrativos y utilizan el texto «TU LOGO AQUÍ» en lugar de marcas ajenas.
-
 **Materiales y personalización**
 
 Podemos evaluar opciones como papel couché, kraft o seda según la presentación que buscas y la viabilidad del proyecto. Material, gramaje, medidas, acabado, impresión y cantidades se confirman durante la cotización; no se ofrecen como especificaciones fijas.
+
+**Papel de regalo corporativo para Navidad**
+
+Prepara los presentes de fin de año para clientes, equipos y colaboradores con diseños navideños que incorporen tu identidad corporativa. Los ejemplos visuales son ilustrativos y utilizan el texto «TU LOGO AQUÍ» en lugar de marcas ajenas.
 
 **¿Qué necesitamos para cotizar?**
 

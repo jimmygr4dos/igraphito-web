@@ -66,8 +66,8 @@ for verification in ['googled4596d5466e1d60a.html','BingSiteAuth.xml']:
     if (ROOT/verification).read_bytes() != (ROOT.parent/'assets'/verification).read_bytes():
         errors.append(f'Verification file altered: {verification}')
 final_images=list((ROOT/'assets/images/final').glob('*.webp'))
-if len(final_images)!=22:errors.append(f'Expected 22 final image assets, got {len(final_images)}')
+if len(final_images)!=27:errors.append(f'Expected 27 final image assets, got {len(final_images)}')
 if errors:raise SystemExit('\n'.join(errors))
 assert personalized==126, personalized
 print('PASS: 126 WhatsApp links personalized across all 21 products.')
-print('PASS: 32 routes, 22 final images, internal links, assets, H1, metadata, original verification files and WhatsApp contact; no forms or editorial notes.')
+print('PASS: 32 routes, 27 final images, internal links, assets, H1, metadata, original verification files and WhatsApp contact; no forms or editorial notes.')

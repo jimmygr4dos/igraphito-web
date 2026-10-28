@@ -88,6 +88,22 @@ def inline(text):
     result = result.replace('ventas@igraphito.com','<a href="mailto:ventas@igraphito.com">ventas@igraphito.com</a>')
     return result
 
+def gift_paper_materials():
+    materials = [
+        ('Couché', 'papel-regalo-couche.webp', 'Imagen ilustrativa de papel couché blanco personalizado con un motivo verde'),
+        ('Kraft', 'papel-regalo-kraft.webp', 'Imagen ilustrativa de papel kraft natural personalizado con un motivo verde'),
+        ('Seda', 'papel-regalo-seda.webp', 'Imagen ilustrativa de papel seda fino y translúcido personalizado'),
+    ]
+    return '<div class="gift-paper-grid">' + ''.join(
+        f'<figure><img src="{asset(image)}" alt="{E(alt)}" width="1448" height="1086" loading="lazy"><figcaption>Papel {E(name)}</figcaption></figure>'
+        for name, image, alt in materials
+    ) + '</div>'
+
+
+def gift_paper_christmas():
+    return f'<figure class="gift-paper-christmas"><img src="{asset("papeles-regalo-navidad.webp")}" alt="Imagen ilustrativa de papeles y regalos navideños en tonos verde, rojo, marfil y dorado" width="1536" height="1024" loading="lazy"><figcaption>Ideas de presentación para campañas de fin de año. Diseños ilustrativos.</figcaption></figure>'
+
+
 def blocks(page, omit_intro=False, omit_heading=None):
     """Editorial labels become semantic headings; internal instructions are excluded."""
     body = re.sub(r'\n(?=\*\*[^*\n]+\*\*)', '\n\n', page['body'])
@@ -129,6 +145,11 @@ def blocks(page, omit_intro=False, omit_heading=None):
                 skip_paragraph=False
                 continue
             out.append('<p>'+inline(raw).replace('\n','<br>')+'</p>')
+            if page['number'] == 32:
+                if raw.startswith('Podemos evaluar opciones como papel'):
+                    out.append(gift_paper_materials())
+                elif raw.startswith('Prepara los presentes de fin de año'):
+                    out.append(gift_paper_christmas())
     return '<div class="content-block">'+''.join(out)+'</div>'+ ('<section class="faq"><h2>Preguntas frecuentes</h2>'+''.join(faq)+'</section>' if faq else '')
 
 def parse():
