@@ -200,7 +200,7 @@ def main():
             body+='<div class="benefits-band"><div class="container"><span>Pedidos a demanda</span><span>Personalización</span><span>Enfoque empresarial</span><span>Contacto por WhatsApp</span></div></div>'
             body+=section('Todo lo que tu empresa necesita para comunicar su marca',category_cards())
             body+='<section class="printing-banner" style="background-image:url(/assets/images/final/printing.webp)"><div class="container"><div><p class="eyebrow">TU PROYECTO, A MEDIDA</p><h2>Impresión<br>offset y digital</h2><p>Conversemos sobre tu proyecto y sus opciones de impresión.</p><a class="button" href="/impresion-offset-y-digital/">Conoce más</a></div></div></section>'
-            body+=section('Productos para tu empresa',product_cards(products,[0,1,6,7,11],'five'))
+            body+=section('Productos para tu empresa',product_cards(products,[0,1,6,7,11,20],'six'))
             body+=section('Publicidad e identificación para tu empresa',product_cards(products,[18,19,4,5],'four'))
             steps=[('Cuéntanos tu proyecto','Comparte el producto y el uso que tienes en mente.'),('Revisamos tu requerimiento','Conversamos sobre las características de tu pedido.'),('Cotizamos a medida','La propuesta corresponde a tu proyecto.'),('Confirmamos los detalles','Las condiciones se acuerdan contigo.'),('Coordinamos tu pedido','Conforme a lo confirmado en la cotización.')]
             body+=section('Tu pedido, a medida','<div class="steps">'+''.join(f'<div class="step">{step_icon(i)}<h3>{h}</h3><p>{v}</p></div>' for i,(h,v) in enumerate(steps))+'</div>')
