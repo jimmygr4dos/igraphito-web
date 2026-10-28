@@ -38,7 +38,7 @@ for route in routes:
         assert [c['position'] for c in crumbs]==[1,2,3,4],route
         assert crumbs[-1]['item']==m.canonical,route
         assert schema['primaryImageOfPage']['contentUrl']==m.meta['og:image'],route
-        assert urlsplit(m.meta['og:image']).path.endswith('.webp') and not urlsplit(m.meta['og:image']).path.endswith('/hero.webp'),route
-assert products==20
+        assert urlsplit(m.meta['og:image']).path.endswith(('.webp', '.svg')) and not urlsplit(m.meta['og:image']).path.endswith('/hero.webp'),route
+assert products==21
 assert 'Disallow: /' not in (ROOT/'robots.txt').read_text(), 'Crawler must reach noindex'
-print('PASS SEO: 31 unique titles/descriptions, canonicals, sitemap, noindex; 20 product images and breadcrumb paths.')
+print('PASS SEO: 32 unique titles/descriptions, canonicals, sitemap, noindex; 21 product images and breadcrumb paths.')
