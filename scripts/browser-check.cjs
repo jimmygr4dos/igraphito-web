@@ -56,9 +56,10 @@ async function main() {
   await page.screenshot({ path: 'qa/product-desktop.png', fullPage: true });
   for (const width of [1440, 390]) {
     await page.setViewportSize({ width, height: 1000 });
-    for (const slug of ['banners-publicitarios', 'viniles-personalizados']) {
+    for (const slug of ['banners-publicitarios', 'viniles-personalizados', 'papeles-de-regalo-empresariales']) {
       await page.goto(base + '/productos/' + slug + '/');
-      await page.locator('.product-gallery img').evaluate(image => image.decode());
+      await page.locator('img').evaluateAll(images => images.forEach(image => image.loading = 'eager'));
+      await page.evaluate(async () => { await Promise.all(Array.from(document.images, image => image.decode())); });
       await page.screenshot({ path: `qa/${slug}-${width}.png`, fullPage: true });
     }
   }
