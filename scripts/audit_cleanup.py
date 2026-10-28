@@ -12,6 +12,15 @@ import xml.etree.ElementTree as ET
 from prepare_release import prepare_release, ROOT
 
 
+class ReadOnlyFTPS(ftplib.FTP_TLS):
+    def makepasv(self):
+        # Prefer the control connection's peer via EPSV; keep TLS verification.
+        try:
+            return ftplib.parse229(self.sendcmd('EPSV'), self.sock.getpeername())
+        except ftplib.error_perm:
+            return super().makepasv()
+
+
 def main():
     prepare_release()
     manifest = json.loads((ROOT / 'release-manifest.json').read_text())
@@ -21,7 +30,7 @@ def main():
         expected_hashes.setdefault(item['sha256'], []).append(item['path'])
     host = 'nemesis.sipanserver.com'
     assert set(socket.gethostbyname_ex(host)[2]) & set(socket.gethostbyname_ex('igraphito.com')[2])
-    ftp = ftplib.FTP_TLS(context=ssl.create_default_context(), timeout=90)
+    ftp = ReadOnlyFTPS(context=ssl.create_default_context(), timeout=30)
     try:
         ftp.connect('igraphito.com', 21)
         ftp.host = host
@@ -29,6 +38,7 @@ def main():
         ftp.prot_p()
         ftp.cwd('public_html')
         base = ftp.pwd().rstrip('/')
+        print('FTPS authenticated; requesting read-only inventory with EPSV.', flush=True)
         files = {}
 
         def scan(remote, prefix=''):
