@@ -1,9 +1,5 @@
 name: Publicar Graphito por FTPS
 on:
-  # Temporary trigger for the explicitly approved timeout test.
-  push:
-    branches: [main]
-    paths: ['.github/workflows/publish-ftps.yml']
   workflow_dispatch:
     inputs:
       mode:
@@ -21,7 +17,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   publish:
-    if: github.ref == 'refs/heads/main' && (github.event_name == 'workflow_dispatch' || github.event.head_commit.message == 'Retry approved production publication with 300-second FTPS timeout')
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
@@ -48,14 +44,5 @@ jobs:
       - name: Conectar por FTPS y ejecutar la opción seleccionada
         env:
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-          DEPLOY_MODE: ${{ github.event_name == 'push' && 'publish' || inputs.mode }}
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          script = Path('scripts/deploy_ftps.py')
-          content = script.read_text()
-          assert content.count('timeout=90') == 1
-          script.write_text(content.replace('timeout=90', 'timeout=300'))
-          print('Temporary FTPS timeout: 300 seconds for this run only.', flush=True)
-          PY
-          python -u scripts/deploy_ftps.py
+          DEPLOY_MODE: ${{ inputs.mode }}
+        run: python scripts/deploy_ftps.py
