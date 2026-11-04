@@ -1,0 +1,36 @@
+name: Revisar respaldos privados del hosting
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/review-hosting-backups.yml']
+permissions:
+  contents: read
+jobs:
+  inventory:
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'workflow_dispatch' || github.event.head_commit.message == 'Inventory private hosting backups for user-requested cleanup')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Inventario de respaldos sin modificar archivos
+        env:
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          python -u - <<'PY'
+          import ftplib, os, ssl, socket, json
+          host = 'ftp.igraphito.com'
+          tls_name = 'nemesis.sipanserver.com'
+          if not set(socket.gethostbyname_ex(host)[2]).intersection(socket.gethostbyname_ex(tls_name)[2]):
+              raise SystemExit('Hosting DNS mismatch')
+          ftp = ftplib.FTP_TLS(context=ssl.create_default_context(), timeout=90)
+          try:
+              ftp.connect(host, 21)
+              ftp.host = tls_name
+              ftp.login('igraphito', os.environ['FTP_PASSWORD'])
+              ftp.prot_p()
+              ftp.cwd('igraphito-private-backups')
+              entries = [{'name': n, 'type': f.get('type'), 'bytes': int(f.get('size', 0)), 'modified': f.get('modify')} for n, f in ftp.mlsd() if n not in {'.', '..'} and f.get('type') not in {'cdir', 'pdir'}]
+              print(json.dumps({'directory': ftp.pwd(), 'entries': entries, 'total_bytes': sum(x['bytes'] for x in entries)}, indent=2))
+          finally:
+              ftp.close()
+          PY
