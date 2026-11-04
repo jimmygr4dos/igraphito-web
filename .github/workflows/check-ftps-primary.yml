@@ -1,14 +1,11 @@
 name: Comprobar cuenta FTPS principal
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths: ['.github/workflows/check-ftps-primary.yml']
 permissions:
   contents: read
 jobs:
   check:
-    if: github.ref == 'refs/heads/main' && (github.event_name == 'workflow_dispatch' || github.event.head_commit.message == 'Check primary FTPS account igraphito using FTP_PASSWORD')
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
