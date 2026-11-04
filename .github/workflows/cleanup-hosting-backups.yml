@@ -1,5 +1,8 @@
 name: Depurar respaldos antiguos autorizados
 on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/cleanup-hosting-backups.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -8,19 +11,19 @@ concurrency:
   cancel-in-progress: false
 jobs:
   cleanup:
-    if: ${{ false }} # One-time authorized cleanup completed; retained for audit only.
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push' && github.event.head_commit.message == 'Keep only latest hosting backup as explicitly requested'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Validar respaldos recientes y eliminar exclusivamente dos archivos antiguos
+      - name: Verificar el ultimo respaldo y eliminar el anterior
         env:
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
           python -u - <<'PY'
           import ftplib, os, ssl, socket, tempfile, zipfile, json
           host, tls_name = 'ftp.igraphito.com', 'nemesis.sipanserver.com'
-          keep = {'public_html-20261021T161910Z.zip': 10666612, 'public_html-20261104T220404Z.zip': 10663431}
-          remove = {'public_html-20261021T155712Z.zip': 5586208, 'public_html-20261021T160006Z.zip': 10666612}
+          keep = {'public_html-20261104T220404Z.zip': 10663431}
+          remove = {'public_html-20261021T161910Z.zip': 10666612}
           if not set(socket.gethostbyname_ex(host)[2]).intersection(socket.gethostbyname_ex(tls_name)[2]):
               raise SystemExit('Hosting DNS mismatch')
           ftp = ftplib.FTP_TLS(context=ssl.create_default_context(), timeout=90)
