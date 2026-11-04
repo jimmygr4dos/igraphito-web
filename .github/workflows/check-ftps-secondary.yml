@@ -1,0 +1,75 @@
+name: Comprobar cuenta FTPS secundaria
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/check-ftps-secondary.yml']
+permissions:
+  contents: read
+jobs:
+  check:
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'workflow_dispatch' || github.event.head_commit.message == 'Check secondary FTPS account using FTP_PASSWORD_2')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Comprobar TLS, autenticacion y listado sin modificar hosting
+        env:
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD_2 }}
+        run: |
+          python -u - <<'PY'
+          import ftplib, os, socket, ssl
+          password = os.environ.get('FTP_PASSWORD')
+          if not password:
+              raise SystemExit('Missing FTP_PASSWORD_2 repository secret')
+          host = 'ftp.igraphito.com'
+          tls_name = 'nemesis.sipanserver.com'
+          addresses = set(socket.gethostbyname_ex(host)[2])
+          print('FTP DNS:', sorted(addresses))
+          class DiagnosticFTP(ftplib.FTP_TLS):
+              def sendcmd(self, cmd):
+                  response = super().sendcmd(cmd)
+                  if cmd in ('PASV', 'EPSV'):
+                      print('Passive response:', response)
+                  return response
+              def makepasv(self):
+                  address, port = super().makepasv()
+                  print('Data connection target:', address, port)
+                  return address, port
+          def connection(name):
+              ftp = DiagnosticFTP(context=ssl.create_default_context(), timeout=45)
+              try:
+                  print('FTP greeting:', ftp.connect(host, 21))
+                  ftp.host = name
+                  print('AUTH TLS:', ftp.auth())
+                  return ftp
+              except Exception:
+                  ftp.close()
+                  raise
+          try:
+              ftp = connection(host)
+          except ssl.SSLCertVerificationError:
+              print('TLS verification failed for requested FTP hostname; checking previously verified hosting hostname.')
+              if not addresses.intersection(socket.gethostbyname_ex(tls_name)[2]):
+                  raise SystemExit('Hosting DNS mismatch; stopped before credentials')
+              ftp = connection(tls_name)
+              print('TLS certificate fully verified for hosting hostname:', tls_name)
+          try:
+              print('Login:', ftp.login('grafy@igraphito.com', password))
+              print('Protected data channel:', ftp.prot_p())
+              root = ftp.pwd()
+              print('Account root:', root)
+              entries = list(ftp.mlsd())
+              print('PASS: root directory listing; entries:', len(entries))
+              names = {name for name, facts in entries}
+              if 'public_html' in names:
+                  ftp.cwd('public_html')
+                  web = list(ftp.mlsd())
+                  print('PASS: public_html directory listing; entries:', len(web))
+                  print('Recognized homepage:', any(name in {'index.html', 'index.php', 'index.htm'} for name, facts in web))
+              else:
+                  print('public_html entry not present in account root.')
+                  print('Recognized homepage at account root:', bool(names.intersection({'index.html', 'index.php', 'index.htm'})))
+              print('PASS: FTPS read-only connection check complete.')
+          finally:
+              ftp.close()
+          PY
