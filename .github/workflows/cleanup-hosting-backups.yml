@@ -1,8 +1,5 @@
 name: Depurar respaldos antiguos autorizados
 on:
-  push:
-    branches: [main]
-    paths: ['.github/workflows/cleanup-hosting-backups.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -11,7 +8,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   cleanup:
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push' && github.event.head_commit.message == 'Keep only latest hosting backup as explicitly requested'
+    if: ${{ false }} # One-time cleanup completed; deployment handles future retention.
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
