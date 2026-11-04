@@ -1,14 +1,11 @@
 name: Revisar respaldos privados del hosting
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths: ['.github/workflows/review-hosting-backups.yml']
 permissions:
   contents: read
 jobs:
   inventory:
-    if: github.ref == 'refs/heads/main' && (github.event_name == 'workflow_dispatch' || github.event.head_commit.message == 'Inventory private hosting backups for user-requested cleanup')
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
