@@ -7,7 +7,31 @@ import socket
 import tempfile
 from datetime import datetime, timezone
 import zipfile
+import re
 from prepare_release import prepare_release
+
+
+def prune_old_backups(ftp, backup_directory, newest_name, newest_size):
+    """Retain the verified latest full backup; ignore unrelated files."""
+    ftp.cwd(backup_directory)
+    entries = {name: facts for name, facts in ftp.mlsd()
+               if facts.get('type') == 'file'}
+    pattern = r'public_html-\d{8}T\d{6}Z\.zip'
+    archives = sorted(name for name in entries if re.fullmatch(pattern, name))
+    if not archives or archives[-1] != newest_name:
+        raise RuntimeError('Latest backup changed; cleanup aborted')
+    ftp.voidcmd('TYPE I')
+    if ftp.size(newest_name) != newest_size:
+        raise RuntimeError('Latest backup size mismatch; cleanup aborted')
+    freed = 0
+    for name in archives[:-1]:
+        ftp.delete(name)
+        freed += int(entries[name].get('size', 0))
+    remaining = {name for name, facts in ftp.mlsd()
+                 if facts.get('type') == 'file' and re.fullmatch(pattern, name)}
+    if remaining != {newest_name}:
+        raise RuntimeError('Backup retention verification failed')
+    print(f'Backup retention: kept {newest_name}; removed {len(archives) - 1}; freed {freed} bytes.')
 
 
 def main():
@@ -68,6 +92,10 @@ def main():
                 for file in (temp / 'public_html').rglob('*'):
                     if file.is_file():
                         backup.write(file, file.relative_to(temp))
+            with zipfile.ZipFile(archive) as verified_backup:
+                if verified_backup.testzip() is not None:
+                    raise RuntimeError('Backup CRC verification failed')
+            backup_size = archive.stat().st_size
             ftp.cwd(root)
             backup_dir = 'igraphito-private-backups'
             try:
@@ -99,6 +127,9 @@ def main():
             with file.open('rb') as source:
                 ftp.storbinary('STOR ' + temporary, source)
             ftp.rename(temporary, file.name)
+        # Prune only after the new backup was verified and every upload succeeded.
+        ftp.cwd(root)
+        prune_old_backups(ftp, backup_dir, archive.name, backup_size)
         print('Published successfully. Existing unrelated files were preserved.')
     finally:
         ftp.close()
